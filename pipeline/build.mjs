@@ -436,11 +436,19 @@ async function processMode(cfg) {
       // bridge circles the block (X499 rectangle at El Kafr, user report:
       // Nahia Axis' eastbound carriageway is unmapped in OSM there)
       opts = { gapMin: GAP_MIN };
+      // Rail: cap how many candidate slots ONE OSM way may claim. Vienna
+      // stacks its tracks — the Jonasreindl ramp at Schottentor runs directly
+      // beneath the surface tracks it feeds, and one way's segments filled
+      // every slot there. The connected alternative never entered the Viterbi,
+      // the chain broke and the line was drawn torn in two (user report).
+      // Diversity, not a bigger N, is what fixes that: 5 of the 6 tram breaks
+      // disappear, with the mean error unchanged.
+      if (cfg.mode === 'tram') opts.perWay = 3;
       // metro shapes are tunnel approximations — often 40–70 m off the OSM
       // subway axis (street-grid drawn), so the snap net widens and the
       // emission softens; surface trams keep the tight default
       if (cfg.mode === 'tram' && isMetroLine(r.line)) {
-        opts = { sigma: 15, radii: [60, 120], maxCand: 16, gapMin: GAP_MIN };
+        opts = { sigma: 15, radii: [60, 120], maxCand: 16, perWay: 3, gapMin: GAP_MIN };
       }
     }
     const res = matchShape(graph, sampled, opts);

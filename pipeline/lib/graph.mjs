@@ -30,7 +30,12 @@ const RAIL_OK = new Set(['subway', 'tram', 'light_rail', 'rail']);
 function tramAccess(tags) {
   if (!tags || !RAIL_OK.has(tags.railway)) return null;
   const s = tags.service;
-  if (s === 'yard' || s === 'siding' || s === 'spur' || s === 'crossover') return null;
+  // Depot infrastructure stays out — a route must not shortcut through a yard.
+  // CROSSOVERS do belong in the network: trams change track on them at termini
+  // and short-turns, and without them a terminus loop next to a depot can be
+  // unreachable (line 18 at Ludwig-Koeßler-Platz drew a 55 m chord across the
+  // block). Allowing them also lowered the mean error across Vienna's trams.
+  if (s === 'yard' || s === 'siding' || s === 'spur') return null;
   return { restricted: false, driveway: false };
 }
 
