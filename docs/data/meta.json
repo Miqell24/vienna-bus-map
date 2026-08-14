@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T08:07:50.535Z",
+  "generatedAt": "2026-08-13T14:46:47.051Z",
   "bbox": [
     16.193834,
     47.99903,
@@ -46,6 +46,496 @@
     }
   ],
   "lines": [
+    {
+      "line": "1A",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wien Schottentor",
+          "variants": 4,
+          "tripCount": 210,
+          "stops": 6,
+          "lengthKm": 1.36,
+          "stats": {
+            "observations": 69,
+            "matched": 69,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.932584728166968,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wien Stephansplatz",
+          "variants": 4,
+          "tripCount": 210,
+          "stops": 8,
+          "lengthKm": 1.95,
+          "stats": {
+            "observations": 99,
+            "matched": 99,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.9564107662661168,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ]
+    },
+    {
+      "line": "2A",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wien Schwarzenbergplatz",
+          "variants": 5,
+          "tripCount": 153,
+          "stops": 10,
+          "lengthKm": 2.79,
+          "stats": {
+            "observations": 139,
+            "matched": 139,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.3222261992333322,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wien Schwedenplatz",
+          "variants": 5,
+          "tripCount": 155,
+          "stops": 10,
+          "lengthKm": 2.2,
+          "stats": {
+            "observations": 112,
+            "matched": 112,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.706935522166996,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ]
+    },
+    {
+      "line": "3A",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wien Stubentor U",
+          "variants": 8,
+          "tripCount": 155,
+          "stops": 9,
+          "lengthKm": 1.87,
+          "stats": {
+            "observations": 95,
+            "matched": 95,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.5766247259399149,
+            "roundaboutSegs": 7,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wien Schottenring",
+          "variants": 4,
+          "tripCount": 159,
+          "stops": 8,
+          "lengthKm": 2.36,
+          "stats": {
+            "observations": 117,
+            "matched": 117,
+            "noCandidates": 0,
+            "viterbiBreaks": 1,
+            "bridged": 0,
+            "rawStretchCount": 1,
+            "rawMeters": 20,
+            "meanError": 1.932672366009745,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ]
+    },
+    {
+      "line": "4A",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wien Wittelsbachstraße",
+          "variants": 6,
+          "tripCount": 408,
+          "stops": 13,
+          "lengthKm": 3.52,
+          "stats": {
+            "observations": 164,
+            "matched": 164,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.0822315593563365,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wien Karlsplatz",
+          "variants": 11,
+          "tripCount": 391,
+          "stops": 13,
+          "lengthKm": 3.59,
+          "stats": {
+            "observations": 166,
+            "matched": 166,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.902915718776551,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ]
+    },
+    {
+      "line": "5A",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wien Griegstraße",
+          "variants": 6,
+          "tripCount": 252,
+          "stops": 22,
+          "lengthKm": 7.1,
+          "stats": {
+            "observations": 356,
+            "matched": 356,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.1369973864799747,
+            "roundaboutSegs": 21,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wien Nestroyplatz",
+          "variants": 8,
+          "tripCount": 240,
+          "stops": 25,
+          "lengthKm": 7.65,
+          "stats": {
+            "observations": 384,
+            "matched": 384,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.280939716338123,
+            "roundaboutSegs": 48,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ]
+    },
+    {
+      "line": "5B",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wien Praterstern",
+          "variants": 6,
+          "tripCount": 411,
+          "stops": 21,
+          "lengthKm": 7.33,
+          "stats": {
+            "observations": 367,
+            "matched": 367,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.3574364125650964,
+            "roundaboutSegs": 27,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wien Heiligenstadt",
+          "variants": 19,
+          "tripCount": 190,
+          "stops": 17,
+          "lengthKm": 6.35,
+          "stats": {
+            "observations": 318,
+            "matched": 318,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.419935902304569,
+            "roundaboutSegs": 24,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ]
+    },
+    {
+      "line": "7A",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wien Reumannplatz",
+          "variants": 6,
+          "tripCount": 495,
+          "stops": 20,
+          "lengthKm": 7,
+          "stats": {
+            "observations": 351,
+            "matched": 351,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.1445645079153692,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wien Meidling Hauptstraße",
+          "variants": 6,
+          "tripCount": 495,
+          "stops": 18,
+          "lengthKm": 6.44,
+          "stats": {
+            "observations": 323,
+            "matched": 323,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.3258580159389894,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ]
+    },
+    {
+      "line": "7B",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wien Meidling, Schedifkaplatz",
+          "variants": 1,
+          "tripCount": 144,
+          "stops": 2,
+          "lengthKm": 1.46,
+          "stats": {
+            "observations": 74,
+            "matched": 74,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.5026675101287718,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wien Wienerberg City",
+          "variants": 1,
+          "tripCount": 144,
+          "stops": 5,
+          "lengthKm": 2.01,
+          "stats": {
+            "observations": 101,
+            "matched": 101,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7189197143559088,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ]
+    },
+    {
+      "line": "8A",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wien Küniglberg/ORF-Zentrum",
+          "variants": 3,
+          "tripCount": 379,
+          "stops": 15,
+          "lengthKm": 4.2,
+          "stats": {
+            "observations": 195,
+            "matched": 195,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.4702842623680128,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wien Meidling, Eichenstraße",
+          "variants": 3,
+          "tripCount": 377,
+          "stops": 13,
+          "lengthKm": 4.29,
+          "stats": {
+            "observations": 215,
+            "matched": 215,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.8944141763065787,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ]
+    },
+    {
+      "line": "9A",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wien Meidling",
+          "variants": 3,
+          "tripCount": 196,
+          "stops": 11,
+          "lengthKm": 2.76,
+          "stats": {
+            "observations": 139,
+            "matched": 139,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.4435560530533327,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wien Meidling Hauptstraße",
+          "variants": 3,
+          "tripCount": 196,
+          "stops": 10,
+          "lengthKm": 2.19,
+          "stats": {
+            "observations": 110,
+            "matched": 110,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.3447444871235001,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ]
+    },
     {
       "line": "10A",
       "mode": "bus",
@@ -480,55 +970,6 @@
             "rawStretchCount": 0,
             "rawMeters": 0,
             "meanError": 0.8249869014473278,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
-    },
-    {
-      "line": "1A",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Schottentor",
-          "variants": 4,
-          "tripCount": 210,
-          "stops": 6,
-          "lengthKm": 1.36,
-          "stats": {
-            "observations": 69,
-            "matched": 69,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.932584728166968,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Stephansplatz",
-          "variants": 4,
-          "tripCount": 210,
-          "stops": 8,
-          "lengthKm": 1.95,
-          "stats": {
-            "observations": 99,
-            "matched": 99,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.9564107662661168,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -1118,55 +1559,6 @@
             "rawMeters": 0,
             "meanError": 0.7734572568400526,
             "roundaboutSegs": 11,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
-    },
-    {
-      "line": "2A",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Schwarzenbergplatz",
-          "variants": 5,
-          "tripCount": 153,
-          "stops": 10,
-          "lengthKm": 2.79,
-          "stats": {
-            "observations": 139,
-            "matched": 139,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.3222261992333322,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Schwedenplatz",
-          "variants": 5,
-          "tripCount": 155,
-          "stops": 10,
-          "lengthKm": 2.2,
-          "stats": {
-            "observations": 112,
-            "matched": 112,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.706935522166996,
-            "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
@@ -1803,55 +2195,6 @@
             "rawStretchCount": 0,
             "rawMeters": 0,
             "meanError": 0.6902797094602765,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
-    },
-    {
-      "line": "3A",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Stubentor U",
-          "variants": 8,
-          "tripCount": 155,
-          "stops": 9,
-          "lengthKm": 1.87,
-          "stats": {
-            "observations": 95,
-            "matched": 95,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.5766247259399149,
-            "roundaboutSegs": 7,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Schottenring",
-          "variants": 4,
-          "tripCount": 159,
-          "stops": 8,
-          "lengthKm": 2.36,
-          "stats": {
-            "observations": 117,
-            "matched": 117,
-            "noCandidates": 0,
-            "viterbiBreaks": 1,
-            "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 1.932672366009745,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -2595,55 +2938,6 @@
       ]
     },
     {
-      "line": "4A",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Wittelsbachstraße",
-          "variants": 6,
-          "tripCount": 408,
-          "stops": 13,
-          "lengthKm": 3.52,
-          "stats": {
-            "observations": 164,
-            "matched": 164,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 2.0822315593563365,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Karlsplatz",
-          "variants": 11,
-          "tripCount": 391,
-          "stops": 13,
-          "lengthKm": 3.59,
-          "stats": {
-            "observations": 166,
-            "matched": 166,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.902915718776551,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
-    },
-    {
       "line": "50A",
       "mode": "bus",
       "color": "#0059a9",
@@ -3372,104 +3666,6 @@
             "rawMeters": 0,
             "meanError": 0.7281506120365034,
             "roundaboutSegs": 6,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
-    },
-    {
-      "line": "5A",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Griegstraße",
-          "variants": 6,
-          "tripCount": 252,
-          "stops": 22,
-          "lengthKm": 7.1,
-          "stats": {
-            "observations": 356,
-            "matched": 356,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.1369973864799747,
-            "roundaboutSegs": 21,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Nestroyplatz",
-          "variants": 8,
-          "tripCount": 240,
-          "stops": 25,
-          "lengthKm": 7.65,
-          "stats": {
-            "observations": 384,
-            "matched": 384,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.280939716338123,
-            "roundaboutSegs": 48,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
-    },
-    {
-      "line": "5B",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Praterstern",
-          "variants": 6,
-          "tripCount": 411,
-          "stops": 21,
-          "lengthKm": 7.33,
-          "stats": {
-            "observations": 367,
-            "matched": 367,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.3574364125650964,
-            "roundaboutSegs": 27,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Heiligenstadt",
-          "variants": 19,
-          "tripCount": 190,
-          "stops": 17,
-          "lengthKm": 6.35,
-          "stats": {
-            "observations": 318,
-            "matched": 318,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.419935902304569,
-            "roundaboutSegs": 24,
             "extStart": 0,
             "extEnd": 0
           }
@@ -4800,104 +4996,6 @@
       ]
     },
     {
-      "line": "7A",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Reumannplatz",
-          "variants": 6,
-          "tripCount": 495,
-          "stops": 20,
-          "lengthKm": 7,
-          "stats": {
-            "observations": 351,
-            "matched": 351,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.1445645079153692,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Meidling Hauptstraße",
-          "variants": 6,
-          "tripCount": 495,
-          "stops": 18,
-          "lengthKm": 6.44,
-          "stats": {
-            "observations": 323,
-            "matched": 323,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.3258580159389894,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
-    },
-    {
-      "line": "7B",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Meidling, Schedifkaplatz",
-          "variants": 1,
-          "tripCount": 144,
-          "stops": 2,
-          "lengthKm": 1.46,
-          "stats": {
-            "observations": 74,
-            "matched": 74,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.5026675101287718,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Wienerberg City",
-          "variants": 1,
-          "tripCount": 144,
-          "stops": 5,
-          "lengthKm": 2.01,
-          "stats": {
-            "observations": 101,
-            "matched": 101,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7189197143559088,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
-    },
-    {
       "line": "80A",
       "mode": "bus",
       "color": "#0059a9",
@@ -5331,55 +5429,6 @@
             "rawStretchCount": 0,
             "rawMeters": 0,
             "meanError": 0.6840419544896907,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
-    },
-    {
-      "line": "8A",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Küniglberg/ORF-Zentrum",
-          "variants": 3,
-          "tripCount": 379,
-          "stops": 15,
-          "lengthKm": 4.2,
-          "stats": {
-            "observations": 195,
-            "matched": 195,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.4702842623680128,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Meidling, Eichenstraße",
-          "variants": 3,
-          "tripCount": 377,
-          "stops": 13,
-          "lengthKm": 4.29,
-          "stats": {
-            "observations": 215,
-            "matched": 215,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.8944141763065787,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -5927,26 +5976,75 @@
       ]
     },
     {
-      "line": "9A",
+      "line": "N6",
       "mode": "bus",
       "color": "#0059a9",
       "dirs": [
         {
           "dir": "0",
-          "headsign": "Wien Meidling",
-          "variants": 3,
-          "tripCount": 196,
-          "stops": 11,
-          "lengthKm": 2.76,
+          "headsign": "Wien Enkplatz",
+          "variants": 6,
+          "tripCount": 24,
+          "stops": 19,
+          "lengthKm": 9.93,
           "stats": {
-            "observations": 139,
-            "matched": 139,
+            "observations": 495,
+            "matched": 495,
             "noCandidates": 0,
             "viterbiBreaks": 0,
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.4435560530533327,
+            "meanError": 1.429101024836925,
+            "roundaboutSegs": 15,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wien Westbahnhof",
+          "variants": 6,
+          "tripCount": 24,
+          "stops": 20,
+          "lengthKm": 9.18,
+          "stats": {
+            "observations": 460,
+            "matched": 460,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.2996919991742122,
+            "roundaboutSegs": 12,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ]
+    },
+    {
+      "line": "N8",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wien Alterlaa",
+          "variants": 8,
+          "tripCount": 7,
+          "stops": 31,
+          "lengthKm": 15.52,
+          "stats": {
+            "observations": 723,
+            "matched": 723,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.0067181611205434,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -5954,20 +6052,20 @@
         },
         {
           "dir": "1",
-          "headsign": "Wien Meidling Hauptstraße",
-          "variants": 3,
-          "tripCount": 196,
-          "stops": 10,
-          "lengthKm": 2.19,
+          "headsign": "Wien Handelskai",
+          "variants": 10,
+          "tripCount": 6,
+          "stops": 30,
+          "lengthKm": 14.17,
           "stats": {
-            "observations": 110,
-            "matched": 110,
+            "observations": 678,
+            "matched": 678,
             "noCandidates": 0,
             "viterbiBreaks": 0,
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.3447444871235001,
+            "meanError": 2.0345121005864426,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -6760,55 +6858,6 @@
       ]
     },
     {
-      "line": "N6",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Enkplatz",
-          "variants": 6,
-          "tripCount": 24,
-          "stops": 19,
-          "lengthKm": 9.93,
-          "stats": {
-            "observations": 495,
-            "matched": 495,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.429101024836925,
-            "roundaboutSegs": 15,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Westbahnhof",
-          "variants": 6,
-          "tripCount": 24,
-          "stops": 20,
-          "lengthKm": 9.18,
-          "stats": {
-            "observations": 460,
-            "matched": 460,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.2996919991742122,
-            "roundaboutSegs": 12,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
-    },
-    {
       "line": "N60",
       "mode": "bus",
       "color": "#0059a9",
@@ -7291,55 +7340,6 @@
             "rawStretchCount": 1,
             "rawMeters": 20,
             "meanError": 1.9946203773686304,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
-    },
-    {
-      "line": "N8",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Alterlaa",
-          "variants": 8,
-          "tripCount": 7,
-          "stops": 31,
-          "lengthKm": 15.52,
-          "stats": {
-            "observations": 723,
-            "matched": 723,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 2.0067181611205434,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Handelskai",
-          "variants": 10,
-          "tripCount": 6,
-          "stops": 30,
-          "lengthKm": 14.17,
-          "stats": {
-            "observations": 678,
-            "matched": 678,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 2.0345121005864426,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
