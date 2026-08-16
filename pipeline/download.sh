@@ -11,6 +11,27 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 mkdir -p data/gtfs data/osm web/vendor
 
+# A downloaded extract is only accepted if it PARSES and carries a plausible
+# number of elements. `grep -q '"elements"'` — the guard this family used
+# everywhere — passes on a truncated response too: Brașov's roads arrived as a
+# 65 kB fragment that still contained the string, was taken for complete, and
+# silently skipped the city (16.08.2026).
+# The minimum differs by extract: a road network runs to tens of thousands of
+# ways, a city rail network to a few hundred, so the caller passes its own floor
+# rather than sharing one.
+# A rejected file is deleted rather than left behind — the `[ ! -f … ]` gates
+# below only ask whether the file exists, so a fragment on disk would be taken
+# for a finished download on the next run.
+ok_json () { # $1=file  $2=minimum element count
+  python3 - "$1" "$2" <<'PYEOF' 2>/dev/null
+import json, sys
+try:
+    sys.exit(0 if len(json.load(open(sys.argv[1])).get("elements", [])) >= int(sys.argv[2]) else 1)
+except Exception:
+    sys.exit(1)
+PYEOF
+}
+
 # 1) GTFS — the Wiener Linien bundle (stable URL, refreshed in place)
 #    Heavy: 78 MB zipped, 620 MB of stop_times alone.
 if [ ! -f data/gtfs/routes.txt ]; then
@@ -31,11 +52,11 @@ if [ ! -f data/osm/vienna.json ]; then
             "https://overpass.kumi.systems/api/interpreter"; do
     echo "-- $EP"
     if curl -fsS --max-time 900 -o data/osm/vienna.json --data-urlencode "data=$Q" "$EP" \
-       && grep -q '"elements"' data/osm/vienna.json; then
+       && ok_json "data/osm/vienna.json" 2000; then
       ok=1; break
     fi
   done
-  [ "$ok" = 1 ] || { echo "Overpass: all mirrors failed" >&2; exit 1; }
+  [ "$ok" = 1 ] || { rm -f data/osm/vienna.json; echo "Overpass: all mirrors failed" >&2; exit 1; }
 fi
 
 # 2b) OSM — rails for the tram and U-Bahn modes: tram tracks, the U-Bahn
@@ -50,11 +71,11 @@ if [ ! -f data/osm/vienna-rail.json ]; then
             "https://overpass.kumi.systems/api/interpreter"; do
     echo "-- $EP"
     if curl -fsS --max-time 600 -o data/osm/vienna-rail.json --data-urlencode "data=$QT" "$EP" \
-       && grep -q '"elements"' data/osm/vienna-rail.json; then
+       && ok_json "data/osm/vienna-rail.json" 40; then
       ok=1; break
     fi
   done
-  [ "$ok" = 1 ] || { echo "Overpass (rails): all mirrors failed" >&2; exit 1; }
+  [ "$ok" = 1 ] || { rm -f data/osm/vienna-rail.json; echo "Overpass (rails): all mirrors failed" >&2; exit 1; }
 fi
 
 # 3) MapLibre GL (vendored, no CDN at runtime)
