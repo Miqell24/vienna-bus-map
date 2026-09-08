@@ -1,81 +1,84 @@
 #!/usr/bin/env bash
-# Downloads input data: Wiener Linien GTFS, OSM networks (Overpass), MapLibre GL.
-# Everything is cached — re-running only fetches what is missing.
+# Downloads input data: the two GTFS feeds, the OSM network (Geofabrik +
+# pyosmium) and MapLibre GL. Everything is cached — re-running only fetches
+# what is missing.
 #
-# ONE feed covers the whole Vienna network (data.gv.at, CC BY 4.0): Wiener Linien
-# buses, trams and the U-Bahn (U1–U6, with shapes and the official line colors in
-# routes.txt), plus the Badner Bahn of Wiener Lokalbahnen — an interurban tram
-# that leaves the city and runs 27 km south to Baden. Modes are separated by
-# route_type at build time.
+# TWO feeds make this map:
+#
+#   VOR — the Verbund's own GTFS: Wiener Linien's buses, trams and U-Bahn,
+#   Österreichische Postbus, Dr. Richard, N-Bus, Blaguss, the Verkehrsbetriebe
+#   Burgenland and the town networks, plus the NÖVOG railways and the CAT —
+#   926 lines of 27 operators. It is published by Mobilitätsverbünde Österreich
+#   on data.mobilitaetsverbuende.at and needs a FREE ACCOUNT: register, confirm
+#   the mail, accept the licence on the data set "Fahrplandaten Verkehrsverbund
+#   Ost-Region (GTFS)", then either
+#     * download the zip by hand and drop it in as data/vor-gtfs.zip, or
+#     * export a token and let this script fetch it:
+#         token=$(curl -s -d client_id=dbp-public-ui -d grant_type=password \
+#           -d scope=openid -d username=YOU -d password=SECRET \
+#           https://user.mobilitaetsverbuende.at/auth/realms/dbp-public/protocol/openid-connect/token \
+#           | python3 -c 'import json,sys; print(json.load(sys.stdin)["access_token"])')
+#         VOR_TOKEN=$token bash pipeline/download.sh
+#   The token is short-lived, so the file is the calmer route.
+#
+#   ÖBB — the national rail feed (static.web.oebb.at, CC BY 4.0), open, no
+#   account. The Verbund's own data deliberately leaves ÖBB out, so this is
+#   where the S-Bahn, REX, CJX and R trains come from; pipeline/scope.mjs picks
+#   the VOR's share of its 273 national routes.
 set -euo pipefail
 cd "$(dirname "$0")/.."
-mkdir -p data/gtfs data/osm web/vendor
+mkdir -p data/gtfs-vor data/gtfs-oebb data/osm/tiles web/vendor
 
-# A downloaded extract is only accepted if it PARSES and carries a plausible
-# number of elements. `grep -q '"elements"'` — the guard this family used
-# everywhere — passes on a truncated response too: Brașov's roads arrived as a
-# 65 kB fragment that still contained the string, was taken for complete, and
-# silently skipped the city (16.08.2026).
-# The minimum differs by extract: a road network runs to tens of thousands of
-# ways, a city rail network to a few hundred, so the caller passes its own floor
-# rather than sharing one.
-# A rejected file is deleted rather than left behind — the `[ ! -f … ]` gates
-# below only ask whether the file exists, so a fragment on disk would be taken
-# for a finished download on the next run.
-ok_json () { # $1=file  $2=minimum element count
-  python3 - "$1" "$2" <<'PYEOF' 2>/dev/null
-import json, sys
-try:
-    sys.exit(0 if len(json.load(open(sys.argv[1])).get("elements", [])) >= int(sys.argv[2]) else 1)
-except Exception:
-    sys.exit(1)
-PYEOF
-}
-
-# 1) GTFS — the Wiener Linien bundle (stable URL, refreshed in place)
-#    Heavy: 78 MB zipped, 620 MB of stop_times alone.
-if [ ! -f data/gtfs/routes.txt ]; then
-  echo "== Wiener Linien GTFS =="
-  curl -fL --retry 3 --max-time 900 -o data/vienna-gtfs.zip \
-    "https://www.wienerlinien.at/ogd_realtime/doku/ogd/gtfs/gtfs.zip"
-  unzip -o data/vienna-gtfs.zip -d data/gtfs
+# 1) GTFS — the Verbund (account-gated: file or token, see the header)
+if [ ! -f data/gtfs-vor/routes.txt ]; then
+  if [ ! -f data/vor-gtfs.zip ] && [ -n "${VOR_TOKEN:-}" ]; then
+    echo "== VOR GTFS (data set 52, via token) =="
+    curl -fL --retry 3 --max-time 3600 -H "Authorization: Bearer $VOR_TOKEN" \
+      -H "Accept: application/zip" -o data/vor-gtfs.zip \
+      "https://data.mobilitaetsverbuende.at/api/public/v1/data-sets/52/2026/file"
+  fi
+  if [ ! -f data/vor-gtfs.zip ]; then
+    echo "brak data/vor-gtfs.zip — pobierz zbiór \"Fahrplandaten Verkehrsverbund Ost-Region (GTFS)\"" >&2
+    echo "z https://data.mobilitaetsverbuende.at/de/data-sets (darmowe konto) albo ustaw VOR_TOKEN" >&2
+    exit 1
+  fi
+  echo "== VOR GTFS =="
+  unzip -o data/vor-gtfs.zip -d data/gtfs-vor
 fi
 
-# 2) OSM — roadways over the whole network extent (GTFS stops span 48.00–48.30 N,
-#    16.20–16.55 E: Vienna plus the Badner Bahn corridor down to Baden)
-if [ ! -f data/osm/vienna.json ]; then
-  echo "== Overpass (roads) =="
-  Q='[out:json][timeout:900];way(47.95,16.13,48.36,16.61)["highway"~"^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|living_street|service|busway|construction|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link)$"];out geom;'
-  ok=0
-  for EP in "https://overpass-api.de/api/interpreter" \
-            "https://maps.mail.ru/osm/tools/overpass/api/interpreter" \
-            "https://overpass.kumi.systems/api/interpreter"; do
-    echo "-- $EP"
-    if curl -fsS --max-time 900 -o data/osm/vienna.json --data-urlencode "data=$Q" "$EP" \
-       && ok_json "data/osm/vienna.json" 2000; then
-      ok=1; break
-    fi
-  done
-  [ "$ok" = 1 ] || { rm -f data/osm/vienna.json; echo "Overpass: all mirrors failed" >&2; exit 1; }
+# 1b) GTFS — ÖBB (open, the rail backbone the Verbund feed leaves out)
+if [ ! -f data/gtfs-oebb/routes.txt ]; then
+  echo "== ÖBB GTFS =="
+  curl -fL --retry 3 --max-time 3600 -o data/oebb-gtfs.zip \
+    "https://static.web.oebb.at/open-data/soll-fahrplan-gtfs/GTFS_Fahrplan_2026.zip"
+  unzip -o data/oebb-gtfs.zip -d data/gtfs-oebb
+  # the zip carries one folder; the build reads the files directly
+  if [ -d data/gtfs-oebb/GTFS_Fahrplan_2026 ]; then
+    mv data/gtfs-oebb/GTFS_Fahrplan_2026/* data/gtfs-oebb/
+    rmdir data/gtfs-oebb/GTFS_Fahrplan_2026
+  fi
 fi
 
-# 2b) OSM — rails for the tram and U-Bahn modes: tram tracks, the U-Bahn
-#     (railway=subway, including the U6 viaduct sections) and light_rail/rail,
-#     which is what the Badner Bahn runs on outside the city. Same bbox.
-if [ ! -f data/osm/vienna-rail.json ]; then
-  echo "== Overpass (rails) =="
-  QT='[out:json][timeout:600];way(47.95,16.13,48.36,16.61)["railway"~"^(subway|tram|light_rail|rail)$"];out geom;'
-  ok=0
-  for EP in "https://overpass-api.de/api/interpreter" \
-            "https://maps.mail.ru/osm/tools/overpass/api/interpreter" \
-            "https://overpass.kumi.systems/api/interpreter"; do
-    echo "-- $EP"
-    if curl -fsS --max-time 600 -o data/osm/vienna-rail.json --data-urlencode "data=$QT" "$EP" \
-       && ok_json "data/osm/vienna-rail.json" 40; then
-      ok=1; break
-    fi
-  done
-  [ "$ok" = 1 ] || { rm -f data/osm/vienna-rail.json; echo "Overpass (rails): all mirrors failed" >&2; exit 1; }
+# 1c) scope: which ÖBB routes are the VOR's, and the line keys of the Verbund
+if [ ! -f data/scope.json ]; then
+  node --max-old-space-size=8192 pipeline/scope.mjs
+fi
+
+# 2) OSM — from the Geofabrik austria extract, not Overpass. The map is the
+#    Verbund: Vienna, Lower Austria and Burgenland, 267 × 205 km, far past what
+#    a public Overpass mirror will serve (the wall Berlin, London and São Paulo
+#    hit before). pipeline/pbf-tiles.py cuts a 7 × 7 road grid and the rail box
+#    — which reaches past the Verbund border, because the trains do — writing
+#    exactly the JSON shape Overpass would have returned, node ids included.
+if [ ! -f data/osm/tiles/t49.json ] || [ ! -f data/osm/vienna-rail.json ]; then
+  python3 -c "import osmium" 2>/dev/null || { echo "brak pakietu osmium — zainstaluj: pip3 install --user osmium" >&2; exit 1; }
+  if [ ! -f data/austria-latest.osm.pbf ]; then
+    echo "== Geofabrik austria-latest.osm.pbf =="
+    curl -fL --retry 5 --retry-delay 5 -C - --max-time 3600 -o data/austria-latest.osm.pbf \
+      "https://download.geofabrik.de/europe/austria-latest.osm.pbf"
+  fi
+  echo "== cutting OSM tiles out of the extract =="
+  python3 pipeline/pbf-tiles.py
 fi
 
 # 3) MapLibre GL (vendored, no CDN at runtime)
@@ -86,4 +89,4 @@ if [ ! -f web/vendor/maplibre-gl.js ]; then
 fi
 
 echo "OK — data ready:"
-du -sh data/vienna-gtfs.zip data/osm/vienna.json data/osm/vienna-rail.json 2>/dev/null || true
+du -sh data/gtfs-vor data/gtfs-oebb data/osm 2>/dev/null || true

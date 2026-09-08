@@ -179,7 +179,7 @@ async function init() {
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: false }), 'top-right');
   map.addControl(new maplibregl.GeolocateControl({ positionOptions: { enableHighAccuracy: true }, trackUserLocation: true, showUserHeading: true, fitBoundsOptions: { maxZoom: 15.5 } }), 'top-right');
   map.addControl(new maplibregl.ScaleControl({ maxWidth: 120 }), 'bottom-left');
-  map.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: 'Timetables: Wiener Linien GTFS (data.gv.at, CC BY 4.0)' }));
+  map.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: 'Timetables: VOR (Mobilitätsverbünde Österreich) · ÖBB (CC BY 4.0)' }));
 
   const [meta] = await Promise.all([
     fetch('data/meta.json').then((r) => r.json()),
@@ -204,12 +204,57 @@ async function init() {
   const nBus = meta.lines.filter((l) => l.mode === 'bus').length;
   // U-Bahn keys are exactly U1…U6 (the U-prefixed rail-replacement bus is filtered out in the pipeline)
   const nMetro = meta.lines.filter((l) => l.mode === 'tram' && /^U[1-6]$/.test(l.line)).length;
-  const nTram = meta.lines.filter((l) => l.mode === 'tram').length - nMetro;
-  document.getElementById('count').textContent = `(${nBus} bus · ${nTram} tram · ${nMetro} U-Bahn)`;
+  // the region's railways: ÖBB's S-Bahn, REX, CJX and R, plus the NÖVOG and
+  // private lines the Verbund carries under their own initials
+  const isTrain = (l) => l.mode === 'tram'
+    && /^(S\d|REX|CJX|R\d|SZ$|WVB|WHB|REB|NÖSBB|CAT|ÖGLB|Zayataler)/.test(l.line);
+  const nTrain = meta.lines.filter(isTrain).length;
+  const nTram = meta.lines.filter((l) => l.mode === 'tram').length - nMetro - nTrain;
+  document.getElementById('count').textContent =
+    `(${nBus} bus · ${nTram} tram · ${nMetro} U-Bahn · ${nTrain} S-Bahn & regional)`;
   document.getElementById('stamp').textContent = new Date(meta.generatedAt).toLocaleDateString('en-GB');
-  document.getElementById('chips').innerHTML = meta.lines
-    .map((l) => `<button class="chip" data-line="${esc(l.line)}" style="background:${esc(l.color)}">${esc(l.line)}</button>`)
-    .join(' ');
+
+  // The pipeline key keeps the operator code where a number belongs to more
+  // than one of them; everything the panel PRINTS goes through this — the
+  // number the stop flag actually shows.
+  const DISP = new Map(meta.lines.filter((l) => l.label).map((l) => [l.line, l.label]));
+  const disp = (l) => DISP.get(l) ?? l;
+  // A thousand lines in one cloud is a wall, and Wiener Linien's 1 sits next to
+  // a Postbus 1 and a Wiener Neustadt 1. So the list is grouped by the operator
+  // that runs the line — the Berlin panel — with the three Viennese ones first
+  // and the rest by size. `ops` comes from the feed's own agency names.
+  const OP_TITLE = new Map(Object.entries(meta.ops || {}));
+  const OP_FIRST = ['wl', 'wlb', 'oebb'];
+  const CATS = [['bus', 'Buses'], ['tram', 'Trams'], ['metro', 'Trains']];
+  const catOf = (l) => (l.mode === 'tram' && (/^U[1-6]$/.test(l.line) || isTrain(l)) ? 'metro' : l.mode);
+  const chipHtml = (l) => {
+    const hs = (l.dirs || []).map((d) => d.headsign).filter(Boolean);
+    const tip = hs.length ? `${disp(l.line) !== l.line ? l.line + ' — ' : ''}${hs.join(' ↔ ')}` : '';
+    return `<button class="chip" data-line="${esc(l.line)}"${tip ? ` title="${esc(tip)}"` : ''} `
+      + `style="background:${esc(l.color)}">${esc(disp(l.line))}</button>`;
+  };
+  const paintChips = () => {
+    const bucket = new Map();
+    for (const l of meta.lines) {
+      const k = l.op || 'other';
+      if (!bucket.has(k)) bucket.set(k, []);
+      bucket.get(k).push(l);
+    }
+    const order = [...OP_FIRST.filter((k) => bucket.has(k)),
+      ...[...bucket.keys()].filter((k) => !OP_FIRST.includes(k))
+        .sort((a, b) => bucket.get(b).length - bucket.get(a).length)];
+    const section = (key) => {
+      const ls = bucket.get(key);
+      if (!ls || !ls.length) return '';
+      const groups = CATS.map(([c, title]) => [title, ls.filter((l) => catOf(l) === c)])
+        .filter(([, cl]) => cl.length);
+      return `<h3 class="chip-head">${esc(OP_TITLE.get(key) || key)} <span class="n">${ls.length}</span></h3>`
+        + groups.map(([title, cl]) => (groups.length > 1 ? `<h4 class="chip-sub">${esc(title)}</h4>` : '')
+          + `<div class="chip-cloud">${cl.map(chipHtml).join(' ')}</div>`).join('');
+    };
+    document.getElementById('chips').innerHTML = order.map(section).join('');
+  };
+  paintChips();
 
   // Line layers go below the base style labels (street names stay readable).
   const firstSymbol = map.getStyle().layers.find((l) => l.type === 'symbol')?.id;
@@ -1147,7 +1192,7 @@ async function init() {
       const fs = Math.max(16, Math.round(out.width / 130));
       ctx.font = `${fs}px sans-serif`;
       ctx.textBaseline = 'bottom';
-      const txt = '© OpenStreetMap contributors · OpenFreeMap · GTFS: Wiener Linien (data.gv.at, CC BY 4.0)';
+      const txt = '© OpenStreetMap contributors · OpenFreeMap · Timetables: VOR (Mobilitätsverbünde Österreich) · ÖBB (CC BY 4.0)';
       const tw = ctx.measureText(txt).width;
       ctx.fillStyle = 'rgba(255,255,255,0.82)';
       ctx.fillRect(out.width - tw - fs, out.height - fs * 1.7, tw + fs, fs * 1.7);
@@ -1391,7 +1436,7 @@ async function init() {
             const fs = Math.max(16, Math.round(Wf / 500));
             cx.font = `${fs}px sans-serif`;
             cx.textBaseline = 'bottom';
-            const txt = '© OpenStreetMap contributors · OpenFreeMap · GTFS: Wiener Linien (data.gv.at, CC BY 4.0)';
+            const txt = '© OpenStreetMap contributors · OpenFreeMap · Timetables: VOR (Mobilitätsverbünde Österreich) · ÖBB (CC BY 4.0)';
             const tw = Math.min(cx.measureText(txt).width, wpx - fs);
             cx.fillStyle = 'rgba(255,255,255,0.82)';
             cx.fillRect(wpx - tw - fs, hpx - fs * 1.7, tw + fs, fs * 1.7);

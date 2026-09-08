@@ -1,7 +1,16 @@
 // GTFS → OSM graph → map matching (HMM) → GeoJSON files for the frontend.
-// Vienna: ONE Wiener Linien feed (data.gv.at, CC BY 4.0) split by route_type
-// into three cfgs — buses (3) on the road graph, trams (0) and the U-Bahn (1)
-// on separate rail graphs. The U-Bahn lines U1–U6 keep their official colors
+// Vienna: the map is the VOR — the Verkehrsverbund Ost-Region, Vienna, Lower
+// Austria and Burgenland. TWO feeds:
+//   the Verbund's own GTFS (data.mobilitaetsverbuende.at) — 926 lines of 27
+//   operators: Wiener Linien's buses, trams and U-Bahn, Postbus and the county
+//   operators of Lower Austria and Burgenland, the NÖVOG railways and the CAT.
+//   Split by route_type into buses (3) on the road graph, trams (0), U-Bahn (1)
+//   and the private railways (2) on rail graphs;
+//   ÖBB's open feed (static.web.oebb.at, CC BY 4.0) for the S-Bahn, REX, CJX
+//   and R trains, which the Verbund's own data deliberately leaves out.
+// pipeline/scope.mjs decides which of ÖBB's 273 national routes are the VOR's,
+// and gives every line its key (an operator code where a number belongs to
+// more than one operator) and the operator its panel heading. The U-Bahn lines U1–U6 keep their official colors
 // straight from routes.txt and trigger the engine's metro treatment (wide
 // ribbon, station discs, always-on names) via the U-prefixed line keys. The
 // tram slot also carries the Badner Bahn (line BB, Wiener Lokalbahnen), which
@@ -124,14 +133,19 @@ const busList = busArgs.filter((a) => a !== '--all');
 // its official line colors). Without the filter `--all` on the bus mode would
 // swallow the rail lines too.
 const MODES = [{
-  mode: 'bus', label: 'buses', osmFile: 'data/osm/vienna.json',
+  mode: 'bus', label: 'buses',
+  // the VOR region — Vienna, Lower Austria and Burgenland, 267 × 205 km — as
+  // 7 × 7 tiles cut out of the Geofabrik austria extract (pbf-tiles.py);
+  // merged at load, ways deduped by id
+  osmFiles: Array.from({ length: 49 }, (_, i) => `data/osm/tiles/t${i + 1}.json`),
   graphMode: 'road', color: '#0059a9', colorDark: '#00294f',
   all: busAll, lines: busList.length ? busList : (busAll ? [] : ['13A']),
   feeds: [
     // SEV = Schienenersatzverkehr: a rail-replacement bus standing in for a
     // closed line. One of its routes carries a plain long name, so the
     // Ersatzverkehr text filter below cannot catch the line on its own.
-    { tag: 'wl', dir: 'data/gtfs', mapKey: (sn) => (/^SEV\b/.test(sn) ? null : sn), routeTypes: ['3'] },
+    { tag: 'vor', dir: 'data/gtfs-vor', routeTypes: ['3'],
+      mapKey: (sn, r) => (/^SEV\b/.test(sn) ? null : lineKey(sn, r)), op: true },
   ],
 }];
 // The rail slot splits in TWO cfgs sharing mode 'tram': street trams and the
@@ -144,15 +158,55 @@ const tramAll = tramLines.length === 1 && tramLines[0] === 'all';
 // U-Bahn line keys are exactly U1…U6 — a prefix test alone would also catch
 // bus codes like U2E (a U2 rail-replacement service, dropped further down)
 const isMetroLine = (l) => /^U[1-6]$/.test(l);
-const tramSel = tramLines.filter((l) => !isMetroLine(l));
+// The Verbund's railways: S-Bahn, REX, CJX and R. They ride the same slot as
+// the U-Bahn (the metro treatment: wide ribbon, station discs, always-on
+// names), and they carry ONE colour, because on these maps the colour says the
+// mode and they are all the same mode — the region's rail. Blue is the S-Bahn's
+// own, the white S on blue every platform in the Verbund signs.
+const RAIL_BLUE = '#0F6EB4', RAIL_BLUE_DARK = '#08375a';
+// the Verbund's railways by name: ÖBB's S-Bahn, REX, CJX and R, and the
+// NÖVOG and private lines the VOR feed carries under their own initials
+// (Waldviertelbahn, Wachaubahn, Reblandbahn, Schneebergbahn, Ybbstalbahn,
+// Höllentalbahn, the Zayataler Schienentaxi and the CAT)
+const isTrainLine = (l) => /^(S\d|REX|CJX|R\d|SZ$|WVB|WHB|REB|NÖSBB|CAT|ÖGLB|Zayataler)/.test(l);
+// everything drawn as a train on this map: U-Bahn and the Verbund's railways
+const isTrunkLine = (l) => isMetroLine(l) || isTrainLine(l);
+const tramSel = tramLines.filter((l) => !isMetroLine(l) && !isTrainLine(l));
 const metroSel = tramLines.filter((l) => isMetroLine(l));
+const trainSel = tramLines.filter(isTrainLine);
+
+// the allowlist that says which of ÖBB's 273 national routes are the VOR's,
+// plus the line keys and operators of the Verbund's own feed
+const SCOPE_FILE = join(ROOT, 'data/scope.json');
+if (!existsSync(SCOPE_FILE)) {
+  console.error('data/scope.json missing — run `node pipeline/scope.mjs` (npm run download does it)');
+  process.exit(1);
+}
+const SCOPE = JSON.parse(readFileSync(SCOPE_FILE, 'utf8'));
+const S_RAIL = new Set(SCOPE.rail);
+const KEY = SCOPE.key || {}, OP = SCOPE.op || {};
+
+// Nineteen numbers belong to more than one operator here — Wiener Linien's 1
+// is also a Postbus line, a Blaguss line and a Wiener Neustadt town line — so
+// those keys carry the operator's code and print bare through LBL (the
+// Randstad rule). The panel groups its chips by the same code.
+const LBL = new Map();
+const LINE_OP = new Map();
+const OP_NAME = SCOPE.opName || {};
+const lineKey = (sn, r) => {
+  const k = KEY[r.route_id] || sn;
+  if (!k) return null;
+  if (k !== sn) LBL.set(k, sn);
+  if (OP[r.route_id]) LINE_OP.set(k, OP[r.route_id]);
+  return k;
+};
 if (tramAll || tramSel.length) MODES.push({
   mode: 'tram', label: 'trams', osmFile: 'data/osm/vienna-rail.json',
   graphMode: 'tram', railKeep: new Set(['tram', 'light_rail']),
   color: '#d6212b', colorDark: '#7c1116',
   all: tramAll, lines: tramAll ? [] : tramSel,
   feeds: [
-    { tag: 'wl', dir: 'data/gtfs', mapKey: (sn) => sn, routeTypes: ['0'] },
+    { tag: 'vor', dir: 'data/gtfs-vor', routeTypes: ['0'], mapKey: lineKey, op: true },
   ],
 });
 if (tramAll || metroSel.length) MODES.push({
@@ -161,7 +215,46 @@ if (tramAll || metroSel.length) MODES.push({
   color: '#d6212b', colorDark: '#7c1116',
   all: tramAll, lines: tramAll ? [] : metroSel,
   feeds: [
-    { tag: 'wl', dir: 'data/gtfs', mapKey: (sn) => sn, routeTypes: ['1'] },
+    { tag: 'vor', dir: 'data/gtfs-vor', routeTypes: ['1'], mapKey: lineKey, op: true },
+  ],
+});
+if (tramAll || trainSel.length) MODES.push({
+  // The VOR's railways out of ÖBB's national feed: S-Bahn S1–S80 around
+  // Vienna, the REX and CJX expresses and the R stopping trains of Lower
+  // Austria and Burgenland — 54 lines that reach Retz, Gmünd, Bernhardsthal,
+  // Neusiedl, Deutschkreutz, Wiener Neustadt, Payerbach and Amstetten, and are
+  // drawn whole where they run past the Verbund border.
+  //
+  // Missing here and nowhere to be had openly: the WESTbahn, the Raaberbahn to
+  // Sopron, the Niederösterreich Bahnen (Mariazellerbahn, Waldviertelbahn) and
+  // the CAT — the Verbund's feed leaves them out with ÖBB, and they publish no
+  // open GTFS of their own.
+  mode: 'tram', label: 'S-Bahn & regional trains', osmFile: 'data/osm/vienna-rail.json',
+  // narrow_gauge belongs in this graph: the NÖVOG lines the Verbund runs are
+  // 760 mm (Mariazellerbahn, Waldviertelbahn, Reblandbahn) and the
+  // Schneebergbahn is a metre-gauge rack railway. Without it the REX56 to
+  // Mariazell matched 5 km of the wrong track instead of its 48.
+  graphMode: 'tram', railKeep: new Set(['rail', 'narrow_gauge']),
+  // Vienna is rebuilding the Verbindungsbahn, the link its S-Bahn uses between
+  // Rennweg and Meidling: OSM has that corridor as railway=construction,
+  // =disused and =proposed, all of it usage=main, and without it the S1 came
+  // out with a 4.6 km hole through the middle of the city. The timetable
+  // already routes trains over it, so the mainline track counts whatever
+  // stage of the rebuild its tags are in — the same rescue Belgrade's
+  // corridor to Blok 45 and Sofia's tracks needed.
+  railExtra: (e) => ['construction', 'disused', 'proposed'].includes(e.tags?.railway)
+    && (e.tags?.usage === 'main' || e.tags?.construction === 'rail'),
+  allMetro: true,
+  color: RAIL_BLUE, colorDark: RAIL_BLUE_DARK,
+  all: tramAll, lines: tramAll ? [] : trainSel,
+  feeds: [
+    { tag: 'oebb', dir: 'data/gtfs-oebb', routeTypes: ['2'],
+      skipRoute: (r) => !S_RAIL.has(r.route_id),
+      mapKey: (sn) => sn, op: () => 'oebb' },
+    // the Verbund's own railways: NÖVOG's Mariazellerbahn, Waldviertelbahn,
+    // Wachaubahn, Schneebergbahn and Reblandbahn, the Höllentalbahn, the
+    // Zayataler Schienentaxi and the CAT to the airport
+    { tag: 'vor', dir: 'data/gtfs-vor', routeTypes: ['2'], mapKey: lineKey, op: true },
   ],
 });
 
@@ -234,7 +327,7 @@ async function processMode(cfg) {
   // NOT fall back to the mode color — that is the tram red, and a metro
   // ribbon in tram red reads as a tram line. Purple = "several metro lines".
   const METRO_MIX = '#7d2b8b', METRO_MIX_DARK = '#45164e';
-  const isMetroMix = (lines) => cfg.mode === 'tram' && lines.length > 1 && lines.every(isMetroLine);
+  const isMetroMix = (lines) => cfg.mode === 'tram' && lines.length > 1 && lines.every(isTrunkLine);
   const colorOf = (lines) => {
     if (!cfg.lineColors) return cfg.color;
     const c = cfg.lineColors[lines[0]] || cfg.color;
@@ -279,10 +372,14 @@ async function processMode(cfg) {
       // colour and a badge of their own). Lines that also run normally keep
       // their regular routes; only the Ersatzverkehr variants drop out.
       if (/ersatzverkehr/i.test(r.route_long_name || '')) continue;
+      // per-feed allowlist: the ÖBB feed is national and only the VOR's share
+      // of it belongs here (pipeline/scope.mjs)
+      if (feed.skipRoute && feed.skipRoute(r)) continue;
       // feed quirk: some short names carry stray whitespace ("14 " vs "14")
-      const key = feed.mapKey((r.route_short_name || '').trim());
+      const key = feed.mapKey((r.route_short_name || '').trim(), r);
       if (!key) continue;
       routeToLine.set(r.route_id, key);
+      if (typeof feed.op === 'function') LINE_OP.set(key, feed.op(r, key));
       if (r.route_type === '11') {
         cfg.trolleySet.add(key); TROLLEYS.add(key);
         cfg.lineColors[key] = TROLLEY_GREEN;
@@ -311,6 +408,41 @@ async function processMode(cfg) {
       e.count++;
       if (e.trips.length < tripCap) e.trips.push({ trip_id: t.trip_id, headsign: t.trip_headsign });
     }
+    // Length per variant, for the pick below — one streaming pass keeping only
+    // a running total and the previous point per shape. The busiest shape of a
+    // line+direction is very often a peak-hour short-turn: S1 is worked 539
+    // times a day in 68 patterns, and the busiest of them is the six stops
+    // from Meidling to Liesing, not the 60 km from Gänserndorf to Wiener
+    // Neustadt. The representative is therefore the LONGEST pattern still
+    // worked by at least REP_MIN_SHARE of the busiest pattern's trips (and
+    // never a lone trip); the busiest shape always clears its own bar, so this
+    // can only lengthen a drawn line, never shorten it. The rule comes from
+    // Tricity by way of Budapest, and the ÖBB feed is what made it necessary
+    // here.
+    const shapeM = new Map(), shapePts = new Map();
+    if (hasShapes) {
+      const needed = new Set();
+      for (const dirs of byLineDir.values()) for (const m of dirs.values()) for (const sh of m.keys()) needed.add(sh);
+      const prev = new Map();
+      let unsorted = 0;
+      for await (const sh of iterCsv(shapesFile)) {
+        if (!needed.has(sh.shape_id)) continue;
+        const lat = Number(sh.shape_pt_lat), lon = Number(sh.shape_pt_lon), seq = Number(sh.shape_pt_sequence);
+        const q = prev.get(sh.shape_id);
+        if (q) {
+          if (seq <= q[2]) unsorted++;
+          const k = Math.PI / 180 * 6371008.8;
+          shapeM.set(sh.shape_id, (shapeM.get(sh.shape_id) || 0) +
+            Math.hypot((lon - q[1]) * k * Math.cos(lat * Math.PI / 180), (lat - q[0]) * k));
+        }
+        prev.set(sh.shape_id, [lat, lon, seq]);
+        shapePts.set(sh.shape_id, (shapePts.get(sh.shape_id) || 0) + 1);
+      }
+      if (unsorted) log(`WARNING: shapes.txt not sorted by shape_pt_sequence (${unsorted} rows) — variant lengths approximate`);
+    }
+    const REP_MIN_SHARE = 0.15;
+    let longerReps = 0, longerM = 0;
+
     const feedReps = [];
     for (const L of [...byLineDir.keys()].sort(numSort)) {
       const dirs = byLineDir.get(L);
@@ -318,12 +450,42 @@ async function processMode(cfg) {
         const m = dirs.get(dir);
         let best = null;
         for (const [shapeId, e] of m) if (!best || e.count > best.e.count) best = { shapeId, e };
+        if (hasShapes && m.size > 1) {
+          const floor = Math.max(2, best.e.count * REP_MIN_SHARE);
+          const lenOf = (id) => shapeM.get(id) || 0;
+          let pick = best;
+          for (const [shapeId, e] of m) {
+            // a two-point shape is a straight line between two stations, not a
+            // route: ÖBB ships one for the R8 and it measured 3.3 km, longer
+            // than the real pattern, so the line came out as an empty chip
+            if ((shapePts.get(shapeId) || 0) < 4) continue;
+            if (e.count >= floor && lenOf(shapeId) > lenOf(pick.shapeId)) pick = { shapeId, e };
+          }
+          if (pick.shapeId !== best.shapeId) {
+            longerReps++;
+            longerM += lenOf(pick.shapeId) - lenOf(best.shapeId);
+            best = pick;
+          }
+        }
         feedReps.push({
           line: L, dir, shapeId: best.shapeId, feedTag: feed.tag,
           headsign: best.e.trips[0]?.headsign || '',
           candTrips: new Set(best.e.trips.map((x) => x.trip_id)),
           variants: m.size, tripCount: best.e.count,
         });
+      }
+    }
+    if (longerReps) log(`Representative variant: ${longerReps} line-directions moved off the busiest short-turn onto the longest regular pattern (+${(longerM / 1000).toFixed(0)} km drawn)`);
+    // A shape of two points is a straight line between two stations, not a
+    // route — ÖBB ships one for the R8 across the Slovak border, and drawn it
+    // came out as 0.00 km: an empty chip in the panel. Nothing to draw, so the
+    // line-direction is dropped rather than published as a stub.
+    if (hasShapes) {
+      const stub = feedReps.filter((r) => (shapePts.get(r.shapeId) || 0) < 3);
+      if (stub.length) {
+        log(`Dropped ${stub.length} line-direction(s) whose only shape is a two-point stub: `
+          + stub.map((r) => `${r.line}/${r.dir}`).join(', '));
+        for (const r of stub) feedReps.splice(feedReps.indexOf(r), 1);
       }
     }
 
@@ -452,9 +614,43 @@ async function processMode(cfg) {
     if (lon < lonMin) lonMin = lon; if (lon > lonMax) lonMax = lon;
   }
   const proj = makeProj((latMin + latMax) / 2, (lonMin + lonMax) / 2);
-  const osm = JSON.parse(readFileSync(join(ROOT, cfg.osmFile), 'utf8'));
+  // one extract, or a grid of tiles merged (the road network comes in 49 of
+  // them): a way on a tile seam is in both files, so ids are deduped
+  const osm = { elements: [] };
+  {
+    const seen = new Set();
+    for (const file of cfg.osmFiles || [cfg.osmFile]) {
+      const part = JSON.parse(readFileSync(join(ROOT, file), 'utf8'));
+      for (const e of part.elements) {
+        const k = e.type + e.id;
+        if (seen.has(k)) continue;
+        seen.add(k); osm.elements.push(e);
+      }
+    }
+    log(`OSM: ${osm.elements.length} unique ways from ${(cfg.osmFiles || [cfg.osmFile]).length} file(s)`);
+  }
   // railKeep: this cfg sees only its own kind of rails (see MODES above)
-  if (cfg.railKeep) osm.elements = osm.elements.filter((e) => cfg.railKeep.has(e.tags?.railway));
+  // railExtra admits the odd way from another layer — here the mainline track
+  // OSM currently tags as under construction (the S-Bahn Stammstrecke). The
+  // graph builder only knows the finished tags, so an admitted construction
+  // way is renamed to what it is being built as before it gets there.
+  if (cfg.railKeep) {
+    osm.elements = osm.elements.filter((e) => cfg.railKeep.has(e.tags?.railway)
+      || (cfg.railExtra && cfg.railExtra(e)));
+    // The graph builder knows four kinds of track (subway, tram, light_rail,
+    // rail), so anything admitted under another tag is renamed to the one it
+    // behaves as: a line under construction to what it is being built as, and
+    // a narrow-gauge railway to plain rail — it is still a railway with
+    // scheduled trains on it.
+    for (const e of osm.elements) {
+      const rw = e.tags?.railway;
+      if (['construction', 'disused', 'proposed'].includes(rw)) {
+        e.tags = { ...e.tags, railway: e.tags.construction || 'rail' };
+      } else if (rw === 'narrow_gauge') {
+        e.tags = { ...e.tags, railway: 'rail' };
+      }
+    }
+  }
   // OSM maps the Bucharest metro as per-direction tunnels that meet nowhere:
   // at junctions the ways pass within metres but share NO node (the Dristor
   // ways even carry a fixme about the missing crossovers), and M5 is split in
@@ -510,7 +706,7 @@ async function processMode(cfg) {
       // metro shapes are tunnel approximations — often 40–70 m off the OSM
       // subway axis (street-grid drawn), so the snap net widens and the
       // emission softens; surface trams keep the tight default
-      if (cfg.mode === 'tram' && isMetroLine(r.line)) {
+      if (cfg.mode === 'tram' && isTrunkLine(r.line)) {
         opts = { sigma: 15, radii: [60, 120], maxCand: 16, perWay: 3, gapMin: GAP_MIN };
       }
     }
@@ -597,7 +793,7 @@ async function processMode(cfg) {
   // interchanges) platform records into a single entry keyed by name — one disc,
   // one label (user report: Irini drawn twice, once off the tracks).
   if (cfg.mode === 'tram') {
-    const isMetroEntry = (e) => [...e.lines].every(isMetroLine);
+    const isMetroEntry = (e) => [...e.lines].every(isTrunkLine);
     const byStation = new Map();
     for (const [id, e] of stopAgg) {
       if (!isMetroEntry(e)) continue;
@@ -626,7 +822,7 @@ async function processMode(cfg) {
   const farNames = [];
   for (const e of stopAgg.values()) {
     const [sx, sy] = proj.toXY(e.lat, e.lon);
-    const isMetroStop = cfg.mode === 'tram' && [...e.lines].every(isMetroLine);
+    const isMetroStop = cfg.mode === 'tram' && [...e.lines].every(isTrunkLine);
     let best = null, bestRun = null;
     // candidates are ONLY the runs that actually call at this pole: on a
     // double-track street the pole of one direction can lie nearer the
@@ -800,7 +996,7 @@ async function processMode(cfg) {
         lines: p.badgeLines.map((line) => ({
           line, mode: p.mode, color: colorOf([line]), colorDark: colorDarkOf([line]),
           // metro rides the tram slot but answers to its own frontend toggle
-          ...(p.mode === 'tram' && isMetroLine(line) ? { metro: 1 } : {}),
+          ...(p.mode === 'tram' && isTrunkLine(line) ? { metro: 1 } : {}),
         })),
       });
     }
@@ -866,7 +1062,7 @@ async function processMode(cfg) {
       if (n === arr.length) flags.trolley = 'all';
       else if (n > 0) flags.trolley = 'mix';
     }
-    if (cfg.mode === 'tram' && arr.every(isMetroLine)) flags.metro = 1;
+    if (cfg.mode === 'tram' && arr.every(isTrunkLine)) flags.metro = 1;
     if (cfg.mlineSet && cfg.mlineSet.size) {
       const n = arr.filter((l) => cfg.mlineSet.has(l)).length;
       if (n === arr.length) flags.mline = 'all';
@@ -1531,6 +1727,30 @@ for (const f of routeFeatures) for (const [lon, lat] of f.geometry.coordinates) 
   if (lat < bLatMin) bLatMin = lat; if (lat > bLatMax) bLatMax = lat;
 }
 
+// ---------- display labels ----------
+// The keys keep their operator codes; every string the map PRINTS loses them.
+// Two keys can now print the same number — that is the point, because the
+// street prints the same number — so each list is deduplicated on its own.
+const relabel = (str) => {
+  const out = [];
+  for (const k of str.split(', ')) {
+    const v = LBL.get(k) ?? k;
+    if (!out.includes(v)) out.push(v);
+  }
+  return out.join(', ');
+};
+for (const features of [routeFeatures, streetFeatures, labelFeatures, stopFeatures, badgeFeatures]) {
+  for (const f of features) {
+    const p = f.properties;
+    for (const k of ['lines', 'busLines', 'tLines', 'ntLines', 'mLines', 'nmLines']) {
+      if (typeof p[k] === 'string' && p[k]) p[k] = relabel(p[k]);
+    }
+    if (Array.isArray(p.arr)) p.arr = [...new Set(p.arr.map((x) => LBL.get(x) ?? x))];
+    if (typeof p.line === 'string' && LBL.has(p.line)) p.lbl = LBL.get(p.line);
+  }
+}
+log(`Display labels: ${LBL.size} keys print the number the operator signs`);
+
 const outDir = join(ROOT, 'data/out');
 mkdirSync(outDir, { recursive: true });
 const fc = (features) => JSON.stringify({ type: 'FeatureCollection', features });
@@ -1546,7 +1766,14 @@ writeFileSync(join(outDir, 'meta.json'), JSON.stringify({
   bbox: [bLonMin, bLatMin, bLonMax, bLatMax],
   badgeBands: BADGE_BANDS,
   modes: MODES.map((m) => ({ mode: m.mode, label: m.label, color: m.color })),
-  lines: metaLines.map((l) => ({ ...l, rank: lineRank(l.line) })),
+  // the panel groups its chip cloud by operator — 27 of them in the Verbund
+  ops: OP_NAME,
+  lines: metaLines.map((l) => ({
+    ...l,
+    rank: lineRank(l.line),
+    ...(LBL.has(l.line) ? { label: LBL.get(l.line) } : {}),
+    ...(LINE_OP.has(l.line) ? { op: LINE_OP.get(l.line) } : {}),
+  })),
 }, null, 2));
 log(`Wrote data/out/{route,streets,labels,street-names,stops,badges,gtfs-shape}.geojson + meta.json`);
 
