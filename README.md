@@ -67,6 +67,28 @@ Build quirks worth knowing:
 - **Rail-replacement services are dropped**, by long name and by the `SEV`
   prefix.
 
+## Timeline — the map's versions
+
+The panel's **Map version** row (10.09.2026, the Kraków mechanism of 3.09)
+switches between dated versions of the network in place: the camera, the base,
+the picked line, the label sizes, the density and the mode filters all stay as
+they are — only the data changes. Each version is a build of `data/out/`,
+archived by `pipeline/snapshot.mjs` under `data/out/versions/<YYYY-MM-DD>/`
+(the corridor view only: `streets`, `labels`, `stops`, `street-names`,
+`badges`, `meta` — the archives carry no `route.geojson`, so the journey
+planner works on the current build and says so) and listed in
+`data/out/versions.json` with the feeds it came from and its line list; the
+row shows the lines added and removed since the previous version.
+`#v=2026-08-13` in the URL opens a given version. `npm run build` archives its
+predecessor (prebuild) and stamps the new build (postbuild);
+`node pipeline/snapshot.mjs --src DIR --id YYYY-MM-DD` imports an outside file
+set.
+
+**The series so far:** 13.08.2026 — the metropolitan sheet (Wiener Linien only,
+189 lines; tram 18 still ended at Schlachthausgasse) — and 8.09.2026 — the whole
+Verbund (927 lines; tram 18 extended through the Prater to U2 Stadion on
+5.09.2026, seven new stops from Ludwig-Koeßler-Platz to Meiereistraße).
+
 ## Pipeline
 
 `npm run download` fetches both feeds (see above for the VOR account), computes
