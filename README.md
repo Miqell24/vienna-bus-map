@@ -84,10 +84,16 @@ predecessor (prebuild) and stamps the new build (postbuild);
 `node pipeline/snapshot.mjs --src DIR --id YYYY-MM-DD` imports an outside file
 set.
 
-**The series so far:** 13.08.2026 — the metropolitan sheet (Wiener Linien only,
-189 lines; tram 18 still ended at Schlachthausgasse) — and 8.09.2026 — the whole
-Verbund (927 lines; tram 18 extended through the Prater to U2 Stadion on
-5.09.2026, seven new stops from Ludwig-Koeßler-Platz to Meiereistraße).
+**The series so far:** five builds of the metropolitan sheet (Wiener Linien only,
+189–190 lines) from the weekly MobilityDatabase snapshots of the Wiener Linien
+feed (mdb-648) — 14.07, 28.07, 13.08 (the sheet as published), 25.08 and
+1.09.2026, on all of which tram 18 still ended at Schlachthausgasse — and
+8.09.2026, the whole Verbund (927 lines; tram 18 extended through the Prater to
+U2 Stadion on 5.09.2026, seven new stops from Ludwig-Koeßler-Platz to
+Meiereistraße). The older sheets were rebuilt on 10.09 with the pipeline as it
+was before 8.09 (a git worktree) and the snapshot feeds; the VOR feed itself
+has no public history (it needs an account), so the Verbund sheet starts on
+8.09.
 
 ## Pipeline
 

@@ -37,6 +37,14 @@ async function init() {
   // (for the base style) and Roboto Condensed (for our labels). VersaTiles names
   // stacks in snake_case and has no Noto Sans Italic — remap the base style's
   // fonts (italic degrades to regular, cosmetic only).
+  // ---- TIMELINE (10.09.2026, the Kraków rule of 3.09) ----
+  // The map can carry several dated VERSIONS of its data: pipeline/snapshot.mjs
+  // archives every build under data/versions/<id>/ and lists them in
+  // data/versions.json. Every file below is fetched through D(), which prefixes
+  // the chosen version's directory — so a version switch is setData on the
+  // sources that already exist, never a reload (camera, view, base, picked
+  // line, sizes and filters all survive). A map without the index has no timeline.
+  const versionsP = fetch('data/versions.json').then((r) => (r.ok ? r.json() : null)).catch(() => null);
   const style = await (await fetch('https://tiles.openfreemap.org/styles/positron')).json();
   style.glyphs = 'https://tiles.versatiles.org/assets/glyphs/{fontstack}/{range}.pbf';
   const FONT_MAP = {
@@ -181,8 +189,20 @@ async function init() {
   map.addControl(new maplibregl.ScaleControl({ maxWidth: 120 }), 'bottom-left');
   map.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: 'Timetables: VOR (Mobilitätsverbünde Österreich) · ÖBB (CC BY 4.0)' }));
 
-  const [meta] = await Promise.all([
-    fetch('data/meta.json').then((r) => r.json()),
+  const versionIndex = await versionsP;
+  const VERSIONS = versionIndex && Array.isArray(versionIndex.versions) && versionIndex.versions.length ? versionIndex.versions : null;
+  // #v=<id> opens a given version (the timeline writes it on every switch)
+  const hashId = (location.hash.match(/(?:^#|&)v=([^&]+)/) || [])[1];
+  let version = VERSIONS
+    ? (VERSIONS.find((v) => v.id === decodeURIComponent(hashId || ''))
+      || VERSIONS.find((v) => v.id === versionIndex.current)
+      || VERSIONS[VERSIONS.length - 1])
+    : null;
+  let dataBase = 'data/' + ((version && version.path) || '');
+  const D = (f) => dataBase + f;
+
+  let [meta] = await Promise.all([
+    fetch(D('meta.json')).then((r) => r.json()),
     // Do not hang on 'load' (one stuck tile blocks it forever) —
     // a loaded style is enough, tiles catch up in the background.
     new Promise((res) => {
@@ -201,23 +221,26 @@ async function init() {
   map.resize();
 
   // Panel (English, minimal): legend + mode toggles + expandable clickable line list.
-  const nBus = meta.lines.filter((l) => l.mode === 'bus').length;
-  // U-Bahn keys are exactly U1…U6 (the U-prefixed rail-replacement bus is filtered out in the pipeline)
-  const nMetro = meta.lines.filter((l) => l.mode === 'tram' && /^U[1-6]$/.test(l.line)).length;
-  // the region's railways: ÖBB's S-Bahn, REX, CJX and R, plus the NÖVOG and
-  // private lines the Verbund carries under their own initials
   const isTrain = (l) => l.mode === 'tram'
     && /^(S\d|REX|CJX|R\d|SZ$|WVB|WHB|REB|NÖSBB|CAT|ÖGLB|Zayataler)/.test(l.line);
-  const nTrain = meta.lines.filter(isTrain).length;
-  const nTram = meta.lines.filter((l) => l.mode === 'tram').length - nMetro - nTrain;
-  document.getElementById('count').textContent =
-    `(${nBus} bus · ${nTram} tram · ${nMetro} U-Bahn · ${nTrain} S-Bahn & regional)`;
-  document.getElementById('stamp').textContent = new Date(meta.generatedAt).toLocaleDateString('en-GB');
+  const paintMeta = () => {
+    const nBus = meta.lines.filter((l) => l.mode === 'bus').length;
+    // U-Bahn keys are exactly U1…U6 (the U-prefixed rail-replacement bus is filtered out in the pipeline)
+    const nMetro = meta.lines.filter((l) => l.mode === 'tram' && /^U[1-6]$/.test(l.line)).length;
+    // the region's railways: ÖBB's S-Bahn, REX, CJX and R, plus the NÖVOG and
+    // private lines the Verbund carries under their own initials
+    const nTrain = meta.lines.filter(isTrain).length;
+    const nTram = meta.lines.filter((l) => l.mode === 'tram').length - nMetro - nTrain;
+    document.getElementById('count').textContent =
+      `(${nBus} bus · ${nTram} tram · ${nMetro} U-Bahn · ${nTrain} S-Bahn & regional)`;
+    document.getElementById('stamp').textContent = new Date(meta.generatedAt).toLocaleDateString('en-GB');
+  };
+  paintMeta();
 
   // The pipeline key keeps the operator code where a number belongs to more
   // than one of them; everything the panel PRINTS goes through this — the
   // number the stop flag actually shows.
-  const DISP = new Map(meta.lines.filter((l) => l.label).map((l) => [l.line, l.label]));
+  let DISP = new Map(meta.lines.filter((l) => l.label).map((l) => [l.line, l.label]));
   const disp = (l) => DISP.get(l) ?? l;
   // A thousand lines in one cloud is a wall, and Wiener Linien's 1 sits next to
   // a Postbus 1 and a Wiener Neustadt 1. So the list is grouped by the operator
@@ -261,8 +284,8 @@ async function init() {
 
   // Strokes come from the merged-streets layer (one stroke per roadway regardless
   // of line count — the KMK map logic), not from overlapping per-line routes.
-  map.addSource('streets', { type: 'geojson', data: 'data/streets.geojson' });
-  map.addSource('stops', { type: 'geojson', data: 'data/stops.geojson' });
+  map.addSource('streets', { type: 'geojson', data: D('streets.geojson') });
+  map.addSource('stops', { type: 'geojson', data: D('stops.geojson') });
 
   // Trams/trolleybuses drawn with the same logic as buses (both tracks at their
   // true OSM positions). Metro is the exception: a WIDE translucent ribbon with
@@ -336,7 +359,7 @@ async function init() {
   // keep the mode colour and the night numbers are black.
   const sectionRow = (pre) => { const r = ['format']; for (let i = 0; i < 24; i++) r.push(['coalesce', ['get', pre + 'l' + i], ''], { 'text-color': ['coalesce', ['get', pre + 'c' + i], KMK] }); return r; };
   const numberFieldN = ['case', ['has', 'l0'], sectionRow(''), numberField];
-  map.addSource('labels', { type: 'geojson', data: 'data/labels.geojson' });
+  map.addSource('labels', { type: 'geojson', data: D('labels.geojson') });
   const numbersLayout = {
     'text-field': numberFieldN,
     'text-font': [NARROW_BOLD],
@@ -425,7 +448,7 @@ async function init() {
   // the pipeline re-joins the runs by name into whole streets. Roundabouts are
   // left out — text bent around a 20 m circle is unreadable, and the streets
   // meeting there carry the name anyway.
-  map.addSource('street-names', { type: 'geojson', data: 'data/street-names.geojson' });
+  map.addSource('street-names', { type: 'geojson', data: D('street-names.geojson') });
   const streetNamesDef = (id, extra) => ({
     id, type: 'symbol', source: 'street-names',
     ...extra,
@@ -614,8 +637,9 @@ async function init() {
   // badges exist in several ZOOM BANDS — in each band the pipeline fused the grids
   // that would collide at that scale into one complex, so only the band matching
   // the current zoom is drawn.
-  map.addSource('badges', { type: 'geojson', data: 'data/badges.geojson' });
-  const BADGE_BANDS = meta.badgeBands || [[13, 14], [14, 15], [15, 16.5], [16.5, 22]];
+  map.addSource('badges', { type: 'geojson', data: D('badges.geojson') });
+  const DEFAULT_BANDS = [[13, 14], [14, 15], [15, 16.5], [16.5, 22]];
+  let BADGE_BANDS = meta.badgeBands || DEFAULT_BANDS;
   // legacy data without `band` passes every band filter — the disjoint zoom
   // ranges still draw it exactly once, so a stale badges.geojson degrades to the
   // unfused layout instead of an empty map
@@ -628,7 +652,7 @@ async function init() {
   // fractional zooms). One number per band = layout and render always agree.
   const BADGE_EM = [7.7, 8.1, 8.7, 9.5, 10];
   const NAME_EM = [9.7, 10.3, 11, 11.9, 12.5];
-  const BADGE_LAYERS = BADGE_BANDS.map(([z0, z1], b) => {
+  const addBadgeLayer = ([z0, z1], b) => {
     const id = 'stops-terminus-badges-' + b;
     map.addLayer({
       id, type: 'symbol', source: 'badges',
@@ -659,12 +683,13 @@ async function init() {
       paint: { 'text-color': ['coalesce', ['get', 'colorDark'], KMK_DARK] },
     });
     return id;
-  });
+  };
+  const BADGE_LAYERS = BADGE_BANDS.map(addBadgeLayer);
   // Terminus names from z13 up: pipeline-emitted rows riding right above each
   // badge complex, drawn unconditionally like the boxes themselves — so a
   // loop can NEVER be nameless, even at the most saturated nodes where the
   // collision-based layer (kept for z<13) always lost.
-  const BADGE_NAME_LAYERS = BADGE_BANDS.map(([z0, z1], b) => {
+  const addBadgeNameLayer = ([z0, z1], b) => {
     const id = 'stops-terminus-names-grid-' + b;
     map.addLayer({
       id, type: 'symbol', source: 'badges',
@@ -684,7 +709,8 @@ async function init() {
       paint: { 'text-color': '#000000', 'text-halo-color': '#ffffff', 'text-halo-width': 2 },
     });
     return id;
-  });
+  };
+  const BADGE_NAME_LAYERS = BADGE_BANDS.map(addBadgeNameLayer);
   // Collision-priority ladder — symbol placement runs the TOP layer first, so
   // the stacking below IS the priority order. Top → bottom:
   //   terminus badge grids  — placed unconditionally; first so the layers
@@ -794,6 +820,34 @@ async function init() {
   // test hook: one factor sets both groups; pass a second argument for one group
   window.__labelScale = (f, g) => { if (g) labelScale[g] = f; else { labelScale.t = f; labelScale.s = f; } applyLabelScale(); };
   applyLabelScale();
+
+  // ---- TIMELINE: a version built with other badge zoom bands. The band layers
+  // follow it — bands both versions have keep their layers (new zoom range),
+  // extra bands get layers, surplus ones lose them — and go back to the top of
+  // the ladder with the current label scale.
+  const syncBadgeBands = (bands) => {
+    if (!bands || JSON.stringify(bands) === JSON.stringify(BADGE_BANDS)) return;
+    const n = Math.min(bands.length, BADGE_BANDS.length);
+    for (let b = 0; b < n; b++) {
+      map.setLayerZoomRange(BADGE_LAYERS[b], bands[b][0], bands[b][1]);
+      map.setLayerZoomRange(BADGE_NAME_LAYERS[b], bands[b][0], bands[b][1]);
+    }
+    while (BADGE_LAYERS.length > bands.length) {
+      map.removeLayer(BADGE_LAYERS.pop());
+      map.removeLayer(BADGE_NAME_LAYERS.pop());
+    }
+    for (let b = BADGE_LAYERS.length; b < bands.length; b++) {
+      for (const [list, add] of [[BADGE_LAYERS, addBadgeLayer], [BADGE_NAME_LAYERS, addBadgeNameLayer]]) {
+        const id = add(bands[b], b);
+        list.push(id);
+        TEXT_BASE.push({ id, grp: 't', size: map.getLayoutProperty(id, 'text-size') ?? 16, halo: map.getPaintProperty(id, 'text-halo-width') });
+      }
+    }
+    BADGE_BANDS = bands;
+    for (const id of [...BADGE_LAYERS, ...BADGE_NAME_LAYERS]) map.moveLayer(id);
+    for (const id of ['stops-metro-names', 'stops-metro-names-hi']) if (map.getLayer(id)) map.moveLayer(id);
+    applyLabelScale();
+  };
 
   // ---- base colours: the Paper / Grey switch (user request 21.08.2026) ----
   // The paper palette is the map's face; the grey one flattens the base to
@@ -1489,7 +1543,7 @@ async function init() {
   // (a large file with all lines included).
   document.getElementById('toggle-shape').addEventListener('change', (e) => {
     if (e.target.checked && !map.getSource('gtfs-shape')) {
-      map.addSource('gtfs-shape', { type: 'geojson', data: 'data/gtfs-shape.geojson' });
+      map.addSource('gtfs-shape', { type: 'geojson', data: D('gtfs-shape.geojson') });
       map.addLayer({
         id: 'gtfs-shape-line', type: 'line', source: 'gtfs-shape',
         paint: { 'line-color': '#e6003c', 'line-width': 1.8, 'line-dasharray': [2, 2] },
@@ -1499,11 +1553,12 @@ async function init() {
     }
   });
 
+  let stopPopup = null;
   map.on('click', 'stops-dots', (e) => {
     const f = e.features[0];
     const p = f.properties;
     const label = p.lines.includes(',') ? 'lines' : 'line';
-    new maplibregl.Popup({ closeButton: false, offset: 10 })
+    stopPopup = new maplibregl.Popup({ closeButton: false, offset: 10 })
       .setLngLat(f.geometry.coordinates)
       .setHTML(`<strong>${esc(p.name)}</strong>${p.terminus ? ' · terminus' : ''}<br>${label}: ${esc(p.lines)}`)
       .addTo(map);
@@ -1519,7 +1574,7 @@ async function init() {
   // so no extra pipeline export is needed. Picking a result shows only the
   // involved lines (existing selection machinery) plus a bold overlay of the
   // exact ridden segments and the boarding/transfer/alighting stops.
-  wireJourneyPlanner();
+  const journey = wireJourneyPlanner();
   function wireJourneyPlanner() {
     const fromEl = document.getElementById('j-from'), toEl = document.getElementById('j-to');
     const msgEl = document.getElementById('j-msg'), resEl = document.getElementById('j-results');
@@ -1550,8 +1605,8 @@ async function init() {
 
     const buildNet = async () => {
       const [routes, stops] = await Promise.all([
-        fetch('data/route.geojson').then((r) => r.json()),
-        fetch('data/stops.geojson').then((r) => r.json()),
+        fetch(D('route.geojson')).then((r) => r.json()),
+        fetch(D('stops.geojson')).then((r) => r.json()),
       ]);
       // stop poles grouped by NAME — a group is one logical stop
       const groups = new Map();
@@ -1615,7 +1670,12 @@ async function init() {
     const jpOpen = async (open) => {
       jpCard.hidden = !open;
       jpToggle.hidden = open;
-      if (open) await ensureNet();
+      if (open) {
+        // the archived versions on the timeline carry no route.geojson (the
+        // slim archive); the planner works on the builds that have it
+        if (version && version.hasRoutes === false) { msg('The journey planner works on the latest version only — switch the map version.'); return; }
+        await ensureNet();
+      }
     };
     jpToggle.addEventListener('click', () => jpOpen(true));
     document.getElementById('jp-close').addEventListener('click', () => jpOpen(false));
@@ -1941,6 +2001,7 @@ async function init() {
     fromEl.addEventListener('input', () => { gpsPos = null; });
 
     document.getElementById('j-go').addEventListener('click', async () => {
+      if (version && version.hasRoutes === false) { msg('The journey planner works on the latest version only — switch the map version.'); return; }
       msg('Searching…');
       resEl.innerHTML = '';
       await ensureNet();
@@ -1969,7 +2030,106 @@ async function init() {
       applyJourney(opts[0]);
     });
     document.getElementById('j-clear').addEventListener('click', clearJourney);
+    // the timeline: the network model belongs to the data it was built from
+    return { reset: () => { net = null; netBuilding = null; clearJourney(); } };
   }
+
+  // ---- TIMELINE: switching versions ----
+  // Everything the map shows is fetched through D(), so a version change is:
+  // new meta, setData on every source, the panel repainted — and NOT a reload.
+  // The camera, the base, the picked line, the label and stroke sizes, the
+  // density and the mode filters stay exactly as they were. A picked line the
+  // other version lacks is let go with a note; an open journey is cleared
+  // (its model is per version).
+  const tlEl = document.getElementById('timeline');
+  let versionSeq = 0;
+  let tlNoteText = '';
+  async function applyVersion(v, opts) {
+    if (!v || v === version) return;
+    const seq = ++versionSeq;
+    version = v;
+    dataBase = 'data/' + (v.path || '');
+    tlNoteText = '';
+    paintTimeline(true);
+    let m2;
+    try {
+      m2 = await fetch(D('meta.json')).then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
+    } catch (e) {
+      console.error('version load failed', e);
+      if (seq === versionSeq) { tlNoteText = 'This version could not be loaded (' + e.message + ')'; paintTimeline(false); }
+      return;
+    }
+    if (seq !== versionSeq) return; // a later pick overtook this one
+    meta = m2;
+    DISP = new Map(meta.lines.filter((l) => l.label).map((l) => [l.line, l.label]));
+    syncBadgeBands(meta.badgeBands || DEFAULT_BANDS);
+    // the same sources, the other version's files
+    for (const [src, f] of [['streets', 'streets.geojson'], ['stops', 'stops.geojson'], ['street-names', 'street-names.geojson'],
+      ['badges', 'badges.geojson'], ['labels', 'labels.geojson'], ['gtfs-shape', 'gtfs-shape.geojson']]) {
+      if (map.getSource(src)) map.getSource(src).setData(D(f));
+    }
+    if (state.selected && !meta.lines.some((l) => l.line === state.selected)) {
+      tlNoteText = `Line ${state.selected} is not in this version — selection cleared`;
+      state.selected = null;
+    }
+    if (journey) journey.reset();
+    if (stopPopup) stopPopup.remove();
+    paintMeta();
+    paintChips();
+    applyFilters();
+    if (!(opts && opts.silent)) history.replaceState(null, '', '#v=' + encodeURIComponent(v.id));
+    paintTimeline(false);
+  }
+  // the row: ◀ date ▶, a slider with one tick per version, what changed since
+  // the previous one, and the feeds the build came from
+  function paintTimeline(loading) {
+    if (!tlEl || !VERSIONS || !version) return;
+    const i = VERSIONS.indexOf(version);
+    tlEl.classList.toggle('loading', !!loading);
+    document.getElementById('tl-val').textContent = version.label;
+    document.getElementById('tl-prev').disabled = i <= 0;
+    document.getElementById('tl-next').disabled = i >= VERSIONS.length - 1;
+    const range = document.getElementById('tl-range');
+    if (String(range.value) !== String(i)) range.value = i;
+    const prev = i > 0 ? VERSIONS[i - 1] : null;
+    const few = (arr) => (arr.length ? ` (${arr.slice(0, 8).join(', ')}${arr.length > 8 ? ', …' : ''})` : '');
+    let info = `${version.current ? 'latest · ' : ''}${version.nLines} lines`;
+    if (prev) {
+      const was = new Set(prev.lines), now = new Set(version.lines);
+      const added = version.lines.filter((l) => !was.has(l)), gone = prev.lines.filter((l) => !now.has(l));
+      info += added.length || gone.length
+        ? ` · since ${prev.label}:${added.length ? ` +${added.length}${few(added)}` : ''}${gone.length ? ` −${gone.length}${few(gone)}` : ''}`
+        : ` · the same lines as ${prev.label}`;
+    } else info += ' · the oldest version';
+    if (version.note) info += ` · ${version.note}`;
+    document.getElementById('tl-info').textContent = info;
+    document.getElementById('tl-feeds').textContent = (version.feeds || []).join(' · ');
+    const noteEl = document.getElementById('tl-note');
+    noteEl.textContent = tlNoteText;
+    noteEl.hidden = !tlNoteText;
+  }
+  if (tlEl && VERSIONS && VERSIONS.length > 1) {
+    const range = document.getElementById('tl-range');
+    range.min = 0; range.max = VERSIONS.length - 1; range.step = 1;
+    document.getElementById('tl-ticks').innerHTML = VERSIONS.map((v, i) => `<option value="${i}" label="${esc(v.label)}"></option>`).join('');
+    document.getElementById('tl-prev').addEventListener('click', () => applyVersion(VERSIONS[VERSIONS.indexOf(version) - 1]));
+    document.getElementById('tl-next').addEventListener('click', () => applyVersion(VERSIONS[VERSIONS.indexOf(version) + 1]));
+    // a drag across several ticks loads only where it stops
+    let tlTimer = null;
+    range.addEventListener('input', () => {
+      clearTimeout(tlTimer);
+      tlTimer = setTimeout(() => applyVersion(VERSIONS[Number(range.value)]), 160);
+    });
+    window.addEventListener('hashchange', () => {
+      const id = (location.hash.match(/(?:^#|&)v=([^&]+)/) || [])[1];
+      const v = id && VERSIONS.find((x) => x.id === decodeURIComponent(id));
+      if (v) applyVersion(v, { silent: true });
+    });
+    tlEl.hidden = false;
+    paintTimeline(false);
+  }
+  window.__setVersion = (id) => applyVersion(VERSIONS && VERSIONS.find((v) => v.id === id)); // test hook
+  window.__version = () => version && version.id;
 
   // NOT fitBounds(meta.bbox): the Badner Bahn runs 27 km south to Baden, so
   // fitting the data bbox would open on countryside with the city as a small
