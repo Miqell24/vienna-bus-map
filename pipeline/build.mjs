@@ -64,10 +64,16 @@ const NIGHT = /^N\d/;
 const TROLLEYS = new Set();
 const lineRank = (k) => (TROLLEYS.has(k) ? 0
   : NIGHT.test(typeof LBL !== 'undefined' && LBL.has(k) ? LBL.get(k) : k) ? 2 : 1);
-const numSort = (a, b) => {
+// Sorted on the PRINTED number, not the key (user report, 11.09.2026: the Ring
+// rows read "71, 1, 2" because the key of Wiener Linien's 1 is `wl:1` and the
+// operator code sorted it after every bare number); the key breaks ties so two
+// operators' "1" keep a stable order.
+const bare = (k) => (typeof LBL !== 'undefined' && LBL.get(k)) || k;
+const cmpParts = (a, b) => {
   const A = keyParts(a), B = keyParts(b);
-  return lineRank(a) - lineRank(b) || A[0].localeCompare(B[0]) || (A[1] - B[1]) || A[2].localeCompare(B[2]);
+  return A[0].localeCompare(B[0]) || (A[1] - B[1]) || A[2].localeCompare(B[2]);
 };
+const numSort = (a, b) => lineRank(a) - lineRank(b) || cmpParts(bare(a), bare(b)) || cmpParts(a, b);
 function round6(v) { return Math.round(v * 1e6) / 1e6; }
 // dark variant for feed-supplied line colors (badge rims / terminus fills)
 function darken(hex, f) {
@@ -507,6 +513,14 @@ async function processMode(cfg) {
       r.stopSeq = (tripStops.get(bestTrip) || []).sort((a, b) => a.seq - b.seq);
     }
 
+    // Every feed here prefixes the city's stops with "Wien " (Wien Oper, Wien
+    // Karlsplatz U — 4 528 poles) the way the VOR writes every stop as
+    // "<town> <stop>"; the map is Vienna's, so the capital's prefix goes
+    // (user request, 11.09.2026) and the other towns keep theirs (Wiener
+    // Neustadt, Baden, Mödling). Station names that would shrink to one bare
+    // word stay whole.
+    const WIEN_KEEP = new Set(['Wien Mitte', 'Wien Mitte-Landstraße']);
+    const stripWien = (n) => (WIEN_KEEP.has(n) ? n : n.replace(/^Wien (?=\S)/, ''));
     // ALL-CAPS feeds get title case; short uppercase tokens survive as
     // acronyms (PKP, KWK)
     const titleCase = (s) => s.replace(/[^\s\-,.\/()]+/g, (w) =>
@@ -515,6 +529,7 @@ async function processMode(cfg) {
       // feed names carry double spaces here and there — collapse for clean labels
       let name = (s.stop_name || '').replace(/\s+/g, ' ').trim();
       if (feed.titleCase) name = titleCase(name);
+      name = stripWien(name);
       const fix = STOP_FIX[feed.tag + ':' + s.stop_id];
       stopsById.set(feed.tag + ':' + s.stop_id, {
         name,

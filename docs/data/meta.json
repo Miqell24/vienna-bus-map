@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T14:49:21.166Z",
+  "generatedAt": "2026-09-11T07:10:06.099Z",
   "bbox": [
     14.415041,
     46.836103,
@@ -81,6 +81,474 @@
     "oebb": "ÖBB — S-Bahn, REX, R"
   },
   "lines": [
+    {
+      "line": "blag:1",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Stein-Mautern Bahnhof",
+          "variants": 5,
+          "tripCount": 76,
+          "stops": 16,
+          "lengthKm": 5.55,
+          "stats": {
+            "observations": 279,
+            "matched": 279,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6891288952921129,
+            "roundaboutSegs": 8,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Krems Bahnhof",
+          "variants": 4,
+          "tripCount": 55,
+          "stops": 8,
+          "lengthKm": 3.81,
+          "stats": {
+            "observations": 192,
+            "matched": 192,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6577151508587966,
+            "roundaboutSegs": 38,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "1",
+      "op": "blag"
+    },
+    {
+      "line": "drn:1",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Hart/St. Pölten Ghegastraße",
+          "variants": 11,
+          "tripCount": 69,
+          "stops": 34,
+          "lengthKm": 12.05,
+          "stats": {
+            "observations": 605,
+            "matched": 605,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.115456188173361,
+            "roundaboutSegs": 30,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Viehofen Living City",
+          "variants": 9,
+          "tripCount": 68,
+          "stops": 35,
+          "lengthKm": 12.79,
+          "stats": {
+            "observations": 639,
+            "matched": 639,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.003109349280939,
+            "roundaboutSegs": 21,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "1",
+      "op": "drn"
+    },
+    {
+      "line": "drz:1",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Klosterneuburg Brunnleiten",
+          "variants": 2,
+          "tripCount": 44,
+          "stops": 29,
+          "lengthKm": 8.52,
+          "stats": {
+            "observations": 427,
+            "matched": 427,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7825035798433386,
+            "roundaboutSegs": 42,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Klosterneuburg Aufeldgasse/Inkustraße",
+          "variants": 2,
+          "tripCount": 44,
+          "stops": 25,
+          "lengthKm": 6.74,
+          "stats": {
+            "observations": 338,
+            "matched": 338,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.8026139823939171,
+            "roundaboutSegs": 22,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "1",
+      "op": "drz"
+    },
+    {
+      "line": "matt:1",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Mattersburg Brunnenplatz",
+          "variants": 5,
+          "tripCount": 4,
+          "stops": 40,
+          "lengthKm": 13.4,
+          "stats": {
+            "observations": 674,
+            "matched": 674,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.5459566958813933,
+            "roundaboutSegs": 50,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Mattersburg Brunnenplatz",
+          "variants": 2,
+          "tripCount": 19,
+          "stops": 35,
+          "lengthKm": 11.09,
+          "stats": {
+            "observations": 558,
+            "matched": 558,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.5336937113938018,
+            "roundaboutSegs": 22,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "1",
+      "op": "matt"
+    },
+    {
+      "line": "nbus:1",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Amstetten Bahnhof",
+          "variants": 13,
+          "tripCount": 57,
+          "stops": 21,
+          "lengthKm": 6.82,
+          "stats": {
+            "observations": 344,
+            "matched": 344,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7129028287997413,
+            "roundaboutSegs": 101,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Ybbs/Donau Busbahnhof",
+          "variants": 11,
+          "tripCount": 5,
+          "stops": 7,
+          "lengthKm": 7.91,
+          "stats": {
+            "observations": 380,
+            "matched": 380,
+            "noCandidates": 0,
+            "viterbiBreaks": 1,
+            "bridged": 0,
+            "rawStretchCount": 1,
+            "rawMeters": 348,
+            "meanError": 0.9107451283388164,
+            "roundaboutSegs": 26,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "1",
+      "op": "nbus"
+    },
+    {
+      "line": "pb:1",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Korneuburg Bahnhof",
+          "variants": 11,
+          "tripCount": 16,
+          "stops": 16,
+          "lengthKm": 7.31,
+          "stats": {
+            "observations": 367,
+            "matched": 367,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6804129103297581,
+            "roundaboutSegs": 8,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Korneuburg Bahnhof",
+          "variants": 13,
+          "tripCount": 14,
+          "stops": 18,
+          "lengthKm": 7.51,
+          "stats": {
+            "observations": 377,
+            "matched": 377,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7752988197994866,
+            "roundaboutSegs": 24,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "1",
+      "op": "pb"
+    },
+    {
+      "line": "ybbs:1",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Säusenstein Parkstraße",
+          "variants": 4,
+          "tripCount": 4,
+          "stops": 10,
+          "lengthKm": 8.83,
+          "stats": {
+            "observations": 445,
+            "matched": 445,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.651093516777752,
+            "roundaboutSegs": 60,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Ybbs/Donau Busbahnhof",
+          "variants": 2,
+          "tripCount": 5,
+          "stops": 6,
+          "lengthKm": 6.7,
+          "stats": {
+            "observations": 336,
+            "matched": 336,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.5629236145820439,
+            "roundaboutSegs": 26,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "1",
+      "op": "ybbs"
+    },
+    {
+      "line": "wl:1A",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wien Schottentor",
+          "variants": 4,
+          "tripCount": 210,
+          "stops": 6,
+          "lengthKm": 1.36,
+          "stats": {
+            "observations": 69,
+            "matched": 69,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.9251931605353098,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wien Stephansplatz",
+          "variants": 4,
+          "tripCount": 210,
+          "stops": 8,
+          "lengthKm": 1.96,
+          "stats": {
+            "observations": 99,
+            "matched": 99,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.976409919368238,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "1A",
+      "op": "wl"
+    },
+    {
+      "line": "wnsw:1A",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Zillingdorf Bergwerk Hauptplatz",
+          "variants": 3,
+          "tripCount": 28,
+          "stops": 37,
+          "lengthKm": 23.36,
+          "stats": {
+            "observations": 1170,
+            "matched": 1170,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6833663028098742,
+            "roundaboutSegs": 10,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wiener Neustadt Hans-Barwitzius-Volksschule",
+          "variants": 3,
+          "tripCount": 26,
+          "stops": 31,
+          "lengthKm": 20.26,
+          "stats": {
+            "observations": 959,
+            "matched": 959,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6839394370899043,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "1A",
+      "op": "wnsw"
+    },
     {
       "line": "1B",
       "mode": "bus",
@@ -182,6 +650,474 @@
       ],
       "rank": 1,
       "op": "pvg"
+    },
+    {
+      "line": "blag:2",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Krems Bründlgraben/EKZ",
+          "variants": 5,
+          "tripCount": 76,
+          "stops": 13,
+          "lengthKm": 5.29,
+          "stats": {
+            "observations": 265,
+            "matched": 265,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.9813226350726423,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Mödling Bahnhof",
+          "variants": 4,
+          "tripCount": 24,
+          "stops": 20,
+          "lengthKm": 6.79,
+          "stats": {
+            "observations": 341,
+            "matched": 341,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6914877844981491,
+            "roundaboutSegs": 29,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "2",
+      "op": "blag"
+    },
+    {
+      "line": "drz:2",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Klosterneuburg-Kierling Bhf.",
+          "variants": 1,
+          "tripCount": 44,
+          "stops": 11,
+          "lengthKm": 3.25,
+          "stats": {
+            "observations": 164,
+            "matched": 164,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.8677870297979737,
+            "roundaboutSegs": 26,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Klosterneuburg Wolfsgraben",
+          "variants": 1,
+          "tripCount": 44,
+          "stops": 13,
+          "lengthKm": 4.22,
+          "stats": {
+            "observations": 214,
+            "matched": 214,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.8676804699776804,
+            "roundaboutSegs": 3,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "2",
+      "op": "drz"
+    },
+    {
+      "line": "matt:2",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Mattersburg Brunnenplatz",
+          "variants": 3,
+          "tripCount": 19,
+          "stops": 33,
+          "lengthKm": 10.76,
+          "stats": {
+            "observations": 542,
+            "matched": 542,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.5625430219628264,
+            "roundaboutSegs": 20,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Mattersburg Brunnenplatz",
+          "variants": 3,
+          "tripCount": 3,
+          "stops": 35,
+          "lengthKm": 11.39,
+          "stats": {
+            "observations": 570,
+            "matched": 570,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6186802318529152,
+            "roundaboutSegs": 40,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "2",
+      "op": "matt"
+    },
+    {
+      "line": "nbus:2",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Amstetten Bahnhof",
+          "variants": 18,
+          "tripCount": 54,
+          "stops": 9,
+          "lengthKm": 4.2,
+          "stats": {
+            "observations": 189,
+            "matched": 189,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6155505787390007,
+            "roundaboutSegs": 59,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Ybbs/Donau Bahnhof",
+          "variants": 13,
+          "tripCount": 4,
+          "stops": 8,
+          "lengthKm": 8.8,
+          "stats": {
+            "observations": 441,
+            "matched": 441,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.47042674561670406,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "2",
+      "op": "nbus"
+    },
+    {
+      "line": "pb:2",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Korneuburg Bahnhof",
+          "variants": 9,
+          "tripCount": 4,
+          "stops": 15,
+          "lengthKm": 9.02,
+          "stats": {
+            "observations": 451,
+            "matched": 451,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.8785988887474231,
+            "roundaboutSegs": 54,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Hollabrunn Elsa-Brandström-Str.",
+          "variants": 2,
+          "tripCount": 4,
+          "stops": 10,
+          "lengthKm": 5.41,
+          "stats": {
+            "observations": 272,
+            "matched": 272,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6953177985582247,
+            "roundaboutSegs": 7,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "2",
+      "op": "pb"
+    },
+    {
+      "line": "ybbs:2",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Neumarkt/Ybbs Kirchenplatz",
+          "variants": 3,
+          "tripCount": 4,
+          "stops": 9,
+          "lengthKm": 5.75,
+          "stats": {
+            "observations": 287,
+            "matched": 287,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.5087533364457343,
+            "roundaboutSegs": 20,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Ybbs/Donau Bahnhof",
+          "variants": 3,
+          "tripCount": 4,
+          "stops": 7,
+          "lengthKm": 8.8,
+          "stats": {
+            "observations": 443,
+            "matched": 443,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.46231352218099936,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "2",
+      "op": "ybbs"
+    },
+    {
+      "line": "zuk:2",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Harland Amtshaus",
+          "variants": 4,
+          "tripCount": 68,
+          "stops": 24,
+          "lengthKm": 11.4,
+          "stats": {
+            "observations": 572,
+            "matched": 572,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.8329029972596899,
+            "roundaboutSegs": 77,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "St. Pölten Gartenstadt Kremserberg",
+          "variants": 6,
+          "tripCount": 66,
+          "stops": 25,
+          "lengthKm": 11.15,
+          "stats": {
+            "observations": 560,
+            "matched": 560,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.8514354335354523,
+            "roundaboutSegs": 70,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "2",
+      "op": "zuk"
+    },
+    {
+      "line": "wl:2A",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wien Schwarzenbergplatz",
+          "variants": 6,
+          "tripCount": 153,
+          "stops": 10,
+          "lengthKm": 3.16,
+          "stats": {
+            "observations": 138,
+            "matched": 138,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.8408849441094477,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wien Schwedenplatz",
+          "variants": 6,
+          "tripCount": 155,
+          "stops": 10,
+          "lengthKm": 2.23,
+          "stats": {
+            "observations": 114,
+            "matched": 114,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6816783635952788,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "2A",
+      "op": "wl"
+    },
+    {
+      "line": "wnsw:2A",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wöllersdorf Staudiglgasse",
+          "variants": 3,
+          "tripCount": 25,
+          "stops": 33,
+          "lengthKm": 18.92,
+          "stats": {
+            "observations": 934,
+            "matched": 934,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6021351094415617,
+            "roundaboutSegs": 50,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wiener Neustadt Hans-Barwitzius-Volksschule",
+          "variants": 4,
+          "tripCount": 27,
+          "stops": 30,
+          "lengthKm": 19.22,
+          "stats": {
+            "observations": 949,
+            "matched": 949,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6020416409478819,
+            "roundaboutSegs": 46,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "2A",
+      "op": "wnsw"
     },
     {
       "line": "2B",
@@ -286,6 +1222,318 @@
       "op": "pvg"
     },
     {
+      "line": "blag:3",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Mödling WIFI",
+          "variants": 2,
+          "tripCount": 22,
+          "stops": 10,
+          "lengthKm": 3.43,
+          "stats": {
+            "observations": 173,
+            "matched": 173,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.9637101085056741,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Krems Bahnhof",
+          "variants": 2,
+          "tripCount": 76,
+          "stops": 14,
+          "lengthKm": 4.48,
+          "stats": {
+            "observations": 226,
+            "matched": 226,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.9786229786169973,
+            "roundaboutSegs": 22,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "3",
+      "op": "blag"
+    },
+    {
+      "line": "drz:3",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Klosterneuburg Strandbad",
+          "variants": 5,
+          "tripCount": 39,
+          "stops": 10,
+          "lengthKm": 3.18,
+          "stats": {
+            "observations": 160,
+            "matched": 160,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.901099439711241,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Klosterneuburg Stadtfriedhof",
+          "variants": 5,
+          "tripCount": 38,
+          "stops": 12,
+          "lengthKm": 3.59,
+          "stats": {
+            "observations": 182,
+            "matched": 182,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.8219545987554133,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "3",
+      "op": "drz"
+    },
+    {
+      "line": "nbus:3",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Amstetten Bahnhof",
+          "variants": 6,
+          "tripCount": 58,
+          "stops": 17,
+          "lengthKm": 4.79,
+          "stats": {
+            "observations": 242,
+            "matched": 242,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.5554499545618813,
+            "roundaboutSegs": 55,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Ybbs/Donau Busbahnhof",
+          "variants": 3,
+          "tripCount": 62,
+          "stops": 6,
+          "lengthKm": 3.53,
+          "stats": {
+            "observations": 179,
+            "matched": 179,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6930409966820481,
+            "roundaboutSegs": 32,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "3",
+      "op": "nbus"
+    },
+    {
+      "line": "wnsw:3",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wiener Neustadt Matzendorfer Gasse",
+          "variants": 3,
+          "tripCount": 55,
+          "stops": 22,
+          "lengthKm": 8.7,
+          "stats": {
+            "observations": 436,
+            "matched": 436,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7609871624318094,
+            "roundaboutSegs": 23,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wiener Neustadt Olof-Palme-Platz",
+          "variants": 5,
+          "tripCount": 52,
+          "stops": 24,
+          "lengthKm": 9.36,
+          "stats": {
+            "observations": 470,
+            "matched": 470,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.8024310649118059,
+            "roundaboutSegs": 16,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "3",
+      "op": "wnsw"
+    },
+    {
+      "line": "ybbs:3",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Ybbs/Donau Bahnhof",
+          "variants": 1,
+          "tripCount": 64,
+          "stops": 6,
+          "lengthKm": 3.54,
+          "stats": {
+            "observations": 180,
+            "matched": 180,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7121710471509766,
+            "roundaboutSegs": 54,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Ybbs/Donau Busbahnhof",
+          "variants": 1,
+          "tripCount": 70,
+          "stops": 6,
+          "lengthKm": 3.53,
+          "stats": {
+            "observations": 179,
+            "matched": 179,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6930409966820481,
+            "roundaboutSegs": 32,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "3",
+      "op": "ybbs"
+    },
+    {
+      "line": "zuk:3",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "St. Pölten Stifterstraße",
+          "variants": 4,
+          "tripCount": 81,
+          "stops": 25,
+          "lengthKm": 10.44,
+          "stats": {
+            "observations": 491,
+            "matched": 491,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.1325332351884223,
+            "roundaboutSegs": 50,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Ratzersdorf Ginstergasse",
+          "variants": 2,
+          "tripCount": 82,
+          "stops": 21,
+          "lengthKm": 8.94,
+          "stats": {
+            "observations": 434,
+            "matched": 434,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.9653095906458884,
+            "roundaboutSegs": 33,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "3",
+      "op": "zuk"
+    },
+    {
       "line": "3A",
       "mode": "bus",
       "color": "#0059a9",
@@ -386,6 +1634,266 @@
       ],
       "rank": 1,
       "op": "pvg"
+    },
+    {
+      "line": "blag:4",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Rehberg Friedhof",
+          "variants": 1,
+          "tripCount": 76,
+          "stops": 13,
+          "lengthKm": 6.28,
+          "stats": {
+            "observations": 316,
+            "matched": 316,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6188367443913106,
+            "roundaboutSegs": 20,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Krems Bahnhof",
+          "variants": 1,
+          "tripCount": 76,
+          "stops": 9,
+          "lengthKm": 4.83,
+          "stats": {
+            "observations": 242,
+            "matched": 242,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.5525816619734312,
+            "roundaboutSegs": 20,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "4",
+      "op": "blag"
+    },
+    {
+      "line": "nbus:4",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Gottsdorf Feuerwehr",
+          "variants": 15,
+          "tripCount": 11,
+          "stops": 10,
+          "lengthKm": 6.31,
+          "stats": {
+            "observations": 318,
+            "matched": 318,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.5128380083340902,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Ybbs/Donau Busbahnhof",
+          "variants": 11,
+          "tripCount": 18,
+          "stops": 8,
+          "lengthKm": 5.89,
+          "stats": {
+            "observations": 297,
+            "matched": 297,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.4919553309646615,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "4",
+      "op": "nbus"
+    },
+    {
+      "line": "wnsw:4",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wiener Neustadt Aqua Nova",
+          "variants": 6,
+          "tripCount": 53,
+          "stops": 35,
+          "lengthKm": 12.78,
+          "stats": {
+            "observations": 641,
+            "matched": 641,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7147444233420823,
+            "roundaboutSegs": 60,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wiener Neustadt Fischapark",
+          "variants": 6,
+          "tripCount": 52,
+          "stops": 27,
+          "lengthKm": 10.81,
+          "stats": {
+            "observations": 542,
+            "matched": 542,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6938586983908192,
+            "roundaboutSegs": 58,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "4",
+      "op": "wnsw"
+    },
+    {
+      "line": "ybbs:4",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Gottsdorf Feuerwehr",
+          "variants": 5,
+          "tripCount": 3,
+          "stops": 13,
+          "lengthKm": 7.48,
+          "stats": {
+            "observations": 377,
+            "matched": 377,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.5205281039654611,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Ybbs/Donau Busbahnhof",
+          "variants": 2,
+          "tripCount": 17,
+          "stops": 9,
+          "lengthKm": 6.11,
+          "stats": {
+            "observations": 308,
+            "matched": 308,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.4986526594803658,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "4",
+      "op": "ybbs"
+    },
+    {
+      "line": "zuk:4",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Unterradlberg Gewerbepark",
+          "variants": 14,
+          "tripCount": 55,
+          "stops": 33,
+          "lengthKm": 15.16,
+          "stats": {
+            "observations": 761,
+            "matched": 761,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.670127965951699,
+            "roundaboutSegs": 61,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "St. Pölten Friedhof",
+          "variants": 8,
+          "tripCount": 66,
+          "stops": 27,
+          "lengthKm": 14.05,
+          "stats": {
+            "observations": 704,
+            "matched": 704,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7662499422163188,
+            "roundaboutSegs": 62,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "4",
+      "op": "zuk"
     },
     {
       "line": "4A",
@@ -490,6 +1998,942 @@
       "op": "pvg"
     },
     {
+      "line": "blag:5",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Gneixendorf Schloss",
+          "variants": 3,
+          "tripCount": 22,
+          "stops": 14,
+          "lengthKm": 5.58,
+          "stats": {
+            "observations": 280,
+            "matched": 280,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.8292300730816392,
+            "roundaboutSegs": 12,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Krems Bahnhof",
+          "variants": 3,
+          "tripCount": 39,
+          "stops": 8,
+          "lengthKm": 4.93,
+          "stats": {
+            "observations": 248,
+            "matched": 248,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7138480921186202,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "5",
+      "op": "blag"
+    },
+    {
+      "line": "drn:5",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Spratzern Missongasse",
+          "variants": 3,
+          "tripCount": 66,
+          "stops": 24,
+          "lengthKm": 8.17,
+          "stats": {
+            "observations": 411,
+            "matched": 411,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.2033376705035823,
+            "roundaboutSegs": 30,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "St. Pölten Traisenpark/Dr.-Adolf-Schärf-Straße",
+          "variants": 2,
+          "tripCount": 84,
+          "stops": 26,
+          "lengthKm": 8.7,
+          "stats": {
+            "observations": 437,
+            "matched": 437,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.0125424796505629,
+            "roundaboutSegs": 21,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "5",
+      "op": "drn"
+    },
+    {
+      "line": "nbus:5",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wieselburg Bahnhof",
+          "variants": 10,
+          "tripCount": 11,
+          "stops": 10,
+          "lengthKm": 8.93,
+          "stats": {
+            "observations": 450,
+            "matched": 450,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.8497341850544398,
+            "roundaboutSegs": 77,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Ybbs/Donau Busbahnhof",
+          "variants": 3,
+          "tripCount": 17,
+          "stops": 10,
+          "lengthKm": 9.02,
+          "stats": {
+            "observations": 458,
+            "matched": 458,
+            "noCandidates": 0,
+            "viterbiBreaks": 1,
+            "bridged": 0,
+            "rawStretchCount": 1,
+            "rawMeters": 20,
+            "meanError": 1.4096162616942467,
+            "roundaboutSegs": 72,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "5",
+      "op": "nbus"
+    },
+    {
+      "line": "ybbs:5",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wieselburg Bahnhof",
+          "variants": 4,
+          "tripCount": 4,
+          "stops": 9,
+          "lengthKm": 9.29,
+          "stats": {
+            "observations": 467,
+            "matched": 467,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7302502553435428,
+            "roundaboutSegs": 62,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Ybbs/Donau Busbahnhof",
+          "variants": 3,
+          "tripCount": 6,
+          "stops": 10,
+          "lengthKm": 9.13,
+          "stats": {
+            "observations": 465,
+            "matched": 465,
+            "noCandidates": 0,
+            "viterbiBreaks": 1,
+            "bridged": 0,
+            "rawStretchCount": 1,
+            "rawMeters": 20,
+            "meanError": 1.4125489392234511,
+            "roundaboutSegs": 72,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "5",
+      "op": "ybbs"
+    },
+    {
+      "line": "wl:5A",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wien Griegstraße",
+          "variants": 6,
+          "tripCount": 252,
+          "stops": 22,
+          "lengthKm": 7.11,
+          "stats": {
+            "observations": 357,
+            "matched": 357,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.1521612496184448,
+            "roundaboutSegs": 21,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wien Nestroyplatz",
+          "variants": 8,
+          "tripCount": 240,
+          "stops": 25,
+          "lengthKm": 7.67,
+          "stats": {
+            "observations": 385,
+            "matched": 385,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.2775439999161609,
+            "roundaboutSegs": 48,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "5A",
+      "op": "wl"
+    },
+    {
+      "line": "wnsw:5A",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wiesen-Sigleß Bahnhof",
+          "variants": 6,
+          "tripCount": 22,
+          "stops": 37,
+          "lengthKm": 27.47,
+          "stats": {
+            "observations": 1303,
+            "matched": 1303,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6571212744271613,
+            "roundaboutSegs": 45,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wiener Neustadt Kleegasse",
+          "variants": 5,
+          "tripCount": 25,
+          "stops": 30,
+          "lengthKm": 22.2,
+          "stats": {
+            "observations": 1114,
+            "matched": 1114,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6572548962103546,
+            "roundaboutSegs": 27,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "5A",
+      "op": "wnsw"
+    },
+    {
+      "line": "wl:5B",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wien Praterstern",
+          "variants": 8,
+          "tripCount": 528,
+          "stops": 21,
+          "lengthKm": 7.34,
+          "stats": {
+            "observations": 368,
+            "matched": 368,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.3619140954122941,
+            "roundaboutSegs": 27,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wien Heiligenstadt",
+          "variants": 21,
+          "tripCount": 190,
+          "stops": 17,
+          "lengthKm": 6.35,
+          "stats": {
+            "observations": 318,
+            "matched": 318,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.446071072044824,
+            "roundaboutSegs": 24,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "5B",
+      "op": "wl"
+    },
+    {
+      "line": "wnsw:5B",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wiesen-Sigleß Bahnhof",
+          "variants": 8,
+          "tripCount": 23,
+          "stops": 32,
+          "lengthKm": 21.92,
+          "stats": {
+            "observations": 1099,
+            "matched": 1099,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6620048214406127,
+            "roundaboutSegs": 53,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wiener Neustadt Kleegasse",
+          "variants": 10,
+          "tripCount": 23,
+          "stops": 35,
+          "lengthKm": 27.81,
+          "stats": {
+            "observations": 1320,
+            "matched": 1320,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6471011451998551,
+            "roundaboutSegs": 27,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "5B",
+      "op": "wnsw"
+    },
+    {
+      "line": "blag:6",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Krems Kraxenweg",
+          "variants": 5,
+          "tripCount": 37,
+          "stops": 7,
+          "lengthKm": 2.2,
+          "stats": {
+            "observations": 112,
+            "matched": 112,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.532969357402917,
+            "roundaboutSegs": 12,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Krems Bahnhof",
+          "variants": 5,
+          "tripCount": 37,
+          "stops": 7,
+          "lengthKm": 2.17,
+          "stats": {
+            "observations": 109,
+            "matched": 109,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7754716160635007,
+            "roundaboutSegs": 6,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "6",
+      "op": "blag"
+    },
+    {
+      "line": "drn:6",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "St. Pölten Friedhof",
+          "variants": 3,
+          "tripCount": 67,
+          "stops": 25,
+          "lengthKm": 8.44,
+          "stats": {
+            "observations": 424,
+            "matched": 424,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7656999924380674,
+            "roundaboutSegs": 53,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "St. Pölten Traisenpark/Dr.-Adolf-Schärf-Straße",
+          "variants": 2,
+          "tripCount": 68,
+          "stops": 21,
+          "lengthKm": 7.48,
+          "stats": {
+            "observations": 377,
+            "matched": 377,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.8053061413625745,
+            "roundaboutSegs": 47,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "6",
+      "op": "drn"
+    },
+    {
+      "line": "nbus:6",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Amstetten Bahnhof",
+          "variants": 4,
+          "tripCount": 28,
+          "stops": 16,
+          "lengthKm": 8.08,
+          "stats": {
+            "observations": 407,
+            "matched": 407,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.5564130044411887,
+            "roundaboutSegs": 90,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Ybbs/Donau Busbahnhof",
+          "variants": 2,
+          "tripCount": 9,
+          "stops": 8,
+          "lengthKm": 6.29,
+          "stats": {
+            "observations": 302,
+            "matched": 302,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.5966959917906685,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "6",
+      "op": "nbus"
+    },
+    {
+      "line": "wnsw:6",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wiener Neustadt Aqua Nova",
+          "variants": 4,
+          "tripCount": 50,
+          "stops": 20,
+          "lengthKm": 8.17,
+          "stats": {
+            "observations": 410,
+            "matched": 410,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7348767297277424,
+            "roundaboutSegs": 44,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wiener Neustadt Grünangergasse",
+          "variants": 6,
+          "tripCount": 55,
+          "stops": 19,
+          "lengthKm": 7.42,
+          "stats": {
+            "observations": 374,
+            "matched": 374,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7799930019942493,
+            "roundaboutSegs": 42,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "6",
+      "op": "wnsw"
+    },
+    {
+      "line": "ybbs:6",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "St. Martin am Ybbsfelde Hauptstraße",
+          "variants": 2,
+          "tripCount": 4,
+          "stops": 9,
+          "lengthKm": 6.2,
+          "stats": {
+            "observations": 297,
+            "matched": 297,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.5885028771969444,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Ybbs/Donau Busbahnhof",
+          "variants": 2,
+          "tripCount": 9,
+          "stops": 8,
+          "lengthKm": 6.14,
+          "stats": {
+            "observations": 294,
+            "matched": 294,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.5920990917127139,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "6",
+      "op": "ybbs"
+    },
+    {
+      "line": "blag:7",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Krems Gewerbepark Ost",
+          "variants": 5,
+          "tripCount": 14,
+          "stops": 14,
+          "lengthKm": 10.2,
+          "stats": {
+            "observations": 480,
+            "matched": 480,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6954297471797962,
+            "roundaboutSegs": 26,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Krems Bahnhof",
+          "variants": 9,
+          "tripCount": 18,
+          "stops": 11,
+          "lengthKm": 8.37,
+          "stats": {
+            "observations": 420,
+            "matched": 420,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7265332664108799,
+            "roundaboutSegs": 47,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "7",
+      "op": "blag"
+    },
+    {
+      "line": "drn:7",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Pottenbrunn Bahnhof",
+          "variants": 2,
+          "tripCount": 69,
+          "stops": 37,
+          "lengthKm": 15.58,
+          "stats": {
+            "observations": 781,
+            "matched": 781,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.9593742180790846,
+            "roundaboutSegs": 56,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "St. Pölten VAZ/Rödlgasse",
+          "variants": 3,
+          "tripCount": 66,
+          "stops": 36,
+          "lengthKm": 15.88,
+          "stats": {
+            "observations": 792,
+            "matched": 792,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.9034956277373354,
+            "roundaboutSegs": 73,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "7",
+      "op": "drn"
+    },
+    {
+      "line": "nbus:7",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Amstetten Bahnhof",
+          "variants": 5,
+          "tripCount": 26,
+          "stops": 29,
+          "lengthKm": 17.95,
+          "stats": {
+            "observations": 902,
+            "matched": 902,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6981073720947274,
+            "roundaboutSegs": 103,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Ybbs/Donau Bahnhof",
+          "variants": 2,
+          "tripCount": 9,
+          "stops": 4,
+          "lengthKm": 5.21,
+          "stats": {
+            "observations": 262,
+            "matched": 262,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6090039795335644,
+            "roundaboutSegs": 12,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "7",
+      "op": "nbus"
+    },
+    {
+      "line": "wnsw:7",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wiener Neustadt J.-Gutenberg-Str.",
+          "variants": 5,
+          "tripCount": 51,
+          "stops": 18,
+          "lengthKm": 7.54,
+          "stats": {
+            "observations": 377,
+            "matched": 377,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.8311120587001312,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wiener Neustadt Grünangergasse",
+          "variants": 4,
+          "tripCount": 57,
+          "stops": 6,
+          "lengthKm": 2.87,
+          "stats": {
+            "observations": 145,
+            "matched": 145,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.1312213636068673,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "7",
+      "op": "wnsw"
+    },
+    {
+      "line": "ybbs:7",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Säusenstein Parkstraße",
+          "variants": 1,
+          "tripCount": 15,
+          "stops": 7,
+          "lengthKm": 5.25,
+          "stats": {
+            "observations": 265,
+            "matched": 265,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6026296458184217,
+            "roundaboutSegs": 10,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Ybbs/Donau Bahnhof",
+          "variants": 1,
+          "tripCount": 15,
+          "stops": 3,
+          "lengthKm": 5.21,
+          "stats": {
+            "observations": 262,
+            "matched": 262,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6090041962019574,
+            "roundaboutSegs": 12,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "7",
+      "op": "ybbs"
+    },
+    {
       "line": "7A",
       "mode": "bus",
       "color": "#0059a9",
@@ -592,6 +3036,110 @@
       "op": "wl"
     },
     {
+      "line": "wnsw:8",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Lichtenwörth Bäckerstraße",
+          "variants": 6,
+          "tripCount": 55,
+          "stops": 24,
+          "lengthKm": 13.7,
+          "stats": {
+            "observations": 673,
+            "matched": 673,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7626861383876431,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wiener Neustadt Grünangergasse",
+          "variants": 4,
+          "tripCount": 62,
+          "stops": 16,
+          "lengthKm": 10.08,
+          "stats": {
+            "observations": 492,
+            "matched": 492,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.9084289890049553,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "8",
+      "op": "wnsw"
+    },
+    {
+      "line": "zuk:8",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Unterradlberg Gewerbepark",
+          "variants": 4,
+          "tripCount": 13,
+          "stops": 42,
+          "lengthKm": 17.34,
+          "stats": {
+            "observations": 870,
+            "matched": 870,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7867085938796748,
+            "roundaboutSegs": 46,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Harland Amtshaus",
+          "variants": 3,
+          "tripCount": 13,
+          "stops": 41,
+          "lengthKm": 17.44,
+          "stats": {
+            "observations": 876,
+            "matched": 876,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7918009460558479,
+            "roundaboutSegs": 73,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "8",
+      "op": "zuk"
+    },
+    {
       "line": "8A",
       "mode": "bus",
       "color": "#0059a9",
@@ -641,6 +3189,110 @@
       ],
       "rank": 1,
       "op": "wl"
+    },
+    {
+      "line": "wnsw:9",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Klingfurth Süd",
+          "variants": 12,
+          "tripCount": 9,
+          "stops": 46,
+          "lengthKm": 37.14,
+          "stats": {
+            "observations": 1844,
+            "matched": 1844,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.679336034688479,
+            "roundaboutSegs": 114,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Winzendorf Schulen",
+          "variants": 12,
+          "tripCount": 8,
+          "stops": 47,
+          "lengthKm": 36.08,
+          "stats": {
+            "observations": 1772,
+            "matched": 1772,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.681728736382864,
+            "roundaboutSegs": 76,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "9",
+      "op": "wnsw"
+    },
+    {
+      "line": "zuk:9",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "St. Pölten Rudolf-Tornar-Str.",
+          "variants": 2,
+          "tripCount": 60,
+          "stops": 19,
+          "lengthKm": 8.04,
+          "stats": {
+            "observations": 404,
+            "matched": 404,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.9221133649644205,
+            "roundaboutSegs": 34,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Hafing Ort",
+          "variants": 2,
+          "tripCount": 62,
+          "stops": 20,
+          "lengthKm": 8.48,
+          "stats": {
+            "observations": 426,
+            "matched": 426,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.0200614291355123,
+            "roundaboutSegs": 40,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "9",
+      "op": "zuk"
     },
     {
       "line": "9A",
@@ -694,6 +3346,110 @@
       "op": "wl"
     },
     {
+      "line": "drn:10",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "St. Georgen/Stfd. Schulen",
+          "variants": 4,
+          "tripCount": 4,
+          "stops": 15,
+          "lengthKm": 7.95,
+          "stats": {
+            "observations": 398,
+            "matched": 398,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6188395000884906,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Harland Amtshaus",
+          "variants": 3,
+          "tripCount": 8,
+          "stops": 14,
+          "lengthKm": 7.72,
+          "stats": {
+            "observations": 387,
+            "matched": 387,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.6270020370333055,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "10",
+      "op": "drn"
+    },
+    {
+      "line": "wnsw:10",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Lanzenkirchen Schulgasse",
+          "variants": 14,
+          "tripCount": 24,
+          "stops": 29,
+          "lengthKm": 14.28,
+          "stats": {
+            "observations": 699,
+            "matched": 699,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7226936743929916,
+            "roundaboutSegs": 24,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wiener Neustadt Hauptbahnhof",
+          "variants": 8,
+          "tripCount": 28,
+          "stops": 28,
+          "lengthKm": 14.54,
+          "stats": {
+            "observations": 715,
+            "matched": 715,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7054597192583559,
+            "roundaboutSegs": 13,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "10",
+      "op": "wnsw"
+    },
+    {
       "line": "10A",
       "mode": "bus",
       "color": "#0059a9",
@@ -745,6 +3501,110 @@
       "op": "wl"
     },
     {
+      "line": "drn:11",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "St. Georgen/Stfd. Schulen",
+          "variants": 2,
+          "tripCount": 10,
+          "stops": 12,
+          "lengthKm": 5.69,
+          "stats": {
+            "observations": 287,
+            "matched": 287,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.924899255631843,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Spratzern Wolfenberger Straße",
+          "variants": 2,
+          "tripCount": 10,
+          "stops": 10,
+          "lengthKm": 4.3,
+          "stats": {
+            "observations": 215,
+            "matched": 215,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.0030768822839338,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "11",
+      "op": "drn"
+    },
+    {
+      "line": "wnsw:11",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wiener Neustadt Metro-Markt",
+          "variants": 20,
+          "tripCount": 1,
+          "stops": 14,
+          "lengthKm": 7.71,
+          "stats": {
+            "observations": 373,
+            "matched": 373,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7867344768793619,
+            "roundaboutSegs": 3,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wiener Neustadt Militärakademie",
+          "variants": 12,
+          "tripCount": 6,
+          "stops": 10,
+          "lengthKm": 10.89,
+          "stats": {
+            "observations": 547,
+            "matched": 547,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.771819296914902,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "11",
+      "op": "wnsw"
+    },
+    {
       "line": "11A",
       "mode": "bus",
       "color": "#0059a9",
@@ -794,6 +3654,58 @@
       ],
       "rank": 1,
       "op": "wl"
+    },
+    {
+      "line": "drn:12",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "St. Pölten Einkaufszentrum Süd",
+          "variants": 2,
+          "tripCount": 27,
+          "stops": 21,
+          "lengthKm": 7.08,
+          "stats": {
+            "observations": 356,
+            "matched": 356,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.287841822726178,
+            "roundaboutSegs": 30,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Viehofen Johannesplatz",
+          "variants": 2,
+          "tripCount": 26,
+          "stops": 21,
+          "lengthKm": 6.9,
+          "stats": {
+            "observations": 345,
+            "matched": 345,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.1226135768301548,
+            "roundaboutSegs": 24,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "12",
+      "op": "drn"
     },
     {
       "line": "12A",
@@ -18409,6 +21321,89 @@
       "op": "drn"
     },
     {
+      "line": "drn:535",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Mistelbach Bahnhof",
+          "variants": 1,
+          "tripCount": 1,
+          "stops": 29,
+          "lengthKm": 37.45,
+          "stats": {
+            "observations": 1858,
+            "matched": 1858,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.529689576802158,
+            "roundaboutSegs": 61,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "535",
+      "op": "drn"
+    },
+    {
+      "line": "pb:535",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Mistelbach Bahnhof",
+          "variants": 1,
+          "tripCount": 50,
+          "stops": 29,
+          "lengthKm": 37.39,
+          "stats": {
+            "observations": 1855,
+            "matched": 1855,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.5298364068956295,
+            "roundaboutSegs": 61,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Gänserndorf Bahnhof",
+          "variants": 1,
+          "tripCount": 51,
+          "stops": 30,
+          "lengthKm": 38.27,
+          "stats": {
+            "observations": 1900,
+            "matched": 1900,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.5242575297778458,
+            "roundaboutSegs": 73,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "535",
+      "op": "pb"
+    },
+    {
       "line": "536",
       "mode": "bus",
       "color": "#0059a9",
@@ -31657,6 +34652,110 @@
       "op": "pb"
     },
     {
+      "line": "arriva:901",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Hainburg/Donau Pfaffenbergweg",
+          "variants": 1,
+          "tripCount": 23,
+          "stops": 9,
+          "lengthKm": 12.39,
+          "stats": {
+            "observations": 690,
+            "matched": 544,
+            "noCandidates": 146,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.088552430833519,
+            "roundaboutSegs": 12,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Bratislava Most SNP",
+          "variants": 1,
+          "tripCount": 23,
+          "stops": 10,
+          "lengthKm": 12.42,
+          "stats": {
+            "observations": 867,
+            "matched": 568,
+            "noCandidates": 299,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.9659608906733843,
+            "roundaboutSegs": 10,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "901",
+      "op": "arriva"
+    },
+    {
+      "line": "pb:901",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Mattersburg Martinsplatz",
+          "variants": 5,
+          "tripCount": 11,
+          "stops": 39,
+          "lengthKm": 33.29,
+          "stats": {
+            "observations": 1617,
+            "matched": 1617,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.4691606492958774,
+            "roundaboutSegs": 85,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Eisenstadt Domplatz",
+          "variants": 7,
+          "tripCount": 13,
+          "stops": 39,
+          "lengthKm": 32.75,
+          "stats": {
+            "observations": 1594,
+            "matched": 1594,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.4625104686272024,
+            "roundaboutSegs": 66,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "901",
+      "op": "pb"
+    },
+    {
       "line": "902",
       "mode": "bus",
       "color": "#0059a9",
@@ -35062,58 +38161,6 @@
       "op": "pvg"
     },
     {
-      "line": "arriva:901",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Hainburg/Donau Pfaffenbergweg",
-          "variants": 1,
-          "tripCount": 23,
-          "stops": 9,
-          "lengthKm": 12.39,
-          "stats": {
-            "observations": 690,
-            "matched": 544,
-            "noCandidates": 146,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.088552430833519,
-            "roundaboutSegs": 12,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Bratislava Most SNP",
-          "variants": 1,
-          "tripCount": 23,
-          "stops": 10,
-          "lengthKm": 12.42,
-          "stats": {
-            "observations": 867,
-            "matched": 568,
-            "noCandidates": 299,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.9659608906733843,
-            "roundaboutSegs": 10,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "901",
-      "op": "arriva"
-    },
-    {
       "line": "AST",
       "mode": "bus",
       "color": "#0059a9",
@@ -36620,367 +39667,54 @@
       "op": "blag"
     },
     {
-      "line": "blag:1",
+      "line": "C",
       "mode": "bus",
       "color": "#0059a9",
       "dirs": [
         {
           "dir": "0",
-          "headsign": "Stein-Mautern Bahnhof",
-          "variants": 5,
-          "tripCount": 76,
-          "stops": 16,
-          "lengthKm": 5.55,
-          "stats": {
-            "observations": 279,
-            "matched": 279,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6891288952921129,
-            "roundaboutSegs": 8,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Krems Bahnhof",
-          "variants": 4,
-          "tripCount": 55,
-          "stops": 8,
-          "lengthKm": 3.81,
-          "stats": {
-            "observations": 192,
-            "matched": 192,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6577151508587966,
-            "roundaboutSegs": 38,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "1",
-      "op": "blag"
-    },
-    {
-      "line": "blag:2",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Krems Bründlgraben/EKZ",
-          "variants": 5,
-          "tripCount": 76,
-          "stops": 13,
-          "lengthKm": 5.29,
-          "stats": {
-            "observations": 265,
-            "matched": 265,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.9813226350726423,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Mödling Bahnhof",
-          "variants": 4,
-          "tripCount": 24,
-          "stops": 20,
-          "lengthKm": 6.79,
-          "stats": {
-            "observations": 341,
-            "matched": 341,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6914877844981491,
-            "roundaboutSegs": 29,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "2",
-      "op": "blag"
-    },
-    {
-      "line": "blag:3",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Mödling WIFI",
+          "headsign": "Baden Goethegasse",
           "variants": 2,
-          "tripCount": 22,
-          "stops": 10,
-          "lengthKm": 3.43,
+          "tripCount": 60,
+          "stops": 11,
+          "lengthKm": 3.2,
           "stats": {
-            "observations": 173,
-            "matched": 173,
+            "observations": 161,
+            "matched": 161,
             "noCandidates": 0,
             "viterbiBreaks": 0,
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 0.9637101085056741,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Krems Bahnhof",
-          "variants": 2,
-          "tripCount": 76,
-          "stops": 14,
-          "lengthKm": 4.48,
-          "stats": {
-            "observations": 226,
-            "matched": 226,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.9786229786169973,
+            "meanError": 0.8931088403955394,
             "roundaboutSegs": 22,
             "extStart": 0,
             "extEnd": 0
           }
-        }
-      ],
-      "rank": 1,
-      "label": "3",
-      "op": "blag"
-    },
-    {
-      "line": "blag:4",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Rehberg Friedhof",
-          "variants": 1,
-          "tripCount": 76,
-          "stops": 13,
-          "lengthKm": 6.28,
-          "stats": {
-            "observations": 316,
-            "matched": 316,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6188367443913106,
-            "roundaboutSegs": 20,
-            "extStart": 0,
-            "extEnd": 0
-          }
         },
         {
           "dir": "1",
-          "headsign": "Krems Bahnhof",
-          "variants": 1,
-          "tripCount": 76,
-          "stops": 9,
-          "lengthKm": 4.83,
+          "headsign": "Baden Bahnhof",
+          "variants": 2,
+          "tripCount": 60,
+          "stops": 10,
+          "lengthKm": 2.76,
           "stats": {
-            "observations": 242,
-            "matched": 242,
+            "observations": 138,
+            "matched": 138,
             "noCandidates": 0,
             "viterbiBreaks": 0,
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 0.5525816619734312,
-            "roundaboutSegs": 20,
+            "meanError": 0.7891686812222486,
+            "roundaboutSegs": 14,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
       "rank": 1,
-      "label": "4",
-      "op": "blag"
-    },
-    {
-      "line": "blag:5",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Gneixendorf Schloss",
-          "variants": 3,
-          "tripCount": 22,
-          "stops": 14,
-          "lengthKm": 5.58,
-          "stats": {
-            "observations": 280,
-            "matched": 280,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.8292300730816392,
-            "roundaboutSegs": 12,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Krems Bahnhof",
-          "variants": 3,
-          "tripCount": 39,
-          "stops": 8,
-          "lengthKm": 4.93,
-          "stats": {
-            "observations": 248,
-            "matched": 248,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7138480921186202,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "5",
-      "op": "blag"
-    },
-    {
-      "line": "blag:6",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Krems Kraxenweg",
-          "variants": 5,
-          "tripCount": 37,
-          "stops": 7,
-          "lengthKm": 2.2,
-          "stats": {
-            "observations": 112,
-            "matched": 112,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.532969357402917,
-            "roundaboutSegs": 12,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Krems Bahnhof",
-          "variants": 5,
-          "tripCount": 37,
-          "stops": 7,
-          "lengthKm": 2.17,
-          "stats": {
-            "observations": 109,
-            "matched": 109,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7754716160635007,
-            "roundaboutSegs": 6,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "6",
-      "op": "blag"
-    },
-    {
-      "line": "blag:7",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Krems Gewerbepark Ost",
-          "variants": 5,
-          "tripCount": 14,
-          "stops": 14,
-          "lengthKm": 10.2,
-          "stats": {
-            "observations": 480,
-            "matched": 480,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6954297471797962,
-            "roundaboutSegs": 26,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Krems Bahnhof",
-          "variants": 9,
-          "tripCount": 18,
-          "stops": 11,
-          "lengthKm": 8.37,
-          "stats": {
-            "observations": 420,
-            "matched": 420,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7265332664108799,
-            "roundaboutSegs": 47,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "7",
       "op": "blag"
     },
     {
@@ -37036,608 +39770,6 @@
       "op": "blag"
     },
     {
-      "line": "C",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Baden Goethegasse",
-          "variants": 2,
-          "tripCount": 60,
-          "stops": 11,
-          "lengthKm": 3.2,
-          "stats": {
-            "observations": 161,
-            "matched": 161,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.8931088403955394,
-            "roundaboutSegs": 22,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Baden Bahnhof",
-          "variants": 2,
-          "tripCount": 60,
-          "stops": 10,
-          "lengthKm": 2.76,
-          "stats": {
-            "observations": 138,
-            "matched": 138,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7891686812222486,
-            "roundaboutSegs": 14,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "op": "blag"
-    },
-    {
-      "line": "drn:1",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Hart/St. Pölten Ghegastraße",
-          "variants": 11,
-          "tripCount": 69,
-          "stops": 34,
-          "lengthKm": 12.05,
-          "stats": {
-            "observations": 605,
-            "matched": 605,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.115456188173361,
-            "roundaboutSegs": 30,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Viehofen Living City",
-          "variants": 9,
-          "tripCount": 68,
-          "stops": 35,
-          "lengthKm": 12.79,
-          "stats": {
-            "observations": 639,
-            "matched": 639,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.003109349280939,
-            "roundaboutSegs": 21,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "1",
-      "op": "drn"
-    },
-    {
-      "line": "drn:5",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Spratzern Missongasse",
-          "variants": 3,
-          "tripCount": 66,
-          "stops": 24,
-          "lengthKm": 8.17,
-          "stats": {
-            "observations": 411,
-            "matched": 411,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.2033376705035823,
-            "roundaboutSegs": 30,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "St. Pölten Traisenpark/Dr.-Adolf-Schärf-Straße",
-          "variants": 2,
-          "tripCount": 84,
-          "stops": 26,
-          "lengthKm": 8.7,
-          "stats": {
-            "observations": 437,
-            "matched": 437,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.0125424796505629,
-            "roundaboutSegs": 21,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "5",
-      "op": "drn"
-    },
-    {
-      "line": "drn:6",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "St. Pölten Friedhof",
-          "variants": 3,
-          "tripCount": 67,
-          "stops": 25,
-          "lengthKm": 8.44,
-          "stats": {
-            "observations": 424,
-            "matched": 424,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7656999924380674,
-            "roundaboutSegs": 53,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "St. Pölten Traisenpark/Dr.-Adolf-Schärf-Straße",
-          "variants": 2,
-          "tripCount": 68,
-          "stops": 21,
-          "lengthKm": 7.48,
-          "stats": {
-            "observations": 377,
-            "matched": 377,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.8053061413625745,
-            "roundaboutSegs": 47,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "6",
-      "op": "drn"
-    },
-    {
-      "line": "drn:7",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Pottenbrunn Bahnhof",
-          "variants": 2,
-          "tripCount": 69,
-          "stops": 37,
-          "lengthKm": 15.58,
-          "stats": {
-            "observations": 781,
-            "matched": 781,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.9593742180790846,
-            "roundaboutSegs": 56,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "St. Pölten VAZ/Rödlgasse",
-          "variants": 3,
-          "tripCount": 66,
-          "stops": 36,
-          "lengthKm": 15.88,
-          "stats": {
-            "observations": 792,
-            "matched": 792,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.9034956277373354,
-            "roundaboutSegs": 73,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "7",
-      "op": "drn"
-    },
-    {
-      "line": "drn:10",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "St. Georgen/Stfd. Schulen",
-          "variants": 4,
-          "tripCount": 4,
-          "stops": 15,
-          "lengthKm": 7.95,
-          "stats": {
-            "observations": 398,
-            "matched": 398,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6188395000884906,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Harland Amtshaus",
-          "variants": 3,
-          "tripCount": 8,
-          "stops": 14,
-          "lengthKm": 7.72,
-          "stats": {
-            "observations": 387,
-            "matched": 387,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6270020370333055,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "10",
-      "op": "drn"
-    },
-    {
-      "line": "drn:11",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "St. Georgen/Stfd. Schulen",
-          "variants": 2,
-          "tripCount": 10,
-          "stops": 12,
-          "lengthKm": 5.69,
-          "stats": {
-            "observations": 287,
-            "matched": 287,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.924899255631843,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Spratzern Wolfenberger Straße",
-          "variants": 2,
-          "tripCount": 10,
-          "stops": 10,
-          "lengthKm": 4.3,
-          "stats": {
-            "observations": 215,
-            "matched": 215,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.0030768822839338,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "11",
-      "op": "drn"
-    },
-    {
-      "line": "drn:12",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "St. Pölten Einkaufszentrum Süd",
-          "variants": 2,
-          "tripCount": 27,
-          "stops": 21,
-          "lengthKm": 7.08,
-          "stats": {
-            "observations": 356,
-            "matched": 356,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.287841822726178,
-            "roundaboutSegs": 30,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Viehofen Johannesplatz",
-          "variants": 2,
-          "tripCount": 26,
-          "stops": 21,
-          "lengthKm": 6.9,
-          "stats": {
-            "observations": 345,
-            "matched": 345,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.1226135768301548,
-            "roundaboutSegs": 24,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "12",
-      "op": "drn"
-    },
-    {
-      "line": "drn:535",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Mistelbach Bahnhof",
-          "variants": 1,
-          "tripCount": 1,
-          "stops": 29,
-          "lengthKm": 37.45,
-          "stats": {
-            "observations": 1858,
-            "matched": 1858,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.529689576802158,
-            "roundaboutSegs": 61,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "535",
-      "op": "drn"
-    },
-    {
-      "line": "drz:1",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Klosterneuburg Brunnleiten",
-          "variants": 2,
-          "tripCount": 44,
-          "stops": 29,
-          "lengthKm": 8.52,
-          "stats": {
-            "observations": 427,
-            "matched": 427,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7825035798433386,
-            "roundaboutSegs": 42,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Klosterneuburg Aufeldgasse/Inkustraße",
-          "variants": 2,
-          "tripCount": 44,
-          "stops": 25,
-          "lengthKm": 6.74,
-          "stats": {
-            "observations": 338,
-            "matched": 338,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.8026139823939171,
-            "roundaboutSegs": 22,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "1",
-      "op": "drz"
-    },
-    {
-      "line": "drz:2",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Klosterneuburg-Kierling Bhf.",
-          "variants": 1,
-          "tripCount": 44,
-          "stops": 11,
-          "lengthKm": 3.25,
-          "stats": {
-            "observations": 164,
-            "matched": 164,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.8677870297979737,
-            "roundaboutSegs": 26,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Klosterneuburg Wolfsgraben",
-          "variants": 1,
-          "tripCount": 44,
-          "stops": 13,
-          "lengthKm": 4.22,
-          "stats": {
-            "observations": 214,
-            "matched": 214,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.8676804699776804,
-            "roundaboutSegs": 3,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "2",
-      "op": "drz"
-    },
-    {
-      "line": "drz:3",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Klosterneuburg Strandbad",
-          "variants": 5,
-          "tripCount": 39,
-          "stops": 10,
-          "lengthKm": 3.18,
-          "stats": {
-            "observations": 160,
-            "matched": 160,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.901099439711241,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Klosterneuburg Stadtfriedhof",
-          "variants": 5,
-          "tripCount": 38,
-          "stops": 12,
-          "lengthKm": 3.59,
-          "stats": {
-            "observations": 182,
-            "matched": 182,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.8219545987554133,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "3",
-      "op": "drz"
-    },
-    {
       "line": "G3",
       "mode": "bus",
       "color": "#0059a9",
@@ -37687,682 +39819,6 @@
       ],
       "rank": 1,
       "op": "gsc"
-    },
-    {
-      "line": "matt:1",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Mattersburg Brunnenplatz",
-          "variants": 5,
-          "tripCount": 4,
-          "stops": 40,
-          "lengthKm": 13.4,
-          "stats": {
-            "observations": 674,
-            "matched": 674,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.5459566958813933,
-            "roundaboutSegs": 50,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Mattersburg Brunnenplatz",
-          "variants": 2,
-          "tripCount": 19,
-          "stops": 35,
-          "lengthKm": 11.09,
-          "stats": {
-            "observations": 558,
-            "matched": 558,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.5336937113938018,
-            "roundaboutSegs": 22,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "1",
-      "op": "matt"
-    },
-    {
-      "line": "matt:2",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Mattersburg Brunnenplatz",
-          "variants": 3,
-          "tripCount": 19,
-          "stops": 33,
-          "lengthKm": 10.76,
-          "stats": {
-            "observations": 542,
-            "matched": 542,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.5625430219628264,
-            "roundaboutSegs": 20,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Mattersburg Brunnenplatz",
-          "variants": 3,
-          "tripCount": 3,
-          "stops": 35,
-          "lengthKm": 11.39,
-          "stats": {
-            "observations": 570,
-            "matched": 570,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6186802318529152,
-            "roundaboutSegs": 40,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "2",
-      "op": "matt"
-    },
-    {
-      "line": "nbus:1",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Amstetten Bahnhof",
-          "variants": 13,
-          "tripCount": 57,
-          "stops": 21,
-          "lengthKm": 6.82,
-          "stats": {
-            "observations": 344,
-            "matched": 344,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7129028287997413,
-            "roundaboutSegs": 101,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Ybbs/Donau Busbahnhof",
-          "variants": 11,
-          "tripCount": 5,
-          "stops": 7,
-          "lengthKm": 7.91,
-          "stats": {
-            "observations": 380,
-            "matched": 380,
-            "noCandidates": 0,
-            "viterbiBreaks": 1,
-            "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 348,
-            "meanError": 0.9107451283388164,
-            "roundaboutSegs": 26,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "1",
-      "op": "nbus"
-    },
-    {
-      "line": "nbus:2",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Amstetten Bahnhof",
-          "variants": 18,
-          "tripCount": 54,
-          "stops": 9,
-          "lengthKm": 4.2,
-          "stats": {
-            "observations": 189,
-            "matched": 189,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6155505787390007,
-            "roundaboutSegs": 59,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Ybbs/Donau Bahnhof",
-          "variants": 13,
-          "tripCount": 4,
-          "stops": 8,
-          "lengthKm": 8.8,
-          "stats": {
-            "observations": 441,
-            "matched": 441,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.47042674561670406,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "2",
-      "op": "nbus"
-    },
-    {
-      "line": "nbus:3",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Amstetten Bahnhof",
-          "variants": 6,
-          "tripCount": 58,
-          "stops": 17,
-          "lengthKm": 4.79,
-          "stats": {
-            "observations": 242,
-            "matched": 242,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.5554499545618813,
-            "roundaboutSegs": 55,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Ybbs/Donau Busbahnhof",
-          "variants": 3,
-          "tripCount": 62,
-          "stops": 6,
-          "lengthKm": 3.53,
-          "stats": {
-            "observations": 179,
-            "matched": 179,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6930409966820481,
-            "roundaboutSegs": 32,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "3",
-      "op": "nbus"
-    },
-    {
-      "line": "nbus:4",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Gottsdorf Feuerwehr",
-          "variants": 15,
-          "tripCount": 11,
-          "stops": 10,
-          "lengthKm": 6.31,
-          "stats": {
-            "observations": 318,
-            "matched": 318,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.5128380083340902,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Ybbs/Donau Busbahnhof",
-          "variants": 11,
-          "tripCount": 18,
-          "stops": 8,
-          "lengthKm": 5.89,
-          "stats": {
-            "observations": 297,
-            "matched": 297,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.4919553309646615,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "4",
-      "op": "nbus"
-    },
-    {
-      "line": "nbus:5",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wieselburg Bahnhof",
-          "variants": 10,
-          "tripCount": 11,
-          "stops": 10,
-          "lengthKm": 8.93,
-          "stats": {
-            "observations": 450,
-            "matched": 450,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.8497341850544398,
-            "roundaboutSegs": 77,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Ybbs/Donau Busbahnhof",
-          "variants": 3,
-          "tripCount": 17,
-          "stops": 10,
-          "lengthKm": 9.02,
-          "stats": {
-            "observations": 458,
-            "matched": 458,
-            "noCandidates": 0,
-            "viterbiBreaks": 1,
-            "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 1.4096162616942467,
-            "roundaboutSegs": 72,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "5",
-      "op": "nbus"
-    },
-    {
-      "line": "nbus:6",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Amstetten Bahnhof",
-          "variants": 4,
-          "tripCount": 28,
-          "stops": 16,
-          "lengthKm": 8.08,
-          "stats": {
-            "observations": 407,
-            "matched": 407,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.5564130044411887,
-            "roundaboutSegs": 90,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Ybbs/Donau Busbahnhof",
-          "variants": 2,
-          "tripCount": 9,
-          "stops": 8,
-          "lengthKm": 6.29,
-          "stats": {
-            "observations": 302,
-            "matched": 302,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.5966959917906685,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "6",
-      "op": "nbus"
-    },
-    {
-      "line": "nbus:7",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Amstetten Bahnhof",
-          "variants": 5,
-          "tripCount": 26,
-          "stops": 29,
-          "lengthKm": 17.95,
-          "stats": {
-            "observations": 902,
-            "matched": 902,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6981073720947274,
-            "roundaboutSegs": 103,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Ybbs/Donau Bahnhof",
-          "variants": 2,
-          "tripCount": 9,
-          "stops": 4,
-          "lengthKm": 5.21,
-          "stats": {
-            "observations": 262,
-            "matched": 262,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6090039795335644,
-            "roundaboutSegs": 12,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "7",
-      "op": "nbus"
-    },
-    {
-      "line": "pb:1",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Korneuburg Bahnhof",
-          "variants": 11,
-          "tripCount": 16,
-          "stops": 16,
-          "lengthKm": 7.31,
-          "stats": {
-            "observations": 367,
-            "matched": 367,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6804129103297581,
-            "roundaboutSegs": 8,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Korneuburg Bahnhof",
-          "variants": 13,
-          "tripCount": 14,
-          "stops": 18,
-          "lengthKm": 7.51,
-          "stats": {
-            "observations": 377,
-            "matched": 377,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7752988197994866,
-            "roundaboutSegs": 24,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "1",
-      "op": "pb"
-    },
-    {
-      "line": "pb:2",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Korneuburg Bahnhof",
-          "variants": 9,
-          "tripCount": 4,
-          "stops": 15,
-          "lengthKm": 9.02,
-          "stats": {
-            "observations": 451,
-            "matched": 451,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.8785988887474231,
-            "roundaboutSegs": 54,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Hollabrunn Elsa-Brandström-Str.",
-          "variants": 2,
-          "tripCount": 4,
-          "stops": 10,
-          "lengthKm": 5.41,
-          "stats": {
-            "observations": 272,
-            "matched": 272,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6953177985582247,
-            "roundaboutSegs": 7,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "2",
-      "op": "pb"
-    },
-    {
-      "line": "pb:535",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Mistelbach Bahnhof",
-          "variants": 1,
-          "tripCount": 50,
-          "stops": 29,
-          "lengthKm": 37.39,
-          "stats": {
-            "observations": 1855,
-            "matched": 1855,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.5298364068956295,
-            "roundaboutSegs": 61,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Gänserndorf Bahnhof",
-          "variants": 1,
-          "tripCount": 51,
-          "stops": 30,
-          "lengthKm": 38.27,
-          "stats": {
-            "observations": 1900,
-            "matched": 1900,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.5242575297778458,
-            "roundaboutSegs": 73,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "535",
-      "op": "pb"
-    },
-    {
-      "line": "pb:901",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Mattersburg Martinsplatz",
-          "variants": 5,
-          "tripCount": 11,
-          "stops": 39,
-          "lengthKm": 33.29,
-          "stats": {
-            "observations": 1617,
-            "matched": 1617,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.4691606492958774,
-            "roundaboutSegs": 85,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Eisenstadt Domplatz",
-          "variants": 7,
-          "tripCount": 13,
-          "stops": 39,
-          "lengthKm": 32.75,
-          "stats": {
-            "observations": 1594,
-            "matched": 1594,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.4625104686272024,
-            "roundaboutSegs": 66,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "901",
-      "op": "pb"
     },
     {
       "line": "R56",
@@ -38773,838 +40229,6 @@
       "op": "pb"
     },
     {
-      "line": "wl:1A",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Schottentor",
-          "variants": 4,
-          "tripCount": 210,
-          "stops": 6,
-          "lengthKm": 1.36,
-          "stats": {
-            "observations": 69,
-            "matched": 69,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.9251931605353098,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Stephansplatz",
-          "variants": 4,
-          "tripCount": 210,
-          "stops": 8,
-          "lengthKm": 1.96,
-          "stats": {
-            "observations": 99,
-            "matched": 99,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.976409919368238,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "1A",
-      "op": "wl"
-    },
-    {
-      "line": "wl:2A",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Schwarzenbergplatz",
-          "variants": 6,
-          "tripCount": 153,
-          "stops": 10,
-          "lengthKm": 3.16,
-          "stats": {
-            "observations": 138,
-            "matched": 138,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.8408849441094477,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Schwedenplatz",
-          "variants": 6,
-          "tripCount": 155,
-          "stops": 10,
-          "lengthKm": 2.23,
-          "stats": {
-            "observations": 114,
-            "matched": 114,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6816783635952788,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "2A",
-      "op": "wl"
-    },
-    {
-      "line": "wl:5A",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Griegstraße",
-          "variants": 6,
-          "tripCount": 252,
-          "stops": 22,
-          "lengthKm": 7.11,
-          "stats": {
-            "observations": 357,
-            "matched": 357,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.1521612496184448,
-            "roundaboutSegs": 21,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Nestroyplatz",
-          "variants": 8,
-          "tripCount": 240,
-          "stops": 25,
-          "lengthKm": 7.67,
-          "stats": {
-            "observations": 385,
-            "matched": 385,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.2775439999161609,
-            "roundaboutSegs": 48,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "5A",
-      "op": "wl"
-    },
-    {
-      "line": "wl:5B",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Praterstern",
-          "variants": 8,
-          "tripCount": 528,
-          "stops": 21,
-          "lengthKm": 7.34,
-          "stats": {
-            "observations": 368,
-            "matched": 368,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.3619140954122941,
-            "roundaboutSegs": 27,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Heiligenstadt",
-          "variants": 21,
-          "tripCount": 190,
-          "stops": 17,
-          "lengthKm": 6.35,
-          "stats": {
-            "observations": 318,
-            "matched": 318,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.446071072044824,
-            "roundaboutSegs": 24,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "5B",
-      "op": "wl"
-    },
-    {
-      "line": "wnsw:1A",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Zillingdorf Bergwerk Hauptplatz",
-          "variants": 3,
-          "tripCount": 28,
-          "stops": 37,
-          "lengthKm": 23.36,
-          "stats": {
-            "observations": 1170,
-            "matched": 1170,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6833663028098742,
-            "roundaboutSegs": 10,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wiener Neustadt Hans-Barwitzius-Volksschule",
-          "variants": 3,
-          "tripCount": 26,
-          "stops": 31,
-          "lengthKm": 20.26,
-          "stats": {
-            "observations": 959,
-            "matched": 959,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6839394370899043,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "1A",
-      "op": "wnsw"
-    },
-    {
-      "line": "wnsw:2A",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wöllersdorf Staudiglgasse",
-          "variants": 3,
-          "tripCount": 25,
-          "stops": 33,
-          "lengthKm": 18.92,
-          "stats": {
-            "observations": 934,
-            "matched": 934,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6021351094415617,
-            "roundaboutSegs": 50,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wiener Neustadt Hans-Barwitzius-Volksschule",
-          "variants": 4,
-          "tripCount": 27,
-          "stops": 30,
-          "lengthKm": 19.22,
-          "stats": {
-            "observations": 949,
-            "matched": 949,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6020416409478819,
-            "roundaboutSegs": 46,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "2A",
-      "op": "wnsw"
-    },
-    {
-      "line": "wnsw:3",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wiener Neustadt Matzendorfer Gasse",
-          "variants": 3,
-          "tripCount": 55,
-          "stops": 22,
-          "lengthKm": 8.7,
-          "stats": {
-            "observations": 436,
-            "matched": 436,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7609871624318094,
-            "roundaboutSegs": 23,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wiener Neustadt Olof-Palme-Platz",
-          "variants": 5,
-          "tripCount": 52,
-          "stops": 24,
-          "lengthKm": 9.36,
-          "stats": {
-            "observations": 470,
-            "matched": 470,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.8024310649118059,
-            "roundaboutSegs": 16,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "3",
-      "op": "wnsw"
-    },
-    {
-      "line": "wnsw:4",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wiener Neustadt Aqua Nova",
-          "variants": 6,
-          "tripCount": 53,
-          "stops": 35,
-          "lengthKm": 12.78,
-          "stats": {
-            "observations": 641,
-            "matched": 641,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7147444233420823,
-            "roundaboutSegs": 60,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wiener Neustadt Fischapark",
-          "variants": 6,
-          "tripCount": 52,
-          "stops": 27,
-          "lengthKm": 10.81,
-          "stats": {
-            "observations": 542,
-            "matched": 542,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6938586983908192,
-            "roundaboutSegs": 58,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "4",
-      "op": "wnsw"
-    },
-    {
-      "line": "wnsw:5A",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wiesen-Sigleß Bahnhof",
-          "variants": 6,
-          "tripCount": 22,
-          "stops": 37,
-          "lengthKm": 27.47,
-          "stats": {
-            "observations": 1303,
-            "matched": 1303,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6571212744271613,
-            "roundaboutSegs": 45,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wiener Neustadt Kleegasse",
-          "variants": 5,
-          "tripCount": 25,
-          "stops": 30,
-          "lengthKm": 22.2,
-          "stats": {
-            "observations": 1114,
-            "matched": 1114,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6572548962103546,
-            "roundaboutSegs": 27,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "5A",
-      "op": "wnsw"
-    },
-    {
-      "line": "wnsw:5B",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wiesen-Sigleß Bahnhof",
-          "variants": 8,
-          "tripCount": 23,
-          "stops": 32,
-          "lengthKm": 21.92,
-          "stats": {
-            "observations": 1099,
-            "matched": 1099,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6620048214406127,
-            "roundaboutSegs": 53,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wiener Neustadt Kleegasse",
-          "variants": 10,
-          "tripCount": 23,
-          "stops": 35,
-          "lengthKm": 27.81,
-          "stats": {
-            "observations": 1320,
-            "matched": 1320,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6471011451998551,
-            "roundaboutSegs": 27,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "5B",
-      "op": "wnsw"
-    },
-    {
-      "line": "wnsw:6",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wiener Neustadt Aqua Nova",
-          "variants": 4,
-          "tripCount": 50,
-          "stops": 20,
-          "lengthKm": 8.17,
-          "stats": {
-            "observations": 410,
-            "matched": 410,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7348767297277424,
-            "roundaboutSegs": 44,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wiener Neustadt Grünangergasse",
-          "variants": 6,
-          "tripCount": 55,
-          "stops": 19,
-          "lengthKm": 7.42,
-          "stats": {
-            "observations": 374,
-            "matched": 374,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7799930019942493,
-            "roundaboutSegs": 42,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "6",
-      "op": "wnsw"
-    },
-    {
-      "line": "wnsw:7",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wiener Neustadt J.-Gutenberg-Str.",
-          "variants": 5,
-          "tripCount": 51,
-          "stops": 18,
-          "lengthKm": 7.54,
-          "stats": {
-            "observations": 377,
-            "matched": 377,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.8311120587001312,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wiener Neustadt Grünangergasse",
-          "variants": 4,
-          "tripCount": 57,
-          "stops": 6,
-          "lengthKm": 2.87,
-          "stats": {
-            "observations": 145,
-            "matched": 145,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.1312213636068673,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "7",
-      "op": "wnsw"
-    },
-    {
-      "line": "wnsw:8",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Lichtenwörth Bäckerstraße",
-          "variants": 6,
-          "tripCount": 55,
-          "stops": 24,
-          "lengthKm": 13.7,
-          "stats": {
-            "observations": 673,
-            "matched": 673,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7626861383876431,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wiener Neustadt Grünangergasse",
-          "variants": 4,
-          "tripCount": 62,
-          "stops": 16,
-          "lengthKm": 10.08,
-          "stats": {
-            "observations": 492,
-            "matched": 492,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.9084289890049553,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "8",
-      "op": "wnsw"
-    },
-    {
-      "line": "wnsw:9",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Klingfurth Süd",
-          "variants": 12,
-          "tripCount": 9,
-          "stops": 46,
-          "lengthKm": 37.14,
-          "stats": {
-            "observations": 1844,
-            "matched": 1844,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.679336034688479,
-            "roundaboutSegs": 114,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Winzendorf Schulen",
-          "variants": 12,
-          "tripCount": 8,
-          "stops": 47,
-          "lengthKm": 36.08,
-          "stats": {
-            "observations": 1772,
-            "matched": 1772,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.681728736382864,
-            "roundaboutSegs": 76,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "9",
-      "op": "wnsw"
-    },
-    {
-      "line": "wnsw:10",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Lanzenkirchen Schulgasse",
-          "variants": 14,
-          "tripCount": 24,
-          "stops": 29,
-          "lengthKm": 14.28,
-          "stats": {
-            "observations": 699,
-            "matched": 699,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7226936743929916,
-            "roundaboutSegs": 24,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wiener Neustadt Hauptbahnhof",
-          "variants": 8,
-          "tripCount": 28,
-          "stops": 28,
-          "lengthKm": 14.54,
-          "stats": {
-            "observations": 715,
-            "matched": 715,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7054597192583559,
-            "roundaboutSegs": 13,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "10",
-      "op": "wnsw"
-    },
-    {
-      "line": "wnsw:11",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wiener Neustadt Metro-Markt",
-          "variants": 20,
-          "tripCount": 1,
-          "stops": 14,
-          "lengthKm": 7.71,
-          "stats": {
-            "observations": 373,
-            "matched": 373,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7867344768793619,
-            "roundaboutSegs": 3,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wiener Neustadt Militärakademie",
-          "variants": 12,
-          "tripCount": 6,
-          "stops": 10,
-          "lengthKm": 10.89,
-          "stats": {
-            "observations": 547,
-            "matched": 547,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.771819296914902,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "11",
-      "op": "wnsw"
-    },
-    {
       "line": "WS",
       "mode": "bus",
       "color": "#0059a9",
@@ -39656,370 +40280,6 @@
       "op": "novog"
     },
     {
-      "line": "ybbs:1",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Säusenstein Parkstraße",
-          "variants": 4,
-          "tripCount": 4,
-          "stops": 10,
-          "lengthKm": 8.83,
-          "stats": {
-            "observations": 445,
-            "matched": 445,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.651093516777752,
-            "roundaboutSegs": 60,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Ybbs/Donau Busbahnhof",
-          "variants": 2,
-          "tripCount": 5,
-          "stops": 6,
-          "lengthKm": 6.7,
-          "stats": {
-            "observations": 336,
-            "matched": 336,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.5629236145820439,
-            "roundaboutSegs": 26,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "1",
-      "op": "ybbs"
-    },
-    {
-      "line": "ybbs:2",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Neumarkt/Ybbs Kirchenplatz",
-          "variants": 3,
-          "tripCount": 4,
-          "stops": 9,
-          "lengthKm": 5.75,
-          "stats": {
-            "observations": 287,
-            "matched": 287,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.5087533364457343,
-            "roundaboutSegs": 20,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Ybbs/Donau Bahnhof",
-          "variants": 3,
-          "tripCount": 4,
-          "stops": 7,
-          "lengthKm": 8.8,
-          "stats": {
-            "observations": 443,
-            "matched": 443,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.46231352218099936,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "2",
-      "op": "ybbs"
-    },
-    {
-      "line": "ybbs:3",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Ybbs/Donau Bahnhof",
-          "variants": 1,
-          "tripCount": 64,
-          "stops": 6,
-          "lengthKm": 3.54,
-          "stats": {
-            "observations": 180,
-            "matched": 180,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7121710471509766,
-            "roundaboutSegs": 54,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Ybbs/Donau Busbahnhof",
-          "variants": 1,
-          "tripCount": 70,
-          "stops": 6,
-          "lengthKm": 3.53,
-          "stats": {
-            "observations": 179,
-            "matched": 179,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6930409966820481,
-            "roundaboutSegs": 32,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "3",
-      "op": "ybbs"
-    },
-    {
-      "line": "ybbs:4",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Gottsdorf Feuerwehr",
-          "variants": 5,
-          "tripCount": 3,
-          "stops": 13,
-          "lengthKm": 7.48,
-          "stats": {
-            "observations": 377,
-            "matched": 377,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.5205281039654611,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Ybbs/Donau Busbahnhof",
-          "variants": 2,
-          "tripCount": 17,
-          "stops": 9,
-          "lengthKm": 6.11,
-          "stats": {
-            "observations": 308,
-            "matched": 308,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.4986526594803658,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "4",
-      "op": "ybbs"
-    },
-    {
-      "line": "ybbs:5",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wieselburg Bahnhof",
-          "variants": 4,
-          "tripCount": 4,
-          "stops": 9,
-          "lengthKm": 9.29,
-          "stats": {
-            "observations": 467,
-            "matched": 467,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7302502553435428,
-            "roundaboutSegs": 62,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Ybbs/Donau Busbahnhof",
-          "variants": 3,
-          "tripCount": 6,
-          "stops": 10,
-          "lengthKm": 9.13,
-          "stats": {
-            "observations": 465,
-            "matched": 465,
-            "noCandidates": 0,
-            "viterbiBreaks": 1,
-            "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 1.4125489392234511,
-            "roundaboutSegs": 72,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "5",
-      "op": "ybbs"
-    },
-    {
-      "line": "ybbs:6",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "St. Martin am Ybbsfelde Hauptstraße",
-          "variants": 2,
-          "tripCount": 4,
-          "stops": 9,
-          "lengthKm": 6.2,
-          "stats": {
-            "observations": 297,
-            "matched": 297,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.5885028771969444,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Ybbs/Donau Busbahnhof",
-          "variants": 2,
-          "tripCount": 9,
-          "stops": 8,
-          "lengthKm": 6.14,
-          "stats": {
-            "observations": 294,
-            "matched": 294,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.5920990917127139,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "6",
-      "op": "ybbs"
-    },
-    {
-      "line": "ybbs:7",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Säusenstein Parkstraße",
-          "variants": 1,
-          "tripCount": 15,
-          "stops": 7,
-          "lengthKm": 5.25,
-          "stats": {
-            "observations": 265,
-            "matched": 265,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6026296458184217,
-            "roundaboutSegs": 10,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Ybbs/Donau Bahnhof",
-          "variants": 1,
-          "tripCount": 15,
-          "stops": 3,
-          "lengthKm": 5.21,
-          "stats": {
-            "observations": 262,
-            "matched": 262,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6090041962019574,
-            "roundaboutSegs": 12,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "7",
-      "op": "ybbs"
-    },
-    {
       "line": "ZF",
       "mode": "bus",
       "color": "#0059a9",
@@ -40050,48 +40310,100 @@
       "op": "wl"
     },
     {
-      "line": "zuk:2",
-      "mode": "bus",
-      "color": "#0059a9",
+      "line": "wl:1",
+      "mode": "tram",
+      "color": "#d6212b",
       "dirs": [
         {
           "dir": "0",
-          "headsign": "Harland Amtshaus",
-          "variants": 4,
-          "tripCount": 68,
-          "stops": 24,
-          "lengthKm": 11.4,
+          "headsign": "Wien Stefan-Fadinger-Platz",
+          "variants": 112,
+          "tripCount": 108,
+          "stops": 29,
+          "lengthKm": 10.61,
           "stats": {
-            "observations": 572,
-            "matched": 572,
+            "observations": 517,
+            "matched": 517,
             "noCandidates": 0,
             "viterbiBreaks": 0,
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 0.8329029972596899,
-            "roundaboutSegs": 77,
+            "meanError": 0.6589166545185999,
+            "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         },
         {
           "dir": "1",
-          "headsign": "St. Pölten Gartenstadt Kremserberg",
-          "variants": 6,
-          "tripCount": 66,
-          "stops": 25,
-          "lengthKm": 11.15,
+          "headsign": "Wien Prater, Hauptallee",
+          "variants": 97,
+          "tripCount": 110,
+          "stops": 30,
+          "lengthKm": 11.07,
           "stats": {
-            "observations": 560,
-            "matched": 560,
+            "observations": 529,
+            "matched": 529,
             "noCandidates": 0,
             "viterbiBreaks": 0,
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 0.8514354335354523,
-            "roundaboutSegs": 70,
+            "meanError": 1.1691496185383825,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "1",
+      "op": "wl"
+    },
+    {
+      "line": "wl:2",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wien Friedrich-Engels-Platz",
+          "variants": 116,
+          "tripCount": 509,
+          "stops": 32,
+          "lengthKm": 12.86,
+          "stats": {
+            "observations": 609,
+            "matched": 609,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.3503351223732917,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wien Dornbach",
+          "variants": 119,
+          "tripCount": 514,
+          "stops": 35,
+          "lengthKm": 13,
+          "stats": {
+            "observations": 636,
+            "matched": 636,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.3546106799710355,
+            "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
@@ -40099,207 +40411,155 @@
       ],
       "rank": 1,
       "label": "2",
-      "op": "zuk"
+      "op": "wl"
     },
     {
-      "line": "zuk:3",
-      "mode": "bus",
-      "color": "#0059a9",
+      "line": "wl:5",
+      "mode": "tram",
+      "color": "#d6212b",
       "dirs": [
         {
           "dir": "0",
-          "headsign": "St. Pölten Stifterstraße",
-          "variants": 4,
-          "tripCount": 81,
+          "headsign": "Wien Westbahnhof",
+          "variants": 57,
+          "tripCount": 345,
+          "stops": 23,
+          "lengthKm": 7.74,
+          "stats": {
+            "observations": 388,
+            "matched": 388,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.19946485681047965,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wien Praterstern",
+          "variants": 39,
+          "tripCount": 493,
           "stops": 25,
-          "lengthKm": 10.44,
+          "lengthKm": 8.11,
           "stats": {
-            "observations": 491,
-            "matched": 491,
+            "observations": 405,
+            "matched": 405,
             "noCandidates": 0,
             "viterbiBreaks": 0,
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.1325332351884223,
-            "roundaboutSegs": 50,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Ratzersdorf Ginstergasse",
-          "variants": 2,
-          "tripCount": 82,
-          "stops": 21,
-          "lengthKm": 8.94,
-          "stats": {
-            "observations": 434,
-            "matched": 434,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.9653095906458884,
-            "roundaboutSegs": 33,
+            "meanError": 0.4113921065836878,
+            "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
       "rank": 1,
-      "label": "3",
-      "op": "zuk"
+      "label": "5",
+      "op": "wl"
     },
     {
-      "line": "zuk:4",
-      "mode": "bus",
-      "color": "#0059a9",
+      "line": "wl:6",
+      "mode": "tram",
+      "color": "#d6212b",
       "dirs": [
         {
           "dir": "0",
-          "headsign": "Unterradlberg Gewerbepark",
-          "variants": 14,
-          "tripCount": 55,
-          "stops": 33,
-          "lengthKm": 15.16,
+          "headsign": "Wien Geiereckstraße",
+          "variants": 36,
+          "tripCount": 852,
+          "stops": 18,
+          "lengthKm": 7.31,
           "stats": {
-            "observations": 761,
-            "matched": 761,
+            "observations": 349,
+            "matched": 349,
             "noCandidates": 0,
             "viterbiBreaks": 0,
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 0.670127965951699,
-            "roundaboutSegs": 61,
+            "meanError": 1.6181895991706814,
+            "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         },
         {
           "dir": "1",
-          "headsign": "St. Pölten Friedhof",
-          "variants": 8,
-          "tripCount": 66,
-          "stops": 27,
-          "lengthKm": 14.05,
-          "stats": {
-            "observations": 704,
-            "matched": 704,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7662499422163188,
-            "roundaboutSegs": 62,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "4",
-      "op": "zuk"
-    },
-    {
-      "line": "zuk:8",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Unterradlberg Gewerbepark",
-          "variants": 4,
-          "tripCount": 13,
-          "stops": 42,
-          "lengthKm": 17.34,
-          "stats": {
-            "observations": 870,
-            "matched": 870,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7867085938796748,
-            "roundaboutSegs": 46,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Harland Amtshaus",
-          "variants": 3,
-          "tripCount": 13,
-          "stops": 41,
-          "lengthKm": 17.44,
-          "stats": {
-            "observations": 876,
-            "matched": 876,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7918009460558479,
-            "roundaboutSegs": 73,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "8",
-      "op": "zuk"
-    },
-    {
-      "line": "zuk:9",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "St. Pölten Rudolf-Tornar-Str.",
-          "variants": 2,
-          "tripCount": 60,
+          "headsign": "Wien Burggasse-Stadthalle",
+          "variants": 36,
+          "tripCount": 830,
           "stops": 19,
-          "lengthKm": 8.04,
+          "lengthKm": 7.51,
           "stats": {
-            "observations": 404,
-            "matched": 404,
+            "observations": 362,
+            "matched": 362,
             "noCandidates": 0,
             "viterbiBreaks": 0,
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 0.9221133649644205,
-            "roundaboutSegs": 34,
+            "meanError": 1.5443726393289696,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "6",
+      "op": "wl"
+    },
+    {
+      "line": "wl:9",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wien Westbahnhof",
+          "variants": 28,
+          "tripCount": 493,
+          "stops": 19,
+          "lengthKm": 6.36,
+          "stats": {
+            "observations": 304,
+            "matched": 304,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.26811918869098667,
+            "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         },
         {
           "dir": "1",
-          "headsign": "Hafing Ort",
-          "variants": 2,
-          "tripCount": 62,
-          "stops": 20,
-          "lengthKm": 8.48,
+          "headsign": "Wien Gersthof, Wallrißstraße",
+          "variants": 32,
+          "tripCount": 491,
+          "stops": 18,
+          "lengthKm": 6.06,
           "stats": {
-            "observations": 426,
-            "matched": 426,
+            "observations": 276,
+            "matched": 276,
             "noCandidates": 0,
             "viterbiBreaks": 0,
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.0200614291355123,
-            "roundaboutSegs": 40,
+            "meanError": 0.28514775570812617,
+            "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
@@ -40307,7 +40567,163 @@
       ],
       "rank": 1,
       "label": "9",
-      "op": "zuk"
+      "op": "wl"
+    },
+    {
+      "line": "wl:10",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wien Unter St. Veit, Hummelgasse",
+          "variants": 17,
+          "tripCount": 419,
+          "stops": 20,
+          "lengthKm": 7.9,
+          "stats": {
+            "observations": 358,
+            "matched": 358,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.8703302576439863,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wien Dornbach",
+          "variants": 18,
+          "tripCount": 414,
+          "stops": 21,
+          "lengthKm": 7.88,
+          "stats": {
+            "observations": 358,
+            "matched": 358,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.3414058003517534,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "10",
+      "op": "wl"
+    },
+    {
+      "line": "wl:11",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wien Kaiserebersdorf, Zinnergasse",
+          "variants": 64,
+          "tripCount": 540,
+          "stops": 32,
+          "lengthKm": 13.32,
+          "stats": {
+            "observations": 576,
+            "matched": 576,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.1515645502296674,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wien Otto-Probst-Platz",
+          "variants": 63,
+          "tripCount": 526,
+          "stops": 34,
+          "lengthKm": 13.21,
+          "stats": {
+            "observations": 597,
+            "matched": 597,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7247903298786418,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "11",
+      "op": "wl"
+    },
+    {
+      "line": "wl:12",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wien Josefstädter Straße",
+          "variants": 27,
+          "tripCount": 829,
+          "stops": 25,
+          "lengthKm": 8.67,
+          "stats": {
+            "observations": 421,
+            "matched": 421,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.8070821036706747,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wien Hillerstraße",
+          "variants": 27,
+          "tripCount": 828,
+          "stops": 25,
+          "lengthKm": 8.84,
+          "stats": {
+            "observations": 428,
+            "matched": 428,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.5873127908903107,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
+      "label": "12",
+      "op": "wl"
     },
     {
       "line": "18",
@@ -41330,473 +41746,6 @@
       "op": "wlb"
     },
     {
-      "line": "O",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Bruno-Marek-Allee",
-          "variants": 21,
-          "tripCount": 672,
-          "stops": 24,
-          "lengthKm": 9.11,
-          "stats": {
-            "observations": 457,
-            "matched": 457,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.8420414427756732,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Raxstraße",
-          "variants": 27,
-          "tripCount": 654,
-          "stops": 25,
-          "lengthKm": 9.24,
-          "stats": {
-            "observations": 460,
-            "matched": 460,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.34380397176915034,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "op": "wl"
-    },
-    {
-      "line": "wl:1",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Stefan-Fadinger-Platz",
-          "variants": 112,
-          "tripCount": 108,
-          "stops": 29,
-          "lengthKm": 10.61,
-          "stats": {
-            "observations": 517,
-            "matched": 517,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.6589166545185999,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Prater, Hauptallee",
-          "variants": 97,
-          "tripCount": 110,
-          "stops": 30,
-          "lengthKm": 11.07,
-          "stats": {
-            "observations": 529,
-            "matched": 529,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.1691496185383825,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "1",
-      "op": "wl"
-    },
-    {
-      "line": "wl:2",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Friedrich-Engels-Platz",
-          "variants": 116,
-          "tripCount": 509,
-          "stops": 32,
-          "lengthKm": 12.86,
-          "stats": {
-            "observations": 609,
-            "matched": 609,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.3503351223732917,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Dornbach",
-          "variants": 119,
-          "tripCount": 514,
-          "stops": 35,
-          "lengthKm": 13,
-          "stats": {
-            "observations": 636,
-            "matched": 636,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.3546106799710355,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "2",
-      "op": "wl"
-    },
-    {
-      "line": "wl:5",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Westbahnhof",
-          "variants": 57,
-          "tripCount": 345,
-          "stops": 23,
-          "lengthKm": 7.74,
-          "stats": {
-            "observations": 388,
-            "matched": 388,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.19946485681047965,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Praterstern",
-          "variants": 39,
-          "tripCount": 493,
-          "stops": 25,
-          "lengthKm": 8.11,
-          "stats": {
-            "observations": 405,
-            "matched": 405,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.4113921065836878,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "5",
-      "op": "wl"
-    },
-    {
-      "line": "wl:6",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Geiereckstraße",
-          "variants": 36,
-          "tripCount": 852,
-          "stops": 18,
-          "lengthKm": 7.31,
-          "stats": {
-            "observations": 349,
-            "matched": 349,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6181895991706814,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Burggasse-Stadthalle",
-          "variants": 36,
-          "tripCount": 830,
-          "stops": 19,
-          "lengthKm": 7.51,
-          "stats": {
-            "observations": 362,
-            "matched": 362,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.5443726393289696,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "6",
-      "op": "wl"
-    },
-    {
-      "line": "wl:9",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Westbahnhof",
-          "variants": 28,
-          "tripCount": 493,
-          "stops": 19,
-          "lengthKm": 6.36,
-          "stats": {
-            "observations": 304,
-            "matched": 304,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.26811918869098667,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Gersthof, Wallrißstraße",
-          "variants": 32,
-          "tripCount": 491,
-          "stops": 18,
-          "lengthKm": 6.06,
-          "stats": {
-            "observations": 276,
-            "matched": 276,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.28514775570812617,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "9",
-      "op": "wl"
-    },
-    {
-      "line": "wl:10",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Unter St. Veit, Hummelgasse",
-          "variants": 17,
-          "tripCount": 419,
-          "stops": 20,
-          "lengthKm": 7.9,
-          "stats": {
-            "observations": 358,
-            "matched": 358,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.8703302576439863,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Dornbach",
-          "variants": 18,
-          "tripCount": 414,
-          "stops": 21,
-          "lengthKm": 7.88,
-          "stats": {
-            "observations": 358,
-            "matched": 358,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.3414058003517534,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "10",
-      "op": "wl"
-    },
-    {
-      "line": "wl:11",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Kaiserebersdorf, Zinnergasse",
-          "variants": 64,
-          "tripCount": 540,
-          "stops": 32,
-          "lengthKm": 13.32,
-          "stats": {
-            "observations": 576,
-            "matched": 576,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.1515645502296674,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Otto-Probst-Platz",
-          "variants": 63,
-          "tripCount": 526,
-          "stops": 34,
-          "lengthKm": 13.21,
-          "stats": {
-            "observations": 597,
-            "matched": 597,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.7247903298786418,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "11",
-      "op": "wl"
-    },
-    {
-      "line": "wl:12",
-      "mode": "tram",
-      "color": "#d6212b",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wien Josefstädter Straße",
-          "variants": 27,
-          "tripCount": 829,
-          "stops": 25,
-          "lengthKm": 8.67,
-          "stats": {
-            "observations": 421,
-            "matched": 421,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.8070821036706747,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Wien Hillerstraße",
-          "variants": 27,
-          "tripCount": 828,
-          "stops": 25,
-          "lengthKm": 8.84,
-          "stats": {
-            "observations": 428,
-            "matched": 428,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.5873127908903107,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 1,
-      "label": "12",
-      "op": "wl"
-    },
-    {
       "line": "wl:D",
       "mode": "tram",
       "color": "#d6212b",
@@ -41846,6 +41795,57 @@
       ],
       "rank": 1,
       "label": "D",
+      "op": "wl"
+    },
+    {
+      "line": "O",
+      "mode": "tram",
+      "color": "#d6212b",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wien Bruno-Marek-Allee",
+          "variants": 21,
+          "tripCount": 672,
+          "stops": 24,
+          "lengthKm": 9.11,
+          "stats": {
+            "observations": 457,
+            "matched": 457,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.8420414427756732,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Wien Raxstraße",
+          "variants": 27,
+          "tripCount": 654,
+          "stops": 25,
+          "lengthKm": 9.24,
+          "stats": {
+            "observations": 460,
+            "matched": 460,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.34380397176915034,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1,
       "op": "wl"
     },
     {

@@ -66,6 +66,15 @@ Build quirks worth knowing:
   those are dropped (ÖBB ships one for the R8 across the Slovak border).
 - **Rail-replacement services are dropped**, by long name and by the `SEV`
   prefix.
+- **Lines sort on the printed number, not the key.** Nineteen numbers belong
+  to more than one operator, so Wiener Linien's 1 is keyed `wl:1` and prints
+  "1"; until 11.09.2026 the rows sorted on the key and the Ring read
+  "71, 1, 2". Every list — number rows, badge grids, the panel — now compares
+  the label and uses the key only to break ties.
+- **"Wien " is dropped from the capital's stop names.** The VOR writes every
+  stop as "<town> <stop>" (Wien Oper, Baden Josefsplatz, Wiener Neustadt
+  Hauptbahnhof); on Vienna's own map the 4 528 "Wien …" poles print without
+  the town, the other towns keep theirs, and Wien Mitte stays whole.
 
 ## Timeline — the map's versions
 
