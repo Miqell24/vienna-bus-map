@@ -187,7 +187,7 @@ async function init() {
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: false }), 'top-right');
   map.addControl(new maplibregl.GeolocateControl({ positionOptions: { enableHighAccuracy: true }, trackUserLocation: true, showUserHeading: true, fitBoundsOptions: { maxZoom: 15.5 } }), 'top-right');
   map.addControl(new maplibregl.ScaleControl({ maxWidth: 120 }), 'bottom-left');
-  map.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: 'Timetables: VOR (Mobilitätsverbünde Österreich) · ÖBB (CC BY 4.0)' }));
+  map.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: 'Timetables: VOR (Mobilitätsverbünde Österreich) · ÖBB (CC BY 4.0) · IDS BK (DPB, ARRIVA)' }));
 
   const versionIndex = await versionsP;
   const VERSIONS = versionIndex && Array.isArray(versionIndex.versions) && versionIndex.versions.length ? versionIndex.versions : null;
@@ -247,7 +247,8 @@ async function init() {
   // that runs the line — the Berlin panel — with the three Viennese ones first
   // and the rest by size. `ops` comes from the feed's own agency names.
   const OP_TITLE = new Map(Object.entries(meta.ops || {}));
-  const OP_FIRST = ['wl', 'wlb', 'oebb'];
+  // the two capitals' city operators first (Bratislava's DPB since 11.09.2026)
+  const OP_FIRST = ['wl', 'dpb', 'wlb', 'oebb'];
   const CATS = [['bus', 'Buses'], ['tram', 'Trams'], ['metro', 'Trains']];
   const catOf = (l) => (l.mode === 'tram' && (/^U[1-6]$/.test(l.line) || isTrain(l)) ? 'metro' : l.mode);
   const chipHtml = (l) => {
@@ -659,7 +660,7 @@ async function init() {
       minzoom: z0, maxzoom: z1,
       filter: ['all', bandC(b), ['has', 'line']],
       layout: {
-        'text-field': ['get', 'line'],
+        'text-field': ['coalesce', ['get', 'lbl'], ['get', 'line']],
         'text-font': [NARROW_BOLD],
         // × sc: crowded complexes arrive pre-shrunk from the pipeline — the
         // per-feature constant keeps layout and render in agreement (the same
@@ -1246,7 +1247,7 @@ async function init() {
       const fs = Math.max(16, Math.round(out.width / 130));
       ctx.font = `${fs}px sans-serif`;
       ctx.textBaseline = 'bottom';
-      const txt = '© OpenStreetMap contributors · OpenFreeMap · Timetables: VOR (Mobilitätsverbünde Österreich) · ÖBB (CC BY 4.0)';
+      const txt = '© OpenStreetMap contributors · OpenFreeMap · Timetables: VOR (Mobilitätsverbünde Österreich) · ÖBB (CC BY 4.0) · IDS BK (DPB, ARRIVA)';
       const tw = ctx.measureText(txt).width;
       ctx.fillStyle = 'rgba(255,255,255,0.82)';
       ctx.fillRect(out.width - tw - fs, out.height - fs * 1.7, tw + fs, fs * 1.7);
@@ -1490,7 +1491,7 @@ async function init() {
             const fs = Math.max(16, Math.round(Wf / 500));
             cx.font = `${fs}px sans-serif`;
             cx.textBaseline = 'bottom';
-            const txt = '© OpenStreetMap contributors · OpenFreeMap · Timetables: VOR (Mobilitätsverbünde Österreich) · ÖBB (CC BY 4.0)';
+            const txt = '© OpenStreetMap contributors · OpenFreeMap · Timetables: VOR (Mobilitätsverbünde Österreich) · ÖBB (CC BY 4.0) · IDS BK (DPB, ARRIVA)';
             const tw = Math.min(cx.measureText(txt).width, wpx - fs);
             cx.fillStyle = 'rgba(255,255,255,0.82)';
             cx.fillRect(wpx - tw - fs, hpx - fs * 1.7, tw + fs, fs * 1.7);
@@ -1930,7 +1931,7 @@ async function init() {
           west = Math.min(west, c[0]); east = Math.max(east, c[0]);
           south = Math.min(south, c[1]); north = Math.max(north, c[1]);
         }
-        feats.push({ type: 'Feature', properties: { kind: 'leg', color: leg.color, line: leg.line }, geometry: { type: 'LineString', coordinates: line } });
+        feats.push({ type: 'Feature', properties: { kind: 'leg', color: leg.color, line: disp(leg.line) }, geometry: { type: 'LineString', coordinates: line } });
         // intermediate stops of the ride (strictly between boarding and alighting)
         for (const [name, pr] of leg.rec.pos) {
           if (pr.at > leg.a.at + 1 && pr.at < leg.b.at - 1) {
@@ -1972,7 +1973,7 @@ async function init() {
       opts.forEach((o, i) => {
         const li = document.createElement('li');
         const parts = o.legs.map((l, li) => {
-          const all = li === 0 && o.alt1 ? [l.line, ...o.alt1] : [l.line];
+          const all = (li === 0 && o.alt1 ? [l.line, ...o.alt1] : [l.line]).map(disp);
           const label = all.slice(0, 5).join(' / ') + (all.length > 5 ? ' …' : '');
           const tip = all.length > 5 ? ` title="${esc2(all.join(' / '))}"` : '';
           return `<span class="jl" style="background:${esc2(l.color)}"${tip}>${esc2(label)}</span> ${esc2(l.from)} &rarr; ${esc2(l.to)}`;

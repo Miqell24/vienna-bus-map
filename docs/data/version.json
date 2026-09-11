@@ -1,8 +1,8 @@
 {
-  "id": "2026-09-08",
-  "label": "8 Sept 2026",
-  "generatedAt": "2026-09-11T07:10:06.099Z",
-  "note": "the whole VOR; tram 18 extended through the Prater to U2 Stadion (5.09.2026)",
+  "id": "2026-09-11",
+  "label": "11 Sept 2026",
+  "generatedAt": "2026-09-11T14:23:43.375Z",
+  "note": "Wien & Bratislava: the whole VOR plus the IDS BK — Bratislava's city network (DPB) and the region's buses (ARRIVA)",
   "feeds": [
     {
       "dir": "data/gtfs-vor",
@@ -32,7 +32,26 @@
       "end": "",
       "mtime": 1,
       "label": "Wiener Linien 2026-09-07"
+    },
+    {
+      "dir": "data/gtfs-dpb",
+      "tag": "DPB Bratislava",
+      "publisher": "Dopravný podnik Bratislava, a. s.",
+      "version": "20260910115826",
+      "start": "20260914",
+      "end": "20261231",
+      "label": "DPB Bratislava 10.09.2026"
+    },
+    {
+      "dir": "data/gtfs-idsbk",
+      "tag": "IDS BK regional buses",
+      "publisher": "",
+      "version": "2026-08-25",
+      "start": "",
+      "end": "",
+      "mtime": 1,
+      "label": "IDS BK regional buses 2026-08-25"
     }
   ],
-  "archivedAt": "2026-09-11T07:10:06.783Z"
+  "archivedAt": "2026-09-11T14:25:02.535Z"
 }

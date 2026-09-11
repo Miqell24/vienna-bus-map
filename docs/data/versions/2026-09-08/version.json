@@ -1,0 +1,38 @@
+{
+  "id": "2026-09-08",
+  "label": "8 Sept 2026",
+  "generatedAt": "2026-09-11T07:10:06.099Z",
+  "note": "the whole VOR; tram 18 extended through the Prater to U2 Stadion (5.09.2026)",
+  "feeds": [
+    {
+      "dir": "data/gtfs-vor",
+      "tag": "VOR",
+      "publisher": "Mobilitätsverbünde Österreich OG",
+      "version": "20260908",
+      "start": "20251214",
+      "end": "20261212",
+      "label": "VOR 08.09.2026"
+    },
+    {
+      "dir": "data/gtfs-oebb",
+      "tag": "ÖBB",
+      "publisher": "",
+      "version": "2025-12-12",
+      "start": "",
+      "end": "",
+      "mtime": 1,
+      "label": "ÖBB 2025-12-12"
+    },
+    {
+      "dir": "data/gtfs",
+      "tag": "Wiener Linien",
+      "publisher": "",
+      "version": "2026-09-07",
+      "start": "",
+      "end": "",
+      "mtime": 1,
+      "label": "Wiener Linien 2026-09-07"
+    }
+  ],
+  "archivedAt": "2026-09-11T14:03:29.714Z"
+}

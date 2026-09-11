@@ -15,6 +15,12 @@
 // ribbon, station discs, always-on names) via the U-prefixed line keys. The
 // tram slot also carries the Badner Bahn (line BB, Wiener Lokalbahnen), which
 // leaves the city on its own light_rail alignment towards Baden.
+//
+// Wien & Bratislava (11.09.2026): the IDS BK joins — Bratislava's city
+// network from Dopravný podnik Bratislava (buses, trolleybuses, trams) and the
+// Verbund's regional buses (ARRIVA), both open on idsbk.sk. Their keys carry
+// the operator code (dpb:1, arriva:205) and print bare, so Bratislava's tram 1
+// and Vienna's never merge.
 // Usage: node pipeline/build.mjs [--all | lines...] [--tram all|1,U3]
 // Results land in shared files with properties.color/mode, so the frontend styles
 // them data-driven.
@@ -143,7 +149,10 @@ const MODES = [{
   // the VOR region — Vienna, Lower Austria and Burgenland, 267 × 205 km — as
   // 7 × 7 tiles cut out of the Geofabrik austria extract (pbf-tiles.py);
   // merged at load, ways deduped by id
-  osmFiles: Array.from({ length: 49 }, (_, i) => `data/osm/tiles/t${i + 1}.json`),
+  // + four tiles over the Bratislava region cut from the slovakia extract
+  // (pbf-tiles.py --sk): the Austrian file ends at the border
+  osmFiles: [...Array.from({ length: 49 }, (_, i) => `data/osm/tiles/t${i + 1}.json`),
+    ...[1, 2, 3, 4].map((i) => `data/osm/tiles/sk${i}.json`)],
   graphMode: 'road', color: '#0059a9', colorDark: '#00294f',
   all: busAll, lines: busList.length ? busList : (busAll ? [] : ['13A']),
   feeds: [
@@ -152,6 +161,20 @@ const MODES = [{
     // Ersatzverkehr text filter below cannot catch the line on its own.
     { tag: 'vor', dir: 'data/gtfs-vor', routeTypes: ['3'],
       mapKey: (sn, r) => (/^SEV\b/.test(sn) ? null : lineKey(sn, r)), op: true },
+    // Bratislava's city buses and trolleybuses (route_type 11 turns green)
+    { tag: 'dpb', dir: 'data/gtfs-dpb', routeTypes: ['3', '11'], stubPseudo: true,
+      mapKey: (sn) => bratKey('dpb', sn), op: () => 'dpb' },
+    // The IDS BK's regional buses. The feed's shapes.txt is not linked to a
+    // single trip and it has no direction_id — the stop sequences become the
+    // geometry, and the direction is the trip number's parity, the Slovak
+    // (JDF) rule: odd trips run out, even ones back. Left out: 901, which the
+    // VOR feed already carries (Hainburg – Bratislava), and DOMINIQ's
+    // 105 808 to Rajka, which is not an IDS BK line and runs into Hungary.
+    { tag: 'idsbk', dir: 'data/gtfs-idsbk', routeTypes: ['3'], ignoreShapes: true,
+      dirKey: (t) => String(Number(t.trip_short_name) % 2),
+      skipRoute: (r) => r.agency_id !== '2' || (r.route_short_name || '').trim() === '901',
+      stopName: (n) => n.replace(/^Bratislava, /, ''),
+      mapKey: (sn) => bratKey('arriva', sn), op: () => 'arriva' },
   ],
 }];
 // The rail slot splits in TWO cfgs sharing mode 'tram': street trams and the
@@ -199,6 +222,15 @@ const KEY = SCOPE.key || {}, OP = SCOPE.op || {};
 const LBL = new Map();
 const LINE_OP = new Map();
 const OP_NAME = SCOPE.opName || {};
+// Bratislava's lines: always the operator code in the key, the bare number in print
+const bratKey = (op, sn) => {
+  if (!sn) return null;
+  const k = op + ':' + sn;
+  LBL.set(k, sn);
+  return k;
+};
+OP_NAME.dpb = 'Dopravný podnik Bratislava';
+OP_NAME.arriva = 'ARRIVA — IDS BK regional buses';
 const lineKey = (sn, r) => {
   const k = KEY[r.route_id] || sn;
   if (!k) return null;
@@ -207,12 +239,13 @@ const lineKey = (sn, r) => {
   return k;
 };
 if (tramAll || tramSel.length) MODES.push({
-  mode: 'tram', label: 'trams', osmFile: 'data/osm/vienna-rail.json',
+  mode: 'tram', label: 'trams', osmFiles: ['data/osm/vienna-rail.json', 'data/osm/bratislava-rail.json'],
   graphMode: 'tram', railKeep: new Set(['tram', 'light_rail']),
   color: '#d6212b', colorDark: '#7c1116',
   all: tramAll, lines: tramAll ? [] : tramSel,
   feeds: [
     { tag: 'vor', dir: 'data/gtfs-vor', routeTypes: ['0'], mapKey: lineKey, op: true },
+    { tag: 'dpb', dir: 'data/gtfs-dpb', routeTypes: ['0'], mapKey: (sn) => bratKey('dpb', sn), op: () => 'dpb' },
   ],
 });
 if (tramAll || metroSel.length) MODES.push({
@@ -364,7 +397,7 @@ async function processMode(cfg) {
     const fdir = join(ROOT, feed.dir);
     const shapesFile = join(fdir, 'shapes.txt');
     // guard inherited from sibling cities: a header-only shapes.txt counts as absent
-    const hasShapes = existsSync(shapesFile) && statSync(shapesFile).size > 200;
+    const hasShapes = !feed.ignoreShapes && existsSync(shapesFile) && statSync(shapesFile).size > 200;
     // more trips sampled when stop sequences ARE the geometry: the longest run
     // must win over short-turn variants
     const tripCap = hasShapes ? 40 : 200;
@@ -406,7 +439,7 @@ async function processMode(cfg) {
       if (!L) continue;
       let dirs = byLineDir.get(L);
       if (!dirs) byLineDir.set(L, (dirs = new Map()));
-      const dir = t.direction_id || '0';
+      const dir = feed.dirKey ? feed.dirKey(t) : (t.direction_id || '0');
       let m = dirs.get(dir);
       if (!m) dirs.set(dir, (m = new Map()));
       let e = m.get(t.shape_id);
@@ -488,7 +521,13 @@ async function processMode(cfg) {
     // line-direction is dropped rather than published as a stub.
     if (hasShapes) {
       const stub = feedReps.filter((r) => (shapePts.get(r.shapeId) || 0) < 3);
-      if (stub.length) {
+      if (stub.length && feed.stubPseudo) {
+        // a city feed with real stop sequences (DPB: 27, 69 and 144 one way)
+        // draws the direction from its stops instead of losing it
+        log(`${stub.length} line-direction(s) with a two-point stub shape take the stop sequence instead: `
+          + stub.map((r) => `${r.line}/${r.dir}`).join(', '));
+        for (const r of stub) r.stubShape = true;
+      } else if (stub.length) {
         log(`Dropped ${stub.length} line-direction(s) whose only shape is a two-point stub: `
           + stub.map((r) => `${r.line}/${r.dir}`).join(', '));
         for (const r of stub) feedReps.splice(feedReps.indexOf(r), 1);
@@ -530,6 +569,7 @@ async function processMode(cfg) {
       let name = (s.stop_name || '').replace(/\s+/g, ' ').trim();
       if (feed.titleCase) name = titleCase(name);
       name = stripWien(name);
+      if (feed.stopName) name = feed.stopName(name);
       const fix = STOP_FIX[feed.tag + ':' + s.stop_id];
       stopsById.set(feed.tag + ':' + s.stop_id, {
         name,
@@ -549,7 +589,7 @@ async function processMode(cfg) {
       }
       for (const r of feedReps) {
         const pts = (shapePts.get(r.shapeId) || []).sort((a, b) => a[0] - b[0]);
-        r.shapeLatLon = pts.map((p) => [p[1], p[2]]);
+        r.shapeLatLon = r.stubShape ? [] : pts.map((p) => [p[1], p[2]]);
       }
     }
     // per-rep fallback: an empty shape (or a shapeless feed) → the stop
@@ -778,6 +818,13 @@ async function processMode(cfg) {
     }
   }
   reps = reps.filter((r) => r.matchedXY);
+  // DPB's loop lines (27, 69) file the last hop back onto the terminus as a
+  // "direction" of its own — two stops, the stub shape: nothing to draw
+  const loopStubs = reps.filter((r) => r.stubShape && r.lengthKm < 0.5);
+  if (loopStubs.length) {
+    log(`Dropped ${loopStubs.length} stub direction(s) under 500 m: ${loopStubs.map((r) => `${r.line}/${r.dir}`).join(', ')}`);
+    reps = reps.filter((r) => !loopStubs.includes(r));
+  }
 
   // Trams take the IDENTICAL path as buses: we draw every traversed segment of
   // every direction. The two directional tracks (~3 m apart) are the analog of the

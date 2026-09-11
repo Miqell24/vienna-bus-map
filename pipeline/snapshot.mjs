@@ -40,6 +40,8 @@ const FEED_TAGS = {
   'data/gtfs-vor': 'VOR',
   'data/gtfs-oebb': 'ÖBB',
   'data/gtfs': 'Wiener Linien',
+  'data/gtfs-dpb': 'DPB Bratislava',
+  'data/gtfs-idsbk': 'IDS BK regional buses',
 };
 
 // ---- CLI ----

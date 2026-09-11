@@ -27,7 +27,7 @@
 #   the VOR's share of its 273 national routes.
 set -euo pipefail
 cd "$(dirname "$0")/.."
-mkdir -p data/gtfs-vor data/gtfs-oebb data/osm/tiles web/vendor
+mkdir -p data/gtfs-vor data/gtfs-oebb data/gtfs-dpb data/gtfs-idsbk data/osm/tiles web/vendor
 
 # 1) GTFS — the Verbund (account-gated: file or token, see the header)
 if [ ! -f data/gtfs-vor/routes.txt ]; then
@@ -59,6 +59,32 @@ if [ ! -f data/gtfs-oebb/routes.txt ]; then
   fi
 fi
 
+# 1d) GTFS — the IDS BK (Wien & Bratislava, 11.09.2026), both open, listed on
+#     https://www.idsbk.sk/en/about/open-data/:
+#     * Dopravný podnik Bratislava — the city's buses, trolleybuses and trams,
+#       an ArcGIS item that always serves the current file;
+#     * the regional buses (ARRIVA) — a Google Drive folder of dated zips,
+#       GTFS and JDF side by side; the newest "<date>-AMS-gtfs" is taken.
+if [ ! -f data/gtfs-dpb/routes.txt ]; then
+  echo "== DPB Bratislava GTFS =="
+  curl -fL --retry 3 --max-time 600 -o data/dpb-gtfs.zip \
+    "https://www.arcgis.com/sharing/rest/content/items/aba12fd2cbac4843bc7406151bc66106/data"
+  mkdir -p data/gtfs-dpb && unzip -o -q data/dpb-gtfs.zip -d data/gtfs-dpb
+fi
+if [ ! -f data/gtfs-idsbk/routes.txt ]; then
+  echo "== IDS BK regional buses GTFS =="
+  id=$(curl -fsL -A "Mozilla/5.0" "https://drive.google.com/embeddedfolderview?id=1n9r_hGe-msl3bGa0q9vqI_ENODHT6n7x" | python3 -c '
+import re, sys
+s = sys.stdin.read()
+files = re.findall(r"file/d/([^/]+)/.*?flip-entry-title\">([^<]+)<", s, re.S)
+gtfs = sorted((n, i) for i, n in files if "-AMS-gtfs" in n)
+print(gtfs[-1][1] if gtfs else "")')
+  [ -n "$id" ] || { echo "nie znalazłem pliku *-AMS-gtfs w folderze IDS BK" >&2; exit 1; }
+  curl -fL --retry 3 --max-time 600 -o data/idsbk-gtfs.zip \
+    "https://drive.usercontent.google.com/download?id=$id&export=download&confirm=t"
+  mkdir -p data/gtfs-idsbk && unzip -o -q data/idsbk-gtfs.zip -d data/gtfs-idsbk
+fi
+
 # 1c) scope: which ÖBB routes are the VOR's, and the line keys of the Verbund
 if [ ! -f data/scope.json ]; then
   node --max-old-space-size=8192 pipeline/scope.mjs
@@ -79,6 +105,16 @@ if [ ! -f data/osm/tiles/t49.json ] || [ ! -f data/osm/vienna-rail.json ]; then
   fi
   echo "== cutting OSM tiles out of the extract =="
   python3 pipeline/pbf-tiles.py
+fi
+# 2b) the Bratislava region comes from its own country's extract: the Austrian
+#     one stops at the border (tiles sk1–sk4 + bratislava-rail.json)
+if [ ! -f data/osm/tiles/sk4.json ] || [ ! -f data/osm/bratislava-rail.json ]; then
+  if [ ! -f data/slovakia-latest.osm.pbf ]; then
+    echo "== Geofabrik slovakia-latest.osm.pbf =="
+    curl -fL --retry 5 --retry-delay 5 -C - --max-time 3600 -o data/slovakia-latest.osm.pbf \
+      "https://download.geofabrik.de/europe/slovakia-latest.osm.pbf"
+  fi
+  python3 pipeline/pbf-tiles.py --sk
 fi
 
 # 3) MapLibre GL (vendored, no CDN at runtime)

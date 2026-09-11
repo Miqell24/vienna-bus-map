@@ -12,31 +12,46 @@ will serve that (the wall Berlin, London and Sao Paulo hit before).
 Two cuts: a road grid for the buses, and one rail box for the trams, the
 U-Bahn and the S-Bahn / REX / R trains, which reach past the Verbund border
 into Styria and Upper Austria.
+
+`--sk` (11.09.2026, Wien & Bratislava) cuts the same two things out of the
+Geofabrik slovakia extract for the IDS BK: a 2 x 2 road grid over the
+Bratislava region (tiles sk1..sk4) and the Bratislava tram network
+(bratislava-rail.json). The Austrian extract stops at the border, so the
+city's streets and tracks have to come from its own country's file.
 """
 import json, os, re, sys
 import osmium
 
 ROOT = os.path.join(os.path.dirname(__file__), '..')
-PBF = os.path.join(ROOT, 'data', 'austria-latest.osm.pbf')
+SK = '--sk' in sys.argv
+PBF = os.path.join(ROOT, 'data', 'slovakia-latest.osm.pbf' if SK else 'austria-latest.osm.pbf')
 
-# must match pipeline/download.sh: Wien + Niederösterreich + Burgenland with a
-# margin for the roads the shapes use
-S, N, W, E = 46.70, 49.10, 14.30, 17.30
-GRID = 7
-RAIL_BOX = (46.55, 13.85, 49.15, 17.40)   # S, W, N, E — trains leave the Verbund
+if SK:
+    # the IDS BK: the stops of both feeds span 47.99–48.62 N, 16.84–17.59 E
+    S, N, W, E = 47.95, 48.66, 16.80, 17.64
+    GRID = 2
+    RAIL_BOX = (48.00, 16.95, 48.30, 17.30)   # Bratislava's trams
+    PREFIX, RAIL_NAME = 'sk', 'bratislava-rail.json'
+else:
+    # must match pipeline/download.sh: Wien + Niederösterreich + Burgenland with a
+    # margin for the roads the shapes use
+    S, N, W, E = 46.70, 49.10, 14.30, 17.30
+    GRID = 7
+    RAIL_BOX = (46.55, 13.85, 49.15, 17.40)   # S, W, N, E — trains leave the Verbund
+    PREFIX, RAIL_NAME = 't', 'vienna-rail.json'
 
 HW = re.compile(r'^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|living_street|service|busway|construction|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link)$')
 RAIL = re.compile(r'^(subway|tram|light_rail|rail|narrow_gauge|construction|disused|proposed)$')
 
 road_tiles = {}
 for i in range(1, GRID * GRID + 1):
-    f = os.path.join(ROOT, f'data/osm/tiles/t{i}.json')
+    f = os.path.join(ROOT, f'data/osm/tiles/{PREFIX}{i}.json')
     if os.path.exists(f):
         continue
     row, col = (i - 1) // GRID, (i - 1) % GRID
     road_tiles[i] = (S + (N - S) * row / GRID, S + (N - S) * (row + 1) / GRID,
                      W + (E - W) * col / GRID, W + (E - W) * (col + 1) / GRID)
-rail_file = os.path.join(ROOT, 'data/osm/vienna-rail.json')
+rail_file = os.path.join(ROOT, 'data/osm', RAIL_NAME)
 need_rail = not os.path.exists(rail_file)
 print('brakujące kafle dróg:', len(road_tiles), '| szyny:', need_rail, flush=True)
 if not road_tiles and not need_rail:
@@ -97,11 +112,11 @@ if not os.path.exists(PBF):
 print('czytam', os.path.basename(PBF), flush=True)
 H().apply_file(PBF, locations=True, idx='flex_mem')
 
-GEN = 'pbf-tiles.py (Geofabrik austria)'
+GEN = 'pbf-tiles.py (Geofabrik %s)' % ('slovakia' if SK else 'austria')
 for i, els in out.items():
-    f = os.path.join(ROOT, f'data/osm/tiles/t{i}.json')
+    f = os.path.join(ROOT, f'data/osm/tiles/{PREFIX}{i}.json')
     json.dump({'version': 0.6, 'generator': GEN, 'elements': els}, open(f, 'w'))
-    print(f't{i}: {len(els)} dróg', flush=True)
+    print(f'{PREFIX}{i}: {len(els)} dróg', flush=True)
 if need_rail:
     json.dump({'version': 0.6, 'generator': GEN, 'elements': out_rail}, open(rail_file, 'w'))
     print(f'szyny: {len(out_rail)} odcinków', flush=True)

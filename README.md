@@ -1,10 +1,12 @@
-# VOR — Vienna, Lower Austria & Burgenland — interactive map
+# Wien & Bratislava — VOR & IDS BK — interactive map
 
 Interactive, poster-grade map of the **whole Verkehrsverbund Ost-Region**:
 Wiener Linien's buses, trams and the U-Bahn, the Badner Bahn, the buses of
 Postbus, Dr. Richard, N-Bus, Blaguss and the county operators of Lower Austria
 and Burgenland, the NÖVOG railways and the CAT — and the S-Bahn, REX, CJX and
-R trains that tie the region together. **928 lines / 43 000 km**, drawn along
+R trains that tie the region together — and since 11.09.2026 the IDS BK across
+the border: Bratislava's buses, trolleybuses and trams (DPB) and the regional buses
+of the Bratislava region (ARRIVA). **1 085 lines / 48 400 km**, drawn along
 the real street and track geometry, weighted mean matching error 0.69 m.
 
 ## Live
@@ -76,6 +78,41 @@ Build quirks worth knowing:
   Hauptbahnhof); on Vienna's own map the 4 528 "Wien …" poles print without
   the town, the other towns keep theirs, and Wien Mitte stays whole.
 
+- **Terminus boxes print the number, not the key** (11.09.2026): the badge
+  layer read `line` and showed `blag:1` or `dpb:N44` on 754 boxes since the
+  Verbund build; it reads `lbl` first now, and so do the journey planner's
+  overlay and result list.
+
+## Bratislava — the IDS BK (11.09.2026)
+
+The map is **Wien & Bratislava** since 11.09.2026: the integrated transport
+system of the Bratislava region joins the Verbund, from the two open feeds
+listed on [idsbk.sk/en/about/open-data](https://www.idsbk.sk/en/about/open-data/):
+
+| feed | what it brings |
+|---|---|
+| **Dopravný podnik Bratislava** — an ArcGIS item that always serves the current file | the city's buses (3), trolleybuses (11, green) and trams 1, 3, 4, 9 (0), night lines N21–N99 |
+| **IDS BK regional buses** — a Google Drive folder of dated GTFS/JDF zips, the newest `<date>-AMS-gtfs` taken | ARRIVA's regional lines 2xx–7xx: Záhorie, Pezinok, Senec, Šamorín |
+
+- Every Bratislava key carries the operator code — `dpb:1`, `arriva:205` —
+  and prints bare: Bratislava's tram 1 and Vienna's never merge, and the panel
+  lists the two capitals' city operators first (Wiener Linien, DPB).
+- **The regional feed is thin**: its `shapes.txt` is linked to no trip and it
+  has no `direction_id`. The feed option `ignoreShapes` makes the stop
+  sequences the geometry (pseudo-matching on the road graph), and `dirKey`
+  takes the direction from the trip number's parity — the Slovak (JDF) rule,
+  odd trips out, even back. `stopName` drops the "Bratislava, " prefix the
+  regional feed writes before the city's stops, so they meet DPB's poles.
+- DPB ships a two-point stub shape for one direction of 27, 69 and 144;
+  `stubPseudo` draws those from their stops instead of dropping them.
+- Left out: **901** (Hainburg – Bratislava), which the VOR feed already
+  carries, and DOMINIQ's **105 808** to Rajka — not an IDS BK line (its own
+  tickets) and mostly in Hungary. The ZSSK trains of the IDS BK are not in
+  either feed.
+- **OSM**: the Austrian extract stops at the border, so `pbf-tiles.py --sk`
+  cuts four road tiles (47.95–48.66 N, 16.80–17.64 E) and Bratislava's tram
+  network out of Geofabrik's `slovakia-latest.osm.pbf`.
+
 ## Timeline — the map's versions
 
 The panel's **Map version** row (10.09.2026, the Kraków mechanism of 3.09)
@@ -114,5 +151,6 @@ road grid and one rail box out of `austria-latest.osm.pbf`. `npm run build`
 map-matches every line (HMM/Viterbi on the OSM graphs) and writes GeoJSON to
 `data/out/`. `npm run serve` hosts the map at http://localhost:8136.
 
-Data: VOR / Mobilitätsverbünde Österreich · ÖBB (CC BY 4.0) ·
+Data: VOR / Mobilitätsverbünde Österreich · ÖBB (CC BY 4.0) · IDS BK
+(Dopravný podnik Bratislava, ARRIVA) ·
 base map © OpenFreeMap / OpenMapTiles / OpenStreetMap contributors.
